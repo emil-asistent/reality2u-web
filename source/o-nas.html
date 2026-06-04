@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O nás — reality2u</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+<style>
+#navbar{position:fixed;top:0;left:0;right:0;z-index:900;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;transition:background .4s,box-shadow .4s;background:transparent}
+#navbar.scrolled{background:rgba(10,22,40,.96);backdrop-filter:blur(20px);box-shadow:0 2px 30px rgba(0,0,0,.4)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-img{height:120px;width:auto;object-fit:contain}
+.nav-links{display:flex;gap:2rem;list-style:none;margin:0;padding:0}
+.nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.9rem;font-weight:700;transition:color .2s}
+.nav-links a:hover{color:#99C6C3}
+.nav-ctas{display:flex;gap:.6rem;align-items:center}
+.btn{padding:.55rem 1.2rem;border-radius:10px;font-size:.85rem;font-weight:600;text-decoration:none;transition:all .2s;border:none;cursor:pointer;font-family:inherit}
+.btn-teal{background:linear-gradient(135deg,#99C6C3,#7caaa7);color:#0A1628;font-weight:700}
+.btn-teal:hover{box-shadow:0 4px 20px rgba(153,198,195,.45);transform:translateY(-1px)}
+.btn-outline-light{border:1.5px solid rgba(255,255,255,.35);color:rgba(255,255,255,.9);background:transparent}
+.btn-outline-light:hover{border-color:#99C6C3;color:#99C6C3}
+.btn-lg{padding:.75rem 1.8rem;font-size:1rem;border-radius:10px}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{width:22px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+@media(max-width:700px){.nav-links,.nav-ctas{display:none}.hamburger{display:flex}}
+
+
+@media(max-width:700px){
+  #navLinks{display:none;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;min-height:100vh;z-index:9999;flex-direction:column;align-items:center;justify-content:center;background:#99C6C3;list-style:none;padding:0;margin:0;overflow-y:auto;}
+  #navLinks.open{display:flex;}
+  #navLinks li{width:100%;text-align:center;}
+  #navLinks a{display:block;padding:18px 0;font-size:clamp(2.2rem,10vw,4rem);color:#0D1F3A;font-weight:900;text-decoration:none;letter-spacing:-.02em;}
+  #navLinks a:hover{opacity:.6;}
+  .hamburger{display:flex;}
+  .nav-ctas{display:none;}
+  #menuClose{display:none;position:fixed;top:20px;right:20px;z-index:10000;background:none;border:none;cursor:pointer;padding:8px;font-size:2rem;color:#0D1F3A;font-weight:900;line-height:1;}
+  #menuClose.visible{display:block;}
+}
+/* ═══ MOBILE MENU ═══ */
+@media(max-width:700px){
+  #navLinks{
+    display:none;
+    position:fixed;
+    top:0;left:0;
+    width:100vw;height:100vh;
+    z-index:9999;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    background:#99C6C3 !important;
+    list-style:none;
+    padding:0;margin:0;
+  }
+  #navLinks.open{display:flex !important;}
+  #navLinks li{width:90%;text-align:center;border-bottom:1px solid rgba(13,31,58,.2);}
+  #navLinks a,
+  #navLinks a.active,
+  #navLinks a:hover{
+    display:block;
+    padding:20px 0;
+    font-size:clamp(2rem,9vw,3.5rem) !important;
+    color:#0D1F3A !important;
+    font-weight:900 !important;
+    text-decoration:none !important;
+    letter-spacing:-.02em;
+    opacity:1 !important;
+  }
+  #navLinks a:hover{opacity:.6 !important;}
+  .hamburger{display:flex !important;}
+  .nav-ctas{display:none !important;}
+  #menuClose{
+    display:none;
+    position:fixed;top:24px;right:24px;
+    z-index:10000;
+    background:none;border:none;cursor:pointer;
+    font-size:2.2rem;color:#0D1F3A;font-weight:900;line-height:1;padding:0;
+  }
+  #menuClose.visible{display:block !important;}
+}
+
+/* ═══ O NÁS — MOBILE ═══ */
+@media(max-width:700px){
+  #stats-inner{grid-template-columns:repeat(2,1fr) !important;}
+  #stats-inner .stat-item{border-right:none;border-bottom:1px solid rgba(10,22,40,.07);}
+  #agents-grid{grid-template-columns:1fr !important;}
+  .flip-card{height:auto !important;min-height:220px;}
+  #principy-grid{grid-template-columns:1fr !important;}
+}
+#menuClose{display:none;}
+</style>
+
+<style id="page-hero-bg-style">
+.page-hero {
+  position: relative;
+  min-height: 60vh;
+  padding: 160px 5% 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('./assets/hero-bg.jpg') center/cover no-repeat;
+  z-index: 0;
+}
+.page-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(10,22,40,0.82) 0%, rgba(10,22,40,0.65) 100%);
+  z-index: 1;
+}
+.page-hero > * {
+  position: relative;
+  z-index: 2;
+}
+.page-hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  color: #fff;
+  margin-bottom: 0.7rem;
+  line-height: 1.15;
+}
+.page-hero p {
+  color: var(--teal, #99C6C3);
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+</style>
+
+<style id="onas-anim">
+/* Reveal ze spodu */
+.reveal-up{opacity:0;transform:translateY(40px);transition:opacity .65s ease,transform .65s ease}
+.reveal-up.visible{opacity:1;transform:none}
+
+/* Value card hover */
+.val-card{transition:transform .3s ease,box-shadow .3s ease}
+.val-card:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 16px 40px rgba(10,22,40,.18)}
+
+</style>
+
+<style id="flip-touch-css">
+.flip-card.flipped .flip-inner { transform: rotateY(180deg); }
+
+</style>
+
+<style id="synergy-bg">
+.synergy-section {
+  background: url('assets/synergy-bg.jpg') center/cover no-repeat !important;
+  position: relative;
+}
+.synergy-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10,22,40,0.72);
+  z-index: 0;
+}
+.synergy-inner {
+  position: relative;
+  z-index: 1;
+}
+
+</style>
+
+<style id="pribeh-mobile">
+@media(max-width:768px){
+  .pribeh-grid{grid-template-columns:1fr!important}
+}
+
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="./index.html" class="nav-logo">
+    <img src="./assets/logo.png" alt="Reality2u" class="nav-logo-img">
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="./nemovitosti.html">Nabídka</a></li>
+    <li><a href="./sluzby.html">Služby</a></li>
+    <li><a href="./o-nas.html">O nás</a></li>
+    <li><a href="./kontakt.html">Kontakt</a></li>
+    <li><a href="https://money2u.cz" target="_blank">Financování</a></li>
+  </ul>
+  <div class="nav-ctas">
+    <a href="./kontakt.html" class="btn btn-teal">Kontaktovat makléře</a>
+  </div>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+<button id="menuClose" onclick="closeMenu()">&#10005;</button>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="val-card reveal-up" data-delay="0" style="display:inline-flex;align-items:center;gap:.5rem;background:rgba(153,198,195,.15);border:1px solid rgba(153,198,195,.3);border-radius:100px;padding:.35rem 1rem;font-size:.78rem;font-weight:600;color:var(--teal,#99C6C3);letter-spacing:.05em;margin-bottom:1.2rem;">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    Tým profesionálních makléřů
+  </div>
+  <h1>Jsme <em style="font-style:normal;color:var(--teal,#99C6C3)">reality2u</em></h1>
+  <p>Váš zájem je na prvním místě. Bez skrytých poplatků, bez kompromisů — jen profesionální přístup, který vám otevírá dveře k té správné nemovitosti.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;margin-top:1.5rem;flex-wrap:wrap;">
+    <a href="kontakt.html" class="btn btn-teal btn-lg">Kontaktovat nás</a>
+    <a href="nemovitosti.html" class="btn btn-outline-light btn-lg">Naše nabídka</a>
+  </div>
+</div>
+
+<!-- STATS -->
+<section id="stats-bar" style="background:#f0f7f6;padding:0;">
+  <div id="stats-inner" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);width:100%;">
+    <div class="stat-item" style="padding:44px 32px;text-align:center;border-right:1px solid rgba(10,22,40,.08);">
+      <span class="stat-num" style="font-family:'Poppins',sans-serif;font-size:clamp(2.5rem,4vw,3.5rem);font-weight:900;color:var(--navy,#0A1628);line-height:1;display:block;margin-bottom:8px;" data-target="500" data-suffix="+">0</span>
+      <div style="font-size:.75rem;color:rgba(10,22,40,.5);font-weight:600;text-transform:uppercase;letter-spacing:.07em;">Prodaných nemovitostí</div>
+    </div>
+    <div class="stat-item" style="padding:44px 32px;text-align:center;border-right:1px solid rgba(10,22,40,.08);">
+      <span class="stat-num" style="font-family:'Poppins',sans-serif;font-size:clamp(2.5rem,4vw,3.5rem);font-weight:900;color:var(--navy,#0A1628);line-height:1;display:block;margin-bottom:8px;" data-target="12" data-suffix=" let">0</span>
+      <div style="font-size:.75rem;color:rgba(10,22,40,.5);font-weight:600;text-transform:uppercase;letter-spacing:.07em;">Na trhu</div>
+    </div>
+    <div class="stat-item" style="padding:44px 32px;text-align:center;border-right:1px solid rgba(10,22,40,.08);">
+      <span class="stat-num" style="font-family:'Poppins',sans-serif;font-size:clamp(2.5rem,4vw,3.5rem);font-weight:900;color:var(--navy,#0A1628);line-height:1;display:block;margin-bottom:8px;" data-target="98" data-suffix="%">0</span>
+      <div style="font-size:.75rem;color:rgba(10,22,40,.5);font-weight:600;text-transform:uppercase;letter-spacing:.07em;">Spokojených klientů</div>
+    </div>
+    <div class="stat-item" style="padding:44px 32px;text-align:center;">
+      <span class="stat-num" style="font-family:'Poppins',sans-serif;font-size:clamp(2.5rem,4vw,3.5rem);font-weight:900;color:var(--navy,#0A1628);line-height:1;display:block;margin-bottom:8px;" data-target="23" data-suffix=" dní">0</span>
+      <div style="font-size:.75rem;color:rgba(10,22,40,.5);font-weight:600;text-transform:uppercase;letter-spacing:.07em;">Průměrný prodej</div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  let counted = false;
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting && !counted) {
+        counted = true;
+        document.querySelectorAll('#stats-bar [data-target]').forEach(el => {
+          const target = +el.dataset.target;
+          const suffix = el.dataset.suffix || '';
+          let cur = 0;
+          const step = Math.max(target/80, 1);
+          const t = setInterval(() => {
+            cur = Math.min(cur + step, target);
+            el.textContent = Math.round(cur) + suffix;
+            if(cur >= target) clearInterval(t);
+          }, 16);
+        });
+      }
+    });
+  }, {threshold: 0.2});
+  document.querySelectorAll('#stats-bar .stat-item').forEach(el => obs.observe(el));
+})();
+</script>
+<!-- TÝM -->
+
+<!-- O NÁS TEXT -->
+<section style="background:#fff;padding:4rem 5%;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <!-- Nadpis na střed přes celou šířku -->
+    <div style="text-align:center;margin-bottom:3rem;">
+      <div class="sec-label" style="color:rgba(10,22,40,.4);margin-bottom:.8rem;">Náš příběh</div>
+      <h2 class="section-title" style="color:var(--navy,#0A1628);margin-bottom:0;">Férové jednání, lidský přístup</h2>
+    </div>
+    <!-- Text vlevo, foto vpravo -->
+    <div id="pribeh-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;">
+      <div>
+        <p style="font-size:1rem;color:rgba(10,22,40,.65);line-height:1.8;margin-bottom:1.2rem;">
+          Reality2u vznikla na základě poptávky realitních služeb klientů finanční skupiny Money2u. 
+          Postupně se vyprofilovala v samostatnou realitní kancelář, která s Money2u úzce spolupracuje — 
+          toto spojení se ukázalo být ideálním pro celý proces od výběru nemovitosti až po její financování.
+        </p>
+        <p style="font-size:1rem;color:rgba(10,22,40,.65);line-height:1.8;">
+          Obě společnosti sídlí pod jednou střechou, takže máte vše na jednom místě 
+          a neztrácíte svůj drahocenný čas. Pojďte se přesvědčit, že cesta k bydlení nemusí být trnitá.
+        </p>
+      </div>
+      <div>
+        <img src="assets/team-photo.jpg" alt="Tým reality2u"
+          style="width:100%;border-radius:20px;object-fit:cover;object-position:center 30%;aspect-ratio:4/3;
+          box-shadow:0 12px 40px rgba(10,22,40,.15);border:3px solid rgba(153,198,195,.3);">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="agents" style="background:var(--teal,#99C6C3);padding:5rem 5%;">
+  <div style="max-width:1100px;margin:0 auto;text-align:center;">
+    <h2 class="section-title" style="color:var(--navy,#0A1628);margin-bottom:.6rem;">Náš tým</h2>
+    <p style="color:rgba(10,22,40,.8);font-size:1rem;font-weight:600;margin:0 auto 3rem;white-space:nowrap;">Zkušení profesionálové propojující realitní a finanční svět. Každý krok s vámi od A do Z.</p>
+            <div id="agents-grid" style="display:flex;flex-wrap:wrap;gap:1.4rem;justify-content:center;width:100%;">
+      <div class="flip-card reveal-up" data-delay="0">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="fc-avatar"><img src="assets/team/kroupa.jpg" alt="Martin Kroupa"></div>
+            <div class="fc-name">Martin Kroupa</div>
+            <div class="fc-role">Realitní makléř</div>
+            <div class="fc-hint">Najeďte pro kontakt</div>
+          </div>
+          <div class="flip-back">
+            <div class="fc-back-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--teal,#99C6C3)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.2a16 16 0 0 0 5.89 5.89l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.27 15.5z"/></svg></div>
+            <div class="fc-back-name">Martin Kroupa</div>
+            <div class="fc-back-role">Realitní makléř</div>
+            <a href="tel:+420777167930" class="fc-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.2a16 16 0 0 0 5.89 5.89l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.27 15.5z"/></svg> 777 167 930</a>
+            <a href="mailto:kroupa@money2u.cz" class="fc-btn" style="margin-top:6px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> kroupa@money2u.cz</a>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card reveal-up" data-delay="70">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="fc-avatar"><img src="assets/team/vasicek.jpg" alt="Tomáš Vašíček"></div>
+            <div class="fc-name">Tomáš Vašíček</div>
+            <div class="fc-role">Realitní makléř</div>
+            <div class="fc-hint">Najeďte pro kontakt</div>
+          </div>
+          <div class="flip-back">
+            <div class="fc-back-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--teal,#99C6C3)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.2a16 16 0 0 0 5.89 5.89l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.27 15.5z"/></svg></div>
+            <div class="fc-back-name">Tomáš Vašíček</div>
+            <div class="fc-back-role">Realitní makléř</div>
+            <a href="tel:+420604262012" class="fc-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.2a16 16 0 0 0 5.89 5.89l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.27 15.5z"/></svg> 604 262 012</a>
+            <a href="mailto:vasicek@money2u.cz" class="fc-btn" style="margin-top:6px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> vasicek@money2u.cz</a>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card reveal-up" data-delay="140">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="fc-avatar"><img src="assets/team/cermak.jpg" alt="Jan Čermák"></div>
+            <div class="fc-name">Jan Čermák</div>
+            <div class="fc-role">Realitní makléř</div>
+            <div class="fc-hint">Najeďte pro kontakt</div>
+          </div>
+          <div class="flip-back">
+            <div class="fc-back-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--teal,#99C6C3)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.2a16 16 0 0 0 5.89 5.89l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.27 15.5z"/></svg></div>
+            <div class="fc-back-name">Jan Čermák</div>
+            <div class="fc-back-role">Realitní makléř</div>
+            <a href="tel:+420733411446" class="fc-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.2a16 16 0 0 0 5.89 5.89l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.27 15.5z"/></svg> 733 411 446</a>
+            <a href="mailto:cermak@reality2u.cz" class="fc-btn" style="margin-top:6px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> cermak@reality2u.cz</a>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card reveal-up" data-delay="210">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="fc-avatar"><img src="assets/team/vankova.jpg" alt="Jana Vaňková"></div>
+            <div class="fc-name">Jana Vaňková</div>
+            <div class="fc-role">Realitní makléřka</div>
+            <div class="fc-hint">Najeďte pro kontakt</div>
+          </div>
+          <div class="flip-back">
+            <div class="fc-back-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--teal,#99C6C3)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.2a16 16 0 0 0 5.89 5.89l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.27 15.5z"/></svg></div>
+            <div class="fc-back-name">Jana Vaňková</div>
+            <div class="fc-back-role">Realitní makléřka</div>
+            <a href="tel:+420774229922" class="fc-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.2a16 16 0 0 0 5.89 5.89l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.27 15.5z"/></svg> 774 229 922</a>
+            <a href="mailto:vankova@reality2u.cz" class="fc-btn" style="margin-top:6px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> vankova@reality2u.cz</a>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card reveal-up" data-delay="280">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="fc-avatar"><img src="assets/team/stastna.jpg" alt="Lucie Šťastná"></div>
+            <div class="fc-name">Lucie Šťastná</div>
+            <div class="fc-role">Realitní makléřka</div>
+            <div class="fc-hint">Najeďte pro kontakt</div>
+          </div>
+          <div class="flip-back">
+            <div class="fc-back-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--teal,#99C6C3)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.2a16 16 0 0 0 5.89 5.89l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.27 15.5z"/></svg></div>
+            <div class="fc-back-name">Lucie Šťastná</div>
+            <div class="fc-back-role">Realitní makléřka</div>
+            <a href="tel:+420775249124" class="fc-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.2a16 16 0 0 0 5.89 5.89l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.27 15.5z"/></svg> 775 249 124</a>
+            <a href="mailto:stastna@reality2u.cz" class="fc-btn" style="margin-top:6px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> stastna@reality2u.cz</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section></section>
+
+<style id="flip-cards-css">
+.flip-card { perspective: 1000px; height: 260px; cursor: pointer; }
+.flip-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s cubic-bezier(.4,0,.2,1); transform-style: preserve-3d; }
+.flip-card:hover .flip-inner { transform: rotateY(180deg); }
+.flip-front, .flip-back {
+  position: absolute; inset: 0; backface-visibility: hidden;
+  border-radius: 18px; padding: 1.8rem 1.4rem;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+}
+.flip-front {
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(10,22,40,.08);
+  border: 1px solid rgba(10,22,40,.06);
+}
+.flip-back {
+  background: var(--navy, #0A1628);
+  transform: rotateY(180deg);
+  box-shadow: 0 4px 20px rgba(10,22,40,.2);
+}
+.fc-avatar {
+  width: 96px; height: 96px; border-radius: 50%;
+  background: linear-gradient(135deg, #e8f4f3, #c5dedd);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1rem;
+  border: 3px solid rgba(153,198,195,.3);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.fc-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center 22%; display: block; }
+.flip-card { flex: 0 0 calc(25% - 1.05rem); max-width: 250px; }
+@media(max-width:900px){ .flip-card { flex: 0 0 calc(50% - 0.7rem); max-width: 320px; } }
+@media(max-width:600px){
+  .flip-card { flex: 0 0 100%; max-width: 320px; height: 280px; }
+  .fc-avatar { width: 110px; height: 110px; }
+}
+.fc-name { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: .95rem; color: var(--navy, #0A1628); margin-bottom: .25rem; }
+.fc-role { font-size: .75rem; color: rgba(10,22,40,.5); line-height: 1.4; margin-bottom: .6rem; }
+.fc-hint { font-size: .65rem; color: rgba(10,22,40,.3); letter-spacing: .05em; text-transform: uppercase; margin-top: auto; }
+.fc-back-icon { margin-bottom: .8rem; }
+.fc-back-name { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: .95rem; color: #fff; margin-bottom: .2rem; }
+.fc-back-role { font-size: .72rem; color: rgba(255,255,255,.5); margin-bottom: 1.2rem; line-height: 1.4; }
+.fc-btn {
+  display: inline-flex; align-items: center; gap: .4rem;
+  background: var(--teal, #99C6C3); color: var(--navy, #0A1628);
+  padding: .5rem 1.2rem; border-radius: 8px;
+  font-size: .78rem; font-weight: 700; text-decoration: none;
+  transition: opacity .2s;
+}
+.fc-btn:hover { opacity: .85; }
+
+</style>
+
+
+
+
+
+<!-- VALUES -->
+<section style="background:#fff;padding:5rem 5%;">
+  <div style="max-width:1100px;margin:0 auto;text-align:center;">
+    <div class="sec-label" style="color:rgba(10,22,40,.4);margin-bottom:.5rem;">Proč s námi</div>
+    <h2 class="section-title" style="color:var(--navy,#0A1628);margin-bottom:.5rem;">Naše hodnoty</h2>
+    <p style="color:rgba(10,22,40,.5);font-size:.95rem;max-width:480px;margin:0 auto 3rem;">Principy, které řídí každou naši transakci.</p>
+    <div id="principy-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;">
+
+      <div class="val-card reveal-up" data-delay="120" style="background:var(--navy,#0A1628);border-radius:18px;padding:2rem 1.8rem;text-align:left;">
+        <div style="width:52px;height:52px;border-radius:12px;background:rgba(153,198,195,.15);display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#99C6C3" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin-bottom:.6rem;">Transparentnost</h3>
+        <p style="font-size:.85rem;color:rgba(255,255,255,.55);line-height:1.6;">Žádné skryté poplatky, žádné provize na straně prodávajícího. Vše jasně a srozumitelně od začátku.</p>
+      </div>
+
+      <div class="val-card reveal-up" data-delay="240" style="background:var(--teal,#99C6C3);border-radius:18px;padding:2rem 1.8rem;text-align:left;">
+        <div style="width:52px;height:52px;border-radius:12px;background:rgba(10,22,40,.12);display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--navy,#0A1628)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:1.05rem;color:var(--navy,#0A1628);margin-bottom:.6rem;">Rychlost</h3>
+        <p style="font-size:.85rem;color:rgba(10,22,40,.6);line-height:1.6;">Průměrný čas prodeje 23 dní. Díky propracovanému marketingu a síti kupujících prodáváme rychleji.</p>
+      </div>
+
+      <div class="val-card reveal-up" data-delay="360" style="background:var(--navy,#0A1628);border-radius:18px;padding:2rem 1.8rem;text-align:left;">
+        <div style="width:52px;height:52px;border-radius:12px;background:rgba(153,198,195,.15);display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#99C6C3" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin-bottom:.6rem;">Výsledky</h3>
+        <p style="font-size:.85rem;color:rgba(255,255,255,.55);line-height:1.6;">98 % spokojených klientů a 500+ úspěšně prodaných nemovitostí. Výsledky mluví samy za sebe.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- was SYNERGY -->
+<section class="synergy-section">
+  <div class="synergy-inner">
+    <div class="badge" style="display:inline-flex;margin-bottom:1.5rem;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      Finanční synergie
+    </div>
+    <h2>Propojeni s <span style="color:#99C6C3;">money2u</span></h2>
+    <p>Jako součást skupiny money2u vám nabízíme unikátní kombinaci: odborné realitní poradenství spojené s nejlepšími podmínkami hypotečního financování. Jeden tým, jedna vize, komplexní péče.</p>
+    <div class="btn-group" style="justify-content:center;">
+      <a href="https://money2u.cz" target="_blank" class="btn btn-teal btn-lg">Navštívit money2u</a>
+      <a href="./kalkulacka.html" class="btn btn-outline-light btn-lg">Spočítat hypotéku</a>
+    </div>
+  </div>
+</section>
+
+
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
+
+
+<style id="nav-update">
+.nav-links a { font-size: 1rem !important; font-weight: 700 !important; position: relative; }
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+  height: 2px; background: #99C6C3; border-radius: 2px;
+  transform: scaleX(0); transition: transform .2s;
+}
+.nav-links a:hover { color: #99C6C3 !important; }
+.nav-links a:hover::after { transform: scaleX(1); }
+.nav-links a.active { color: #99C6C3 !important; }
+.nav-links a.active::after { transform: scaleX(0) !important; }
+.btn-teal { font-size: .95rem !important; padding: .7rem 1.5rem !important; }
+
+</style>
+<script id="nav-active">
+(function(){
+  var page = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    var href = a.getAttribute('href').replace('./', '');
+    if (href === page || (page === '' && href === 'index.html')) {
+      a.classList.add('active');
+    }
+  });
+})();
+</script>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <span class="logo-main"><span class="reality">reality</span><span class="twou">2u</span></span>
+        <span class="logo-sub">Součást skupiny money2u</span>
+      </a>
+      <p>Váš spolehlivý realitní partner v Brně a okolí.</p>
+    </div>
+    <div class="footer-col footer-col-hide">
+      <h4>Nemovitosti</h4>
+      <ul>
+        <li><a href="nemovitosti.html">Všechny nabídky</a></li>
+        <li><a href="nemovitosti.html">Prodej</a></li>
+        <li><a href="nemovitosti.html">Pronájem</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="index.html">Úvod</a></li>
+        <li><a href="nemovitosti.html">Nabídka</a></li>
+        <li><a href="sluzby.html">Služby</a></li>
+        <li><a href="o-nas.html">O nás</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="https://money2u.cz" target="_blank">money2u.cz</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-col-hide">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="#">Tolstého 35, Brno</a></li>
+        <li><a href="tel:+420799794670">+420 799 794 670</a></li>
+        <li><a href="mailto:info@reality2u.cz">info@reality2u.cz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 reality2u s.r.o. Všechna práva vyhrazena.</p>
+    <p><a href="https://money2u.cz" target="_blank">Součást skupiny money2u</a></p>
+  </div>
+</footer>
+
+<style>
+footer{background:#060e1a;padding:4rem 5% 2rem;border-top:1px solid rgba(153,198,195,.1);font-family:'Inter',sans-serif}
+footer .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+footer .footer-brand p{color:rgba(255,255,255,.55);font-size:.9rem;margin-top:.8rem;line-height:1.7}
+footer .logo{text-decoration:none;display:block;margin-bottom:.5rem}
+footer .logo-main{display:block;font-family:'Poppins',sans-serif;font-weight:900;font-size:1.5rem}
+footer .logo-main .reality{color:#fff}
+footer .logo-main .twou{color:#99C6C3}
+footer .logo-sub{display:block;font-size:.72rem;color:rgba(255,255,255,.4);letter-spacing:.05em;margin-top:.15rem}
+footer .footer-col h4{font-family:'Poppins',sans-serif;font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#99C6C3;margin-bottom:1rem}
+footer .footer-col ul{list-style:none;padding:0;margin:0}
+footer .footer-col ul li{margin-bottom:.5rem}
+footer .footer-col ul li a{color:rgba(255,255,255,.6);font-size:.9rem;text-decoration:none;transition:color .2s}
+footer .footer-col ul li a:hover{color:#99C6C3}
+footer .footer-bottom{max-width:1200px;margin:0 auto;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+footer .footer-bottom p{font-size:.82rem;color:rgba(255,255,255,.4);margin:0}
+footer .footer-bottom a{color:#99C6C3}
+/* Mobil: skryj Nemovitosti + Kontakt sloupce, zobraz jen Brand + Menu */
+@media(max-width:768px){
+  footer .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+  footer .footer-col-hide{display:none}
+}
+@media(max-width:500px){
+  footer .footer-grid{grid-template-columns:1fr}
+  footer .footer-col-hide{display:none}
+}
+
+</style>
+
+<script id="onas-reveal-js">
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var el = e.target;
+        var d = parseInt(el.getAttribute('data-delay')||0);
+        setTimeout(function(){ el.classList.add('visible'); }, d);
+        obs.unobserve(el);
+      }
+    });
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal-up').forEach(function(el){ obs.observe(el); });
+})();
+</script>
+
+<script id="flip-touch-js">
+// Mobil flip na tap — toggle activated
+document.querySelectorAll('.flip-card').forEach(function(card){
+  card.addEventListener('click', function(){
+    this.classList.toggle('flipped');
+  });
+});
+</script>
+
+<script>
+function toggleMenu(){
+  var m=document.getElementById('navLinks');
+  var btn=document.getElementById('menuClose');
+  if(!m)return;
+  var isOpen=m.classList.contains('open');
+  if(isOpen){m.classList.remove('open');if(btn)btn.classList.remove('visible');document.body.style.overflow='';}
+  else{m.classList.add('open');if(btn)btn.classList.add('visible');document.body.style.overflow='hidden';}
+}
+function closeMenu(){
+  var m=document.getElementById('navLinks');var btn=document.getElementById('menuClose');
+  if(m)m.classList.remove('open');if(btn)btn.classList.remove('visible');document.body.style.overflow='';
+}
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('#navLinks a').forEach(function(a){a.addEventListener('click',closeMenu);});
+});
+</script>
+<script>window.addEventListener("scroll",function(){var n=document.getElementById("navbar");if(n){if(window.scrollY>20){n.classList.add("scrolled");}else{n.classList.remove("scrolled");}}});</script>
+<script>
+(function(){
+  function mobileGridFix(){
+    if(window.innerWidth<=700){
+      var sg=document.getElementById('stats-inner');
+      if(sg) sg.style.gridTemplateColumns='repeat(2,1fr)';
+      var ag=document.getElementById('agents-grid');
+      if(ag) ag.style.gridTemplateColumns='1fr';
+      var pg=document.getElementById('principy-grid');
+      if(pg) pg.style.gridTemplateColumns='1fr';
+      var prg=document.getElementById('pribeh-grid');
+      if(prg){prg.style.gridTemplateColumns='1fr';prg.style.gap='1.5rem';}
+    } else {
+      var sg=document.getElementById('stats-inner');
+      if(sg) sg.style.gridTemplateColumns='repeat(4,1fr)';
+      var ag=document.getElementById('agents-grid');
+      if(ag) ag.style.gridTemplateColumns='repeat(4,1fr)';
+      var pg=document.getElementById('principy-grid');
+      if(pg) pg.style.gridTemplateColumns='repeat(3,1fr)';
+      var prg=document.getElementById('pribeh-grid');
+      if(prg) prg.style.gridTemplateColumns='1fr 1fr';
+    }
+  }
+  document.addEventListener('DOMContentLoaded', mobileGridFix);
+  window.addEventListener('resize', mobileGridFix);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prodej moderní novostavby patrového rodinného domu užitná plocha 126 m2 — reality2u</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+#navbar{position:fixed;top:0;left:0;right:0;z-index:900;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;background:rgba(10,22,40,.97);backdrop-filter:blur(20px);transition:background .3s}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-img{height:120px;width:auto;object-fit:contain;mix-blend-mode:screen}
+.nav-links{display:flex;gap:2rem;list-style:none;margin:0;padding:0}
+.nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.9rem;font-weight:700;transition:color .2s}
+.nav-links a:hover{color:var(--teal)}
+.nav-ctas{display:flex;gap:.6rem;align-items:center}
+.btn-teal{background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--navy);font-weight:700}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.3rem}
+.hamburger span{width:22px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+@media(max-width:700px){.nav-links,.nav-ctas{display:none}.hamburger{display:flex}}
+:root{--navy:#0A1628;--navy2:#122040;--teal:#99C6C3;--teal2:#7caaa7;--gold:#F5A623;--cream:#F8F6F0;--white:#fff;--text-mid:rgba(10,22,40,.6)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#f0f2f5;color:var(--navy);overflow-x:hidden}
+.btn{display:inline-flex;align-items:center;padding:.5rem 1.1rem;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;text-decoration:none;border:none;transition:all .2s;font-family:Inter,sans-serif;white-space:nowrap}
+.btn-teal{background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--navy);font-weight:700}
+.btn-teal:hover{box-shadow:0 4px 16px rgba(153,198,195,.4);transform:translateY(-1px)}
+.detail-wrap{max-width:1400px;margin:0 auto;padding:96px 5% 4.5rem;display:grid;grid-template-columns:1fr 380px;gap:3rem;align-items:start}
+.detail-main{min-width:0}
+.detail-text{max-width:920px}
+.hstat-row{display:flex;flex-wrap:wrap;gap:1.2rem;margin:1rem 0 1.5rem;padding:1.2rem 1.5rem;background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(10,22,40,.06)}
+.hstat{text-align:center;min-width:72px}
+.hstat-val{font-family:Poppins,sans-serif;font-weight:800;font-size:1.6rem;color:var(--navy);line-height:1.1}
+.hstat-lbl{font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--text-mid);margin-top:.2rem}
+.param-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin-bottom:2rem;max-width:920px}
+.param-item{display:flex;align-items:center;gap:.8rem;background:#fff;border-radius:12px;padding:.9rem 1.1rem;box-shadow:0 1px 6px rgba(10,22,40,.05)}
+.param-ico{color:var(--teal2);flex-shrink:0;display:flex}
+.param-lbl{font-size:.66rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--text-mid)}
+.param-val{font-family:Poppins,sans-serif;font-weight:700;font-size:1.02rem;color:var(--navy)}
+.contact-card{background:var(--navy);border-radius:18px;padding:1.6rem;color:#fff}
+.agent-av{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal2));display:flex;align-items:center;justify-content:center;font-family:Poppins,sans-serif;font-weight:800;font-size:1rem;color:var(--navy);flex-shrink:0}
+.inp{width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:9px;padding:.6rem .9rem;color:#fff;font-size:.83rem;font-family:Inter,sans-serif;outline:none;transition:border .2s;margin-bottom:.5rem}
+.inp:focus{border-color:rgba(153,198,195,.5)}
+.inp::placeholder{color:rgba(255,255,255,.3)}
+.sim-card{display:block;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(10,22,40,.08);transition:all .3s;text-decoration:none;overflow:hidden}
+.sim-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(10,22,40,.14)}
+.sim-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.gthumb:hover{opacity:.85}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:9999;display:none;align-items:center;justify-content:center;flex-direction:column}
+.lightbox.open{display:flex}
+.lb-img{max-width:90vw;max-height:80vh;object-fit:contain;border-radius:12px}
+.lb-close,.lb-nav{position:absolute;border:none;background:rgba(255,255,255,.12);color:#fff;cursor:pointer;border-radius:50%;width:44px;height:44px;font-size:1.4rem;display:flex;align-items:center;justify-content:center}
+.lb-close{top:1.5rem;right:1.5rem;font-size:1.8rem}
+.lb-nav{top:50%;transform:translateY(-50%)}
+.lb-prev{left:1rem}.lb-next{right:1rem}
+footer{background:#060e1a;padding:2.5rem 5% 1.5rem;border-top:1px solid rgba(153,198,195,.08)}
+.footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem;max-width:1100px;margin:0 auto 1.8rem}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:980px){.detail-wrap{grid-template-columns:1fr;gap:2rem;padding:88px 5% 3.5rem}.detail-text{max-width:none}.param-grid{max-width:none}}
+@media(max-width:600px){.hstat-row{gap:.9rem 1.4rem;padding:1.1rem 1.2rem}.hstat-val{font-size:1.35rem}.param-grid{grid-template-columns:1fr}.sim-grid{grid-template-columns:1fr}}
+@media(max-width:700px){
+  #navLinks{display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:9999;flex-direction:column;align-items:center;justify-content:center;background:#99C6C3 !important;list-style:none;padding:0;margin:0;}
+  #navLinks.open{display:flex !important;}
+  #navLinks li{width:90%;text-align:center;border-bottom:1px solid rgba(13,31,58,.2);}
+  #navLinks a,#navLinks a.active,#navLinks a:hover{display:block;padding:20px 0;font-size:clamp(2rem,9vw,3.5rem) !important;color:#0D1F3A !important;font-weight:900 !important;text-decoration:none !important;letter-spacing:-.02em;opacity:1 !important;}
+  #navLinks a:hover{opacity:.6 !important;}
+  .hamburger{display:flex !important;}
+  .nav-ctas{display:none !important;}
+  #menuClose{display:none;position:fixed;top:24px;right:24px;z-index:10000;background:none;border:none;cursor:pointer;font-size:2.2rem;color:#0D1F3A;font-weight:900;line-height:1;padding:0;}
+  #menuClose.visible{display:block !important;}
+}
+#menuClose{display:none;}
+.nav-links a { font-size: 1rem !important; font-weight: 700 !important; position: relative; }
+.nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 2px; background: #99C6C3; border-radius: 2px; transform: scaleX(0); transition: transform .2s; }
+.nav-links a:hover { color: #99C6C3 !important; }
+.nav-links a:hover::after { transform: scaleX(1); }
+.btn-teal { font-size: .95rem !important; padding: .7rem 1.5rem !important; }
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <a href="./" class="nav-logo">
+    <img src="./assets/logo.png" alt="Reality2u" class="nav-logo-img">
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="./nemovitosti">Nabídka</a></li>
+    <li><a href="./sluzby">Služby</a></li>
+    <li><a href="./o-nas">O nás</a></li>
+    <li><a href="./kontakt">Kontakt</a></li>
+    <li><a href="https://money2u.cz" target="_blank">Financování</a></li>
+  </ul>
+  <div class="nav-ctas">
+    <a href="./kontakt" class="btn btn-teal">Kontaktovat makléře</a>
+  </div>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+<button id="menuClose" onclick="closeMenu()">&#10005;</button>
+</nav>
+<div class="detail-wrap">
+  <div class="detail-main">
+    <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem;flex-wrap:wrap">
+      <span style="background:rgba(153,198,195,.9);color:var(--navy);padding:.25rem .7rem;border-radius:6px;font-size:.7rem;font-weight:700">Prodej</span>
+      <span style="background:rgba(16,185,129,.95);color:#fff;padding:.25rem .7rem;border-radius:6px;font-size:.7rem;font-weight:700">Volné</span>
+      <span style="font-size:.78rem;color:var(--text-mid)"><a href="./" style="color:var(--teal2);text-decoration:none">Domů</a> / <a href="./nemovitosti" style="color:var(--teal2);text-decoration:none">Nabídka</a> / Rodinný dům</span>
+    </div>
+    <h1 style="font-family:Poppins,sans-serif;font-weight:800;font-size:clamp(1.7rem,3.4vw,2.5rem);line-height:1.2;color:var(--navy);margin-bottom:.5rem">Prodej moderní novostavby patrového rodinného domu užitná plocha 126 m2</h1>
+    <p style="font-size:.95rem;color:var(--text-mid);margin-bottom:.5rem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;flex-shrink:0"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Mouřínov</p>
+    <div style="font-family:Poppins,sans-serif;font-weight:900;font-size:2.4rem;color:var(--navy);margin-bottom:.2rem">9 900 000 Kč</div>
+    <div style="height:.5rem"></div>
+    <div class="hstat-row reveal"><div class="hstat"><div class="hstat-val">6+kk</div><div class="hstat-lbl">Dispozice</div></div><div class="hstat"><div class="hstat-val">126 m²</div><div class="hstat-lbl">Plocha</div></div></div>
+    
+    <div style="margin-bottom:2.5rem"><div id="mainImgWrap" onclick="openLightbox(0)" style="cursor:zoom-in;border-radius:14px;overflow:hidden;margin-bottom:.6rem;aspect-ratio:16/9;background:url('https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_002a.1761222683.jpg') center/cover no-repeat,linear-gradient(135deg,#1a2e4a,#2a5a8a)"></div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem"><div class="gthumb" onclick="setMain('https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_001a.1761222687.jpg',1)" style="background:url('https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_001a.1761222687.jpg') center/cover no-repeat;aspect-ratio:16/10;border-radius:8px;cursor:zoom-in;transition:all .2s;border:2px solid transparent" onmouseover="this.style.borderColor='var(--teal)'" onmouseout="this.style.borderColor='transparent'"></div><div class="gthumb" onclick="setMain('https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_001.1761222695.png',2)" style="background:url('https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_001.1761222695.png') center/cover no-repeat;aspect-ratio:16/10;border-radius:8px;cursor:zoom-in;transition:all .2s;border:2px solid transparent" onmouseover="this.style.borderColor='var(--teal)'" onmouseout="this.style.borderColor='transparent'"></div><div class="gthumb" onclick="setMain('https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_001-2-.1761222698.png',3)" style="background:url('https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_001-2-.1761222698.png') center/cover no-repeat;aspect-ratio:16/10;border-radius:8px;cursor:zoom-in;transition:all .2s;border:2px solid transparent" onmouseover="this.style.borderColor='var(--teal)'" onmouseout="this.style.borderColor='transparent'"></div><div class="gthumb" onclick="setMain('https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_002.1761222699.jpg',4)" style="background:url('https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_002.1761222699.jpg') center/cover no-repeat;aspect-ratio:16/10;border-radius:8px;cursor:zoom-in;transition:all .2s;border:2px solid transparent" onmouseover="this.style.borderColor='var(--teal)'" onmouseout="this.style.borderColor='transparent'"></div><div class="gthumb" onclick="setMain('https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_001.1761222703.jpg',5)" style="background:url('https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_001.1761222703.jpg') center/cover no-repeat;aspect-ratio:16/10;border-radius:8px;cursor:zoom-in;transition:all .2s;border:2px solid transparent" onmouseover="this.style.borderColor='var(--teal)'" onmouseout="this.style.borderColor='transparent'"></div><div class="gthumb" onclick="setMain('https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_002-2-.1761222711.png',6)" style="background:url('https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_002-2-.1761222711.png') center/cover no-repeat;aspect-ratio:16/10;border-radius:8px;cursor:zoom-in;transition:all .2s;border:2px solid transparent" onmouseover="this.style.borderColor='var(--teal)'" onmouseout="this.style.borderColor='transparent'"></div><div class="gthumb" onclick="setMain('https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_002.1761222720.png',7)" style="background:url('https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_002.1761222720.png') center/cover no-repeat;aspect-ratio:16/10;border-radius:8px;cursor:zoom-in;transition:all .2s;border:2px solid transparent" onmouseover="this.style.borderColor='var(--teal)'" onmouseout="this.style.borderColor='transparent'"></div><div class="gthumb" onclick="setMain('https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_dsc03095.1761222725.jpg',8)" style="background:url('https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_dsc03095.1761222725.jpg') center/cover no-repeat;aspect-ratio:16/10;border-radius:8px;cursor:zoom-in;transition:all .2s;border:2px solid transparent" onmouseover="this.style.borderColor='var(--teal)'" onmouseout="this.style.borderColor='transparent'"></div></div><div style="text-align:center;margin-top:.5rem"><button onclick="openLightbox(0)" style="background:transparent;border:1px solid rgba(10,22,40,.15);border-radius:8px;padding:.4rem 1rem;font-size:.78rem;color:var(--text-mid);cursor:pointer">Zobrazit všech 15 fotek</button></div></div>
+    <div class="param-grid reveal"><div class="param-item"><div class="param-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h6M3 15h6"/></svg></div><div><div class="param-lbl">Dispozice</div><div class="param-val">6+kk</div></div></div><div class="param-item"><div class="param-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg></div><div><div class="param-lbl">Plocha</div><div class="param-val">126 m²</div></div></div></div>
+    <div class="reveal detail-text" style="margin-bottom:1.8rem">
+      <h2 style="font-family:Poppins,sans-serif;font-weight:700;font-size:1.3rem;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:2px solid var(--cream)">Popis nemovitosti</h2>
+      <p style="font-size:1.06rem;line-height:1.85;color:var(--text-mid);margin-bottom:1rem">Ve výhradním zastoupení nabízíme k prodeji moderní patrovou novostavbu rodinného domu 6 +KK v klidné obci Mouřínov, Obec Mouřínov se rozkládá v chráněné oblasti přírodního parku Ždánický les a je vzdálená 5 km od obce Bučovice. Nyní je dům ve fázi hrubé stavby, i když se pokračuje neustále ve výstavbě, nyní má nový majitel možnost zasahovat do stavby v rámci klientských změn. Dispozice rodinného domu 6+kk o celkové užitné ploše 126 m2 nabízí v přízemí domu prostorné zádveří - spíše vstupní halu o výměře 7,78m2, ze které se dostaneme do obývacího pokoje s kuchyní o výměře 37,06m2. V přízemí se také nachází pracovna s výhledem do ulice o výměře 8,25m2, samostatné WC, technická místnost o výměře 6,75m2 a schodiště, kterým se dostaneme do II.NP o celkové užitné ploše 63,79m2. V II.NP se pak nachází okolo schodišťové chodby , která je spolu s koupelnou prosvětlena střešním světlíkem, 3 pokoje a pracovna. Pokoje mají výměru 9,48 m2, 13,1m2 a 14,51 m2. Z největšího pokoje se pak dostaneme do pracovny o výměře 5,76 m2. Koupelna pak má výměru 4,8m2. Energetická náročnost budovy bude B, což je i výhoda při řešení financování nemovitosti hypotékou, se kterou Vám rádi pomůžeme. Dům je řešen ve vysokém standardu s důrazem na kvalitu a komfort: • Keramické zdivo a zateplení • Teplovodní podlahové topení • Příprava na FVE, venkovní žaluzie • Plastová okna trojsklo • Pletivové oplocení pozemku • Možnost klientských změn Parkování je řešeno před domem- 2 zpevněná parkovací místa. Za domem je pak menší dvůr vhodný na posezení. Malebná obec Mouřínov má základní občanskou vybavenost, nachází se zde mateřská škola, dětské a sportovní hřiště, samozřejmostí je obecní úřad, knihovna , smíšené zboží. Dojezdová vzdálenost do blízkých Bučovic je 7 min. autem a do Brna cca 30 min.</p>
+    </div>
+    <div style="background:var(--cream);border-radius:10px;padding:1rem 1.2rem;margin-bottom:2rem;font-size:.74rem;color:var(--text-mid);line-height:1.7">
+      Tato nabídka není veřejný příslib dle § 1733 občanského zákoníku. Z nabídky nikomu nevzniká nárok na uzavření smlouvy.
+    </div>
+    <div class="reveal" style="margin-top:2.5rem"><h2 style="font-family:Poppins,sans-serif;font-weight:700;font-size:1.3rem;margin-bottom:1.2rem;padding-bottom:.5rem;border-bottom:2px solid var(--cream)">Podobné nemovitosti</h2><div class="sim-grid"><a href="./nemovitost-prodej-paneloveho-bytu-3-1-v-ov-s-komorou-a-balkonem-2066" class="sim-card"><div style="height:160px;background:url('https://inzeraty.reality2u.cz/cache/offers/2066/1182x591_20260430-165229.1778656116.jpg') center/cover no-repeat,linear-gradient(135deg,#1a2e4a,#2a5a8a);border-radius:12px 12px 0 0"></div><div style="padding:.9rem 1rem 1rem"><div style="font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--teal2);margin-bottom:.2rem">Byt</div><div style="font-family:Poppins,sans-serif;font-weight:700;font-size:.88rem;line-height:1.3;margin-bottom:.3rem;color:var(--navy)">Prodej panelového bytu 3+1 v OV s komorou a ba</div><div style="font-size:.75rem;color:var(--text-mid);margin-bottom:.3rem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;flex-shrink:0"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Hustopeče</div><div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.4rem"><span style="background:var(--cream);border-radius:5px;padding:.15rem .45rem;font-size:.68rem;font-weight:600;color:var(--navy)">3+1</span></div><div style="font-family:Poppins,sans-serif;font-weight:800;font-size:1rem;color:var(--navy)">5 750 000 Kč</div></div></a><a href="./nemovitost-prodej-zrekonstruovaneho-paneloveho-bytu-2-1-v-ov-1979" class="sim-card"><div style="height:160px;background:url('https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_20260420-101812.1776693477.jpg') center/cover no-repeat,linear-gradient(135deg,#1a3d3a,#2a7a6a);border-radius:12px 12px 0 0"></div><div style="padding:.9rem 1rem 1rem"><div style="font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--teal2);margin-bottom:.2rem">Byt</div><div style="font-family:Poppins,sans-serif;font-weight:700;font-size:.88rem;line-height:1.3;margin-bottom:.3rem;color:var(--navy)">Prodej zrekonstruovaného panelového bytu 2+1 v</div><div style="font-size:.75rem;color:var(--text-mid);margin-bottom:.3rem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;flex-shrink:0"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Hustopeče</div><div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.4rem"><span style="background:var(--cream);border-radius:5px;padding:.15rem .45rem;font-size:.68rem;font-weight:600;color:var(--navy)">2+1</span></div><div style="font-family:Poppins,sans-serif;font-weight:800;font-size:1rem;color:var(--navy)">4 990 000 Kč</div></div></a><a href="./nemovitost-prodej-prostorne-chalupy-8-1-v-brode-nad-dyji-1946" class="sim-card"><div style="height:160px;background:url('https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_10.1775726724.jpg') center/cover no-repeat,linear-gradient(135deg,#1a2e4a,#2a5a8a);border-radius:12px 12px 0 0"></div><div style="padding:.9rem 1rem 1rem"><div style="font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--teal2);margin-bottom:.2rem">Chalupa</div><div style="font-family:Poppins,sans-serif;font-weight:700;font-size:.88rem;line-height:1.3;margin-bottom:.3rem;color:var(--navy)">Prodej prostorné chalupy 8+1 v Brodě nad Dyjí</div><div style="font-size:.75rem;color:var(--text-mid);margin-bottom:.3rem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;flex-shrink:0"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Brod nad Dyjí</div><div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.4rem"><span style="background:var(--cream);border-radius:5px;padding:.15rem .45rem;font-size:.68rem;font-weight:600;color:var(--navy)">8+1</span><span style="background:var(--cream);border-radius:5px;padding:.15rem .45rem;font-size:.68rem;font-weight:600;color:var(--navy)">798 m²</span></div><div style="font-family:Poppins,sans-serif;font-weight:800;font-size:1rem;color:var(--navy)">6 800 000 Kč</div></div></a></div></div>
+  </div>
+  <div style="position:sticky;top:84px">
+    <div class="contact-card">
+      <div style="font-family:Poppins,sans-serif;font-weight:700;font-size:.9rem;margin-bottom:1rem;color:rgba(255,255,255,.8)">Kontaktovat makléře</div>
+      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.1rem">
+        <div class="agent-av">JV</div>
+        <div><div style="font-weight:700;font-size:.92rem">Jana Vaňková</div><div style="font-size:.72rem;color:rgba(255,255,255,.45)">Makléř · reality2u</div></div>
+      </div>
+      <a href="tel:+420774229922" style="display:flex;align-items:center;gap:.5rem;background:rgba(153,198,195,.15);border:1px solid rgba(153,198,195,.25);border-radius:9px;padding:.7rem;color:var(--teal);text-decoration:none;font-weight:600;font-size:.85rem;margin-bottom:.5rem">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.39 2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.13 1 .37 1.97.7 2.91a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.99-.99a2 2 0 0 1 2.11-.45c.94.33 1.91.57 2.91.7A2 2 0 0 1 22 16.92z"/></svg>
+        774 229 922
+      </a>
+      <a href="mailto:vankova@reality2u.cz" style="display:flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:9px;padding:.7rem;color:rgba(255,255,255,.65);text-decoration:none;font-size:.82rem;margin-bottom:1rem">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        vankova@reality2u.cz
+      </a>
+      <input class="inp" placeholder="Vaše jméno" id="cf-name">
+      <input class="inp" placeholder="Telefon nebo email" id="cf-contact">
+      <textarea class="inp" rows="3" placeholder="Zpráva..." id="cf-msg" style="resize:none"></textarea>
+      <button onclick="sendInq()" style="width:100%;background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--navy);border:none;border-radius:9px;padding:.75rem;font-weight:700;font-size:.88rem;cursor:pointer;font-family:Inter,sans-serif">Odeslat poptávku</button>
+      <a href="kalkulacka" style="display:flex;align-items:center;gap:.5rem;background:rgba(245,166,35,.12);border:1px solid rgba(245,166,35,.3);border-radius:9px;padding:.7rem;color:var(--gold);text-decoration:none;font-weight:600;font-size:.83rem;margin-top:.5rem;justify-content:center">Spočítat hypotéku &#x2192;</a>
+    </div>
+    <div style="background:#fff;border-radius:14px;padding:1.2rem;margin-top:.8rem;font-size:.79rem;color:var(--text-mid);line-height:1.85;box-shadow:0 2px 12px rgba(10,22,40,.06)">
+      <strong style="color:var(--navy);font-weight:700;font-size:.85rem">reality2u s.r.o.</strong><br>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;flex-shrink:0"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Tolstého 35, 616 00 Brno<br>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;flex-shrink:0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.2a16 16 0 0 0 5.89 5.89l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.27 15.5z"/></svg> <a href="tel:+420722967163" style="color:var(--teal2);text-decoration:none">+420 722 967 163</a><br>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;flex-shrink:0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> <a href="mailto:asistentka@reality2u.cz" style="color:var(--teal2);text-decoration:none">asistentka@reality2u.cz</a><br>
+      IČO: 04690915
+    </div>
+  </div>
+</div>
+<div class="lightbox" id="lb">
+  <button class="lb-close" onclick="closeLb()">&#x2715;</button>
+  <button class="lb-nav lb-prev" onclick="lbNav(-1)">&#x2039;</button>
+  <img class="lb-img" id="lbImg" src="" alt="">
+  <button class="lb-nav lb-next" onclick="lbNav(1)">&#x203A;</button>
+  <div style="color:rgba(255,255,255,.4);font-size:.75rem;margin-top:.7rem" id="lbCnt"></div>
+</div>
+<script>
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const IMGS=["https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_002a.1761222683.jpg", "https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_001a.1761222687.jpg", "https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_001.1761222695.png", "https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_001-2-.1761222698.png", "https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_002.1761222699.jpg", "https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_001.1761222703.jpg", "https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_002-2-.1761222711.png", "https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_002.1761222720.png", "https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_dsc03095.1761222725.jpg", "https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_img-20250909-wa0001.1761222731.jpg", "https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_dsc03096.1761222733.jpg", "https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_img-20250909-wa0003.1761222734.jpg", "https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_img-20250909-wa0002.1761222750.jpg", "https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_img-20251201-wa0004.1764575552.jpg", "https://inzeraty.reality2u.cz/cache/offers/1536/1182x591_img-20251201-wa0003.1764575635.jpg"];
+let cur=0;
+function openLightbox(i){if(!IMGS.length)return;cur=i;document.getElementById('lb').classList.add('open');updLb()}
+function closeLb(){document.getElementById('lb').classList.remove('open')}
+function lbNav(d){cur=(cur+d+IMGS.length)%IMGS.length;updLb()}
+function updLb(){document.getElementById('lbImg').src=IMGS[cur];document.getElementById('lbCnt').textContent=(cur+1)+' / '+IMGS.length}
+function setMain(src,idx){document.getElementById('mainImgWrap').style.backgroundImage="url('"+src+"')";cur=idx}
+document.getElementById('lb').addEventListener('click',e=>{if(e.target===e.currentTarget)closeLb()})
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')lbNav(-1);if(e.key==='ArrowRight')lbNav(1)})
+function sendInq(){
+  const n=document.getElementById('cf-name').value.trim();
+  const c=document.getElementById('cf-contact').value.trim();
+  if(!n||!c){alert('Vyplňte prosím jméno a kontakt.');return}
+  alert('Děkujeme, '+n+'! Jana Vaňková vás bude kontaktovat co nejdříve.');
+  ['cf-name','cf-contact','cf-msg'].forEach(id=>document.getElementById(id).value='')
+}
+window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>30));
+</script>
+<script id="nav-active">
+(function(){var page=location.pathname.split('/').pop()||'index.html';document.querySelectorAll('.nav-links a').forEach(function(a){var href=a.getAttribute('href').replace('./','');if(href===page)a.classList.add('active');});})();
+</script>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="./" class="logo">
+        <span class="logo-main"><span class="reality">reality</span><span class="twou">2u</span></span>
+        <span class="logo-sub">Součást skupiny money2u</span>
+      </a>
+      <p>Váš spolehlivý realitní partner v Brně a okolí.</p>
+    </div>
+    <div class="footer-col footer-col-hide">
+      <h4>Nemovitosti</h4>
+      <ul>
+        <li><a href="nemovitosti">Všechny nabídky</a></li>
+        <li><a href="nemovitosti">Prodej</a></li>
+        <li><a href="nemovitosti">Pronájem</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="./">Úvod</a></li>
+        <li><a href="nemovitosti">Nabídka</a></li>
+        <li><a href="sluzby">Služby</a></li>
+        <li><a href="o-nas">O nás</a></li>
+        <li><a href="kontakt">Kontakt</a></li>
+        <li><a href="https://money2u.cz" target="_blank">money2u.cz</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-col-hide">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="#">Tolstého 35, Brno</a></li>
+        <li><a href="tel:+420799794670">+420 799 794 670</a></li>
+        <li><a href="mailto:info@reality2u.cz">info@reality2u.cz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 reality2u s.r.o. Všechna práva vyhrazena.</p>
+    <p><a href="https://money2u.cz" target="_blank">Součást skupiny money2u</a></p>
+  </div>
+</footer>
+
+<style>
+footer{background:#060e1a;padding:4rem 5% 2rem;border-top:1px solid rgba(153,198,195,.1);font-family:'Inter',sans-serif}
+footer .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+footer .footer-brand p{color:rgba(255,255,255,.55);font-size:.9rem;margin-top:.8rem;line-height:1.7}
+footer .logo{text-decoration:none;display:block;margin-bottom:.5rem}
+footer .logo-main{display:block;font-family:'Poppins',sans-serif;font-weight:900;font-size:1.5rem}
+footer .logo-main .reality{color:#fff}
+footer .logo-main .twou{color:#99C6C3}
+footer .logo-sub{display:block;font-size:.72rem;color:rgba(255,255,255,.4);letter-spacing:.05em;margin-top:.15rem}
+footer .footer-col h4{font-family:'Poppins',sans-serif;font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#99C6C3;margin-bottom:1rem}
+footer .footer-col ul{list-style:none;padding:0;margin:0}
+footer .footer-col ul li{margin-bottom:.5rem}
+footer .footer-col ul li a{color:rgba(255,255,255,.6);font-size:.9rem;text-decoration:none;transition:color .2s}
+footer .footer-col ul li a:hover{color:#99C6C3}
+footer .footer-bottom{max-width:1200px;margin:0 auto;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+footer .footer-bottom p{font-size:.82rem;color:rgba(255,255,255,.4);margin:0}
+footer .footer-bottom a{color:#99C6C3}
+@media(max-width:768px){footer .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}footer .footer-col-hide{display:none}}
+@media(max-width:500px){footer .footer-grid{grid-template-columns:1fr}footer .footer-col-hide{display:none}}
+</style>
+
+<script>
+function toggleMenu(){var m=document.getElementById('navLinks');var btn=document.getElementById('menuClose');if(!m)return;var isOpen=m.classList.contains('open');if(isOpen){m.classList.remove('open');if(btn)btn.classList.remove('visible');document.body.style.overflow='';}else{m.classList.add('open');if(btn)btn.classList.add('visible');document.body.style.overflow='hidden';}}
+function closeMenu(){var m=document.getElementById('navLinks');var btn=document.getElementById('menuClose');if(m)m.classList.remove('open');if(btn)btn.classList.remove('visible');document.body.style.overflow='';}
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('#navLinks a').forEach(function(a){a.addEventListener('click',closeMenu);});});
+</script>
+</body>
+</html>

@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aktuální nabídka nemovitostí — reality2u</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0A1628;--navy2:#122040;--teal:#99C6C3;--teal2:#7caaa7;--gold:#F5A623;--cream:#F8F6F0;--white:#fff;--text-mid:rgba(10,22,40,.6)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--navy);overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:900;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;background:rgba(10,22,40,.96);backdrop-filter:blur(20px);box-shadow:0 2px 20px rgba(0,0,0,.3)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--teal),var(--teal2));display:flex;align-items:center;justify-content:center}
+.nav-logo-mark svg{width:22px;height:22px;fill:var(--navy)}
+.nav-logo-text{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.1rem;color:#fff}
+.nav-logo-text em{font-style:normal;color:var(--teal)}
+.nav-logo-sub{font-size:.6rem;color:rgba(255,255,255,.35);display:block}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,.75);text-decoration:none;font-size:.88rem;font-weight:500;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--teal)}
+.nav-ctas{display:flex;gap:.5rem}
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1.1rem;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;text-decoration:none;border:none;transition:all .2s;font-family:'Inter',sans-serif;white-space:nowrap}
+.btn-teal{background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--navy);font-weight:700}
+.btn-teal:hover{box-shadow:0 4px 16px rgba(153,198,195,.4);transform:translateY(-1px)}
+.btn-outline-light{border:1.5px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8);background:transparent}
+.btn-outline-light:hover{border-color:var(--teal);color:var(--teal)}
+.filter-bar{background:var(--white);padding:1.5rem 5%;border-bottom:1px solid rgba(10,22,40,.08);position:sticky;top:72px;z-index:100;box-shadow:0 2px 12px rgba(10,22,40,.05)}
+.filter-inner{display:flex;gap:.6rem;align-items:center;max-width:1100px;margin:0 auto;flex-wrap:wrap}
+.ftab{padding:.4rem 1rem;border-radius:8px;font-size:.82rem;font-weight:600;cursor:pointer;border:1.5px solid rgba(10,22,40,.12);background:transparent;color:rgba(10,22,40,.6);font-family:'Inter',sans-serif;transition:all .2s}
+.ftab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.ftab:hover{border-color:var(--teal2);color:var(--navy)}
+select.f-sel{padding:.4rem .8rem;border-radius:8px;border:1.5px solid rgba(10,22,40,.12);font-size:.82rem;font-family:'Inter',sans-serif;color:rgba(10,22,40,.7);background:var(--white);cursor:pointer;outline:none}
+.content{padding:2.5rem 5% 4rem;max-width:1200px;margin:0 auto}
+.results-count{font-size:.83rem;color:var(--text-mid);margin-bottom:1.2rem;font-weight:500}
+.prop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.2rem}
+.prop-card{background:var(--white);border-radius:18px;overflow:hidden;box-shadow:0 2px 16px rgba(10,22,40,.07);transition:all .3s;cursor:pointer;border:1px solid rgba(10,22,40,.06)}
+.prop-card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(10,22,40,.14)}
+.prop-img{height:220px;position:relative;overflow:hidden}
+.prop-badges{position:absolute;top:.8rem;left:.8rem;display:flex;gap:.3rem}
+.pbadge{padding:.22rem .6rem;border-radius:6px;font-size:.67rem;font-weight:700;backdrop-filter:blur(6px)}
+.pb-new{background:rgba(153,198,195,.9);color:var(--navy)}
+.pb-rent{background:var(--navy);color:var(--teal);border:1px solid rgba(153,198,195,.3)}
+.prop-fav{position:absolute;top:.8rem;right:.8rem;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.85);border:none;cursor:pointer;font-size:.85rem;transition:all .2s;backdrop-filter:blur(6px)}
+.prop-fav:hover{background:#fff;transform:scale(1.1)}
+.prop-price-tag{position:absolute;bottom:.8rem;left:.8rem;background:rgba(10,22,40,.88);color:#fff;padding:.28rem .7rem;border-radius:7px;font-family:'Poppins',sans-serif;font-weight:800;font-size:.88rem;backdrop-filter:blur(6px)}
+.prop-body{padding:1rem 1.1rem}
+.prop-type{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--teal2);margin-bottom:.2rem}
+.prop-name{font-family:'Poppins',sans-serif;font-weight:700;font-size:.9rem;color:var(--navy);margin-bottom:.25rem;line-height:1.3}
+.prop-loc{font-size:.78rem;color:var(--text-mid);margin-bottom:.5rem;display:flex;align-items:center;gap:.3rem}
+.prop-desc{font-size:.76rem;color:var(--text-mid);line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.prop-actions{display:flex;gap:.5rem;padding:.8rem 1.1rem 1rem;border-top:1px solid rgba(10,22,40,.05)}
+.btn-prop-main{flex:1;background:var(--navy);color:#fff;border:none;border-radius:7px;padding:.5rem;font-size:.78rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s;text-align:center;text-decoration:none;display:flex;align-items:center;justify-content:center}
+.btn-prop-main:hover{background:var(--navy2)}
+.btn-prop-hypo{background:linear-gradient(135deg,var(--gold),#d4891a);color:#fff;border:none;border-radius:7px;padding:.5rem .85rem;font-size:.76rem;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s;text-decoration:none;display:flex;align-items:center;gap:.25rem;white-space:nowrap}
+.btn-prop-hypo:hover{box-shadow:0 3px 14px rgba(245,166,35,.35)}
+footer{background:#060e1a;padding:2.5rem 5% 1.5rem;border-top:1px solid rgba(153,198,195,.08)}
+.footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem;max-width:1100px;margin:0 auto 1.8rem}
+.footer-bottom-bar{border-top:1px solid rgba(255,255,255,.06);padding-top:1.1rem;max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.footer-bottom-bar p{font-size:.72rem;color:rgba(255,255,255,.25)}
+.footer-money2u{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .8rem;background:rgba(245,166,35,.1);border:1px solid rgba(245,166,35,.2);border-radius:7px;font-size:.73rem;font-weight:600;color:var(--gold);text-decoration:none}
+.fs-link{width:32px;height:32px;border-radius:7px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.45);text-decoration:none;font-size:.78rem;transition:all .2s}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:700px){.nav-links,.nav-ctas{display:none}.prop-grid{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr}}
+
+/* Footer override — sjednocení se style.css */
+footer{background:#060e1a !important;padding:4rem 2rem 2rem !important;border-top:1px solid rgba(153,198,195,.1) !important}
+.footer-grid{max-width:1200px !important;margin:0 auto !important;display:grid !important;grid-template-columns:2fr 1fr 1fr 1fr !important;gap:3rem !important;margin-bottom:3rem !important}
+.footer-brand p{color:rgba(255,255,255,.55) !important;font-size:.9rem !important;margin-top:.8rem !important;line-height:1.7 !important}
+.footer-col h4{font-family:'Poppins',sans-serif !important;font-size:.85rem !important;font-weight:700 !important;text-transform:uppercase !important;letter-spacing:.1em !important;color:var(--teal) !important;margin-bottom:1rem !important}
+.footer-col ul{list-style:none !important}
+.footer-col ul li{margin-bottom:.5rem !important}
+.footer-col ul li a{color:rgba(255,255,255,.6) !important;font-size:.9rem !important;transition:color .2s !important}
+.footer-col ul li a:hover{color:var(--teal) !important}
+.footer-bottom{max-width:1200px !important;margin:0 auto !important;padding-top:1.5rem !important;border-top:1px solid rgba(255,255,255,.08) !important;display:flex !important;justify-content:space-between !important;align-items:center !important;flex-wrap:wrap !important;gap:1rem !important}
+.footer-bottom p{font-size:.82rem !important;color:rgba(255,255,255,.4) !important}
+.footer-bottom a{color:var(--teal) !important}
+/* logo v patičce */
+.footer-brand .logo{text-decoration:none !important;display:block !important;margin-bottom:.5rem !important}
+.footer-brand .logo-main{display:block !important;font-family:'Poppins',sans-serif !important;font-weight:900 !important;font-size:1.5rem !important}
+.footer-brand .logo-main .reality{color:#fff !important}
+.footer-brand .logo-main .twou{color:var(--teal) !important}
+.footer-brand .logo-sub{display:block !important;font-size:.72rem !important;color:rgba(255,255,255,.4) !important;letter-spacing:.05em !important;margin-top:.15rem !important}
+
+
+
+@media(max-width:700px){
+  #navLinks{display:none;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;min-height:100vh;z-index:9999;flex-direction:column;align-items:center;justify-content:center;background:#99C6C3;list-style:none;padding:0;margin:0;overflow-y:auto;}
+  #navLinks.open{display:flex;}
+  #navLinks li{width:100%;text-align:center;}
+  #navLinks a{display:block;padding:18px 0;font-size:clamp(2.2rem,10vw,4rem);color:#0D1F3A;font-weight:900;text-decoration:none;letter-spacing:-.02em;}
+  #navLinks a:hover{opacity:.6;}
+  .hamburger{display:flex;}
+  .nav-ctas{display:none;}
+  #menuClose{display:none;position:fixed;top:20px;right:20px;z-index:10000;background:none;border:none;cursor:pointer;padding:8px;font-size:2rem;color:#0D1F3A;font-weight:900;line-height:1;}
+  #menuClose.visible{display:block;}
+}
+/* ═══ MOBILE MENU ═══ */
+@media(max-width:700px){
+  #navLinks{
+    display:none;
+    position:fixed;
+    top:0;left:0;
+    width:100vw;height:100vh;
+    z-index:9999;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    background:#99C6C3 !important;
+    list-style:none;
+    padding:0;margin:0;
+  }
+  #navLinks.open{display:flex !important;}
+  #navLinks li{width:90%;text-align:center;border-bottom:1px solid rgba(13,31,58,.2);}
+  #navLinks a,
+  #navLinks a.active,
+  #navLinks a:hover{
+    display:block;
+    padding:20px 0;
+    font-size:clamp(2rem,9vw,3.5rem) !important;
+    color:#0D1F3A !important;
+    font-weight:900 !important;
+    text-decoration:none !important;
+    letter-spacing:-.02em;
+    opacity:1 !important;
+  }
+  #navLinks a:hover{opacity:.6 !important;}
+  .hamburger{display:flex !important;}
+  .nav-ctas{display:none !important;}
+  #menuClose{
+    display:none;
+    position:fixed;top:24px;right:24px;
+    z-index:10000;
+    background:none;border:none;cursor:pointer;
+    font-size:2.2rem;color:#0D1F3A;font-weight:900;line-height:1;padding:0;
+  }
+  #menuClose.visible{display:block !important;}
+}
+#menuClose{display:none;}
+</style>
+<style>
+#navbar{position:fixed;top:0;left:0;right:0;z-index:900;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;transition:background .4s,box-shadow .4s;background:transparent}
+#navbar.scrolled{background:rgba(10,22,40,.96);backdrop-filter:blur(20px);box-shadow:0 2px 30px rgba(0,0,0,.4)}
+.nav-logo{display:flex;align-items:center;text-decoration:none}
+.nav-logo-img{height:120px;width:auto;object-fit:contain}
+.nav-links{display:flex;gap:2rem;list-style:none;margin:0;padding:0}
+.nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.9rem;font-weight:700;transition:color .2s}
+.nav-links a:hover{color:#99C6C3}
+.nav-ctas{display:flex;gap:.6rem;align-items:center}
+.btn{padding:.55rem 1.2rem;border-radius:10px;font-size:.85rem;font-weight:600;text-decoration:none;border:none;cursor:pointer;font-family:inherit}
+.btn-teal{background:linear-gradient(135deg,#99C6C3,#6AAAA7);color:#0A1628;font-weight:700}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{width:22px;height:2px;background:#fff;border-radius:2px}
+@media(max-width:700px){.nav-links,.nav-ctas{display:none}.hamburger{display:flex}}
+
+</style>
+
+
+<style id="search-css">
+.search-box{background:rgba(255,255,255,.07);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:1.5rem;max-width:740px}
+.search-tabs{display:flex;gap:.3rem;margin-bottom:1.2rem}
+.stab{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.7);padding:.4rem 1rem;border-radius:8px;font-size:.8rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s}
+.stab.active,.stab:hover{background:var(--teal);color:var(--navy);border-color:var(--teal)}
+.search-row{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:.7rem;align-items:end}
+.sf{display:flex;flex-direction:column;gap:.35rem}
+.sf label{font-size:.73rem;font-weight:600;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.05em}
+.sf input,.sf select{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:9px;padding:0 .8rem;color:#fff;font-size:.88rem;font-family:inherit;height:44px;box-sizing:border-box}
+.btn-search{background:linear-gradient(135deg,var(--gold),#d4870a);color:#fff;font-weight:700;font-size:.9rem;padding:0 1.5rem;border-radius:9px;border:none;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:.5rem;font-family:inherit;transition:all .2s;height:44px;box-sizing:border-box}
+.btn-search:hover{box-shadow:0 4px 20px rgba(245,166,35,.4)}
+@media(max-width:1024px){.search-row{grid-template-columns:1fr 1fr;}.search-row .btn-search{grid-column:1/-1}}
+
+</style>
+<style id="page-hero-bg-style">
+.page-hero {
+  position: relative;
+  min-height: 60vh;
+  padding: 160px 5% 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('./assets/hero-bg.jpg') center/cover no-repeat;
+  z-index: 0;
+}
+.page-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(10,22,40,0.82) 0%, rgba(10,22,40,0.65) 100%);
+  z-index: 1;
+}
+.page-hero > * {
+  position: relative;
+  z-index: 2;
+}
+.page-hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  color: #fff;
+  margin-bottom: 0.7rem;
+  line-height: 1.15;
+}
+.page-hero p {
+  color: var(--teal, #99C6C3);
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <a href="./index.html" class="nav-logo"><img src="./assets/logo.png" alt="Reality2u" class="nav-logo-img"></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="./nemovitosti.html">Nabídka</a></li>
+    <li><a href="./sluzby.html">Služby</a></li>
+    <li><a href="./o-nas.html">O nás</a></li>
+    <li><a href="./kontakt.html">Kontakt</a></li>
+    <li><a href="https://money2u.cz" target="_blank">Financování</a></li>
+  </ul>
+  <div class="nav-ctas"><a href="./kontakt.html" class="btn btn-teal">Kontaktovat makléře</a></div>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+<button id="menuClose" onclick="closeMenu()">&#10005;</button>
+</nav>
+
+<div class="page-hero">
+  <h1>Aktuální nabídka nemovitostí</h1>
+  <p>Prohlédněte si 10 aktivních inzerátů — prodej i pronájem po celé ČR</p>
+    <!-- SEARCH -->
+    <div class="search-box" style="margin-top:1.5rem;">
+      <div class="search-tabs">
+        <button class="stab active" data-tab="prodej">Prodej</button>
+        <button class="stab" data-tab="pronajem">Pronájem</button>
+      </div>
+      <div class="search-row">
+        <div class="sf">
+          <label>Lokalita</label>
+          <input id="s-lokalita" placeholder="Brno, Praha, nebo celá ČR...">
+        </div>
+        <div class="sf">
+          <label>Typ nemovitosti</label>
+          <select id="s-typ">
+            <option value="">Vše</option>
+            <option value="byt">Byt</option>
+            <option value="dum">Dům</option>
+            <option value="pozemek">Pozemek</option>
+            <option value="komercni">Komerční</option>
+            <option value="chalupa">Chalupa</option>
+            <option value="ateliér">Ateliér</option>
+          </select>
+        </div>
+        <div class="sf">
+          <label>Max. cena</label>
+          <select id="s-cena">
+            <option value="0">Bez limitu</option>
+            <option value="2000000">do 2 000 000 Kč</option>
+            <option value="3500000">do 3 500 000 Kč</option>
+            <option value="5000000">do 5 000 000 Kč</option>
+            <option value="8000000">do 8 000 000 Kč</option>
+            <option value="99999999">nad 8 000 000 Kč</option>
+          </select>
+        </div>
+        <button class="btn-search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          Hledat
+        </button>
+      </div>
+    </div>
+</div>
+
+
+<div class="filter-bar">
+  <div class="filter-inner">
+    <button class="ftab active" data-filter="all">Vše (10)</button>
+    <button class="ftab" data-filter="prodej">Prodej (6)</button>
+    <button class="ftab" data-filter="pronajem">Pronájem (4)</button>
+    <select class="f-sel" id="f-city">
+      <option value="">Všechny lokality</option>
+      <option>Brno</option><option>Svitavy</option><option>Jaroměřice</option><option>Pohořelice</option>
+    </select>
+  </div>
+</div>
+
+<div class="content">
+  <div class="results-count" id="resCount">10 nemovitostí</div>
+  <div class="prop-grid" id="propGrid">
+    
+      <div class="prop-card reveal" onclick="window.location='./nemovitost-1849.html'">
+        <div class="prop-img" style="background:url('https://inzeraty.reality2u.cz/cache/offers/1849/1182x591_2.1772480387.jpg') center/cover no-repeat,linear-gradient(135deg,#1a3a5c,#2d6a8f)">
+          <div class="prop-badges"><span class="pbadge pb-new">Prodej</span></div>
+          <button class="prop-fav" onclick="event.stopPropagation()">♡</button>
+          <div class="prop-price-tag">4 290 000 Kč</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-type">Chalupa · Prodej</div>
+          <div class="prop-name">Prodej Chalupy K Trvalému Bydlení U Lesa Jaroměřice</div>
+          <div class="prop-loc"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Svitavy</div>
+          <div class="prop-desc">Na samotném konci klidné ulice v obci Jaroměřice se nachází rodinný dům, který může stejně dobře sloužit jako ...</div>
+        </div>
+        <div class="prop-actions">
+          <a href="./nemovitost-1849.html" class="btn-prop-main" onclick="event.stopPropagation()">Zobrazit detail</a>
+          <a href="kalkulacka.html" class="btn-prop-hypo" onclick="event.stopPropagation()">Hypotéka</a>
+        </div>
+      </div>
+      <div class="prop-card reveal" onclick="window.location='./nemovitost-1847.html'">
+        <div class="prop-img" style="background:url('https://inzeraty.reality2u.cz/cache/offers/1847/1182x591_1.1772480365.jpg') center/cover no-repeat,linear-gradient(135deg,#1e3d2f,#3a7a55)">
+          <div class="prop-badges"><span class="pbadge pb-new">Prodej</span></div>
+          <button class="prop-fav" onclick="event.stopPropagation()">♡</button>
+          <div class="prop-price-tag">4 290 000 Kč</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-type">Rodinný dům · Prodej</div>
+          <div class="prop-name">Prodej Rodinného Domu U Lesa Jaroměrice</div>
+          <div class="prop-loc"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Svitavy</div>
+          <div class="prop-desc">Na samotném konci klidné ulice v obci Jaroměřice stojí rodinný dům, který nabízí soukromí, prostor a každodenn...</div>
+        </div>
+        <div class="prop-actions">
+          <a href="./nemovitost-1847.html" class="btn-prop-main" onclick="event.stopPropagation()">Zobrazit detail</a>
+          <a href="kalkulacka.html" class="btn-prop-hypo" onclick="event.stopPropagation()">Hypotéka</a>
+        </div>
+      </div>
+      <div class="prop-card reveal" onclick="window.location='./nemovitost-1841.html'">
+        <div class="prop-img" style="background:url('https://inzeraty.reality2u.cz/cache/offers/1841/1182x591_svitavy-10.1760522581.jpg') center/cover no-repeat,linear-gradient(135deg,#3d2a1e,#8a5a35)">
+          <div class="prop-badges"><span class="pbadge pb-rent">Pronájem</span></div>
+          <button class="prop-fav" onclick="event.stopPropagation()">♡</button>
+          <div class="prop-price-tag">6 000 Kč / měsíc</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-type">Ateliér · Pronájem</div>
+          <div class="prop-name">Pronájem Ateliéru Svitavy</div>
+          <div class="prop-loc"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Svitavy</div>
+          <div class="prop-desc">Nabízím k pronájmu ateliér nacházející se ve 3. nadzemním podlaží cihlového domu přímo v centru města Svitavy,...</div>
+        </div>
+        <div class="prop-actions">
+          <a href="./nemovitost-1841.html" class="btn-prop-main" onclick="event.stopPropagation()">Zobrazit detail</a>
+          
+        </div>
+      </div>
+      <div class="prop-card reveal" onclick="window.location='./nemovitost-1839.html'">
+        <div class="prop-img" style="background:url('https://inzeraty.reality2u.cz/cache/offers/1839/1182x591_1.1772446553.jpg') center/cover no-repeat,linear-gradient(135deg,#2a1e3d,#5a357a)">
+          <div class="prop-badges"><span class="pbadge pb-new">Prodej</span></div>
+          <button class="prop-fav" onclick="event.stopPropagation()">♡</button>
+          <div class="prop-price-tag">6 500 000 Kč</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-type">Byt · Prodej</div>
+          <div class="prop-name">Prodej Bytu 2+1 Před Rekonstrukcí Fišova, Brno - Černá Pole</div>
+          <div class="prop-loc"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Brno - Černá Pole - reality2u Prod</div>
+          <div class="prop-desc">Hledáte místo pro život či investici, které v sobě spojuje naprostý klid s výbornou dostupností všeho podstatn...</div>
+        </div>
+        <div class="prop-actions">
+          <a href="./nemovitost-1839.html" class="btn-prop-main" onclick="event.stopPropagation()">Zobrazit detail</a>
+          <a href="kalkulacka.html" class="btn-prop-hypo" onclick="event.stopPropagation()">Hypotéka</a>
+        </div>
+      </div>
+      <div class="prop-card reveal" onclick="window.location='./nemovitost-1823.html'">
+        <div class="prop-img" style="background:url('https://inzeraty.reality2u.cz/cache/offers/1823/1182x591_1.1771864369.jpg') center/cover no-repeat,linear-gradient(135deg,#1e2d3d,#3a5a7a)">
+          <div class="prop-badges"><span class="pbadge pb-rent">Pronájem</span></div>
+          <button class="prop-fav" onclick="event.stopPropagation()">♡</button>
+          <div class="prop-price-tag">20 000 Kč / měsíc</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-type">Apartmán · Pronájem</div>
+          <div class="prop-name">Pronájem Zařízené Jednotky 1+Kk Nad Arboretem, Brno - Černá Pole</div>
+          <div class="prop-loc"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Brno - Černá Pole - reality2u Pron</div>
+          <div class="prop-desc">Nabízím k pronájmu moderní a kompletně zařízenou ubytovací jednotku v novostavbě Nad Arboretem na brněnské tří...</div>
+        </div>
+        <div class="prop-actions">
+          <a href="./nemovitost-1823.html" class="btn-prop-main" onclick="event.stopPropagation()">Zobrazit detail</a>
+          
+        </div>
+      </div>
+      <div class="prop-card reveal" onclick="window.location='./nemovitost-1811.html'">
+        <div class="prop-img" style="background:url('https://inzeraty.reality2u.cz/cache/offers/1811/1182x591_2.1771499011.jpg') center/cover no-repeat,linear-gradient(135deg,#3d1e2a,#8a355a)">
+          <div class="prop-badges"><span class="pbadge pb-rent">Pronájem</span></div>
+          <button class="prop-fav" onclick="event.stopPropagation()">♡</button>
+          <div class="prop-price-tag">25 000 Kč</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-type">Apartmán · Pronájem</div>
+          <div class="prop-name">Pronájem Zařízené Jednotky Nad Arboretem Brno - Třída Gerenála Píky</div>
+          <div class="prop-loc"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Brno - třída Gerenála Píky - reali</div>
+          <div class="prop-desc">Nabízím k pronájmu moderní a kompletně zařízenou ubytovací jednotku v novostavbě Nad Arboretem na brněnské tří...</div>
+        </div>
+        <div class="prop-actions">
+          <a href="./nemovitost-1811.html" class="btn-prop-main" onclick="event.stopPropagation()">Zobrazit detail</a>
+          
+        </div>
+      </div>
+      <div class="prop-card reveal" onclick="window.location='./nemovitost-1769.html'">
+        <div class="prop-img" style="background:url('https://inzeraty.reality2u.cz/cache/offers/1769/1182x591_2.1771257409.jpg') center/cover no-repeat,linear-gradient(135deg,#1a2e4a,#2a5a8a)">
+          <div class="prop-badges"><span class="pbadge pb-rent">Pronájem</span></div>
+          <button class="prop-fav" onclick="event.stopPropagation()">♡</button>
+          <div class="prop-price-tag">22 000 Kč / měsíc</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-type">Byt · Pronájem</div>
+          <div class="prop-name">Pronájem Vzdušného Bytu 3+Kk Černého, Brno - Bystrc</div>
+          <div class="prop-loc"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Brno - Bystrc - reality2u Pronájem</div>
+          <div class="prop-desc">Nabízím vám k pronájmu byt o dispozici 3+kk v oblíbené lokalitě Brno - Bystrc, konkrétně na ulici Černého. Jed...</div>
+        </div>
+        <div class="prop-actions">
+          <a href="./nemovitost-1769.html" class="btn-prop-main" onclick="event.stopPropagation()">Zobrazit detail</a>
+          
+        </div>
+      </div>
+      <div class="prop-card reveal" onclick="window.location='./nemovitost-1763.html'">
+        <div class="prop-img" style="background:url('https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_1.1770041549.jpg') center/cover no-repeat,linear-gradient(135deg,#2e3d1a,#5a7a2a)">
+          <div class="prop-badges"><span class="pbadge pb-new">Prodej</span></div>
+          <button class="prop-fav" onclick="event.stopPropagation()">♡</button>
+          <div class="prop-price-tag">3 100 000 Kč</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-type">Chata · Prodej</div>
+          <div class="prop-name">Prodej Nádherné Chaty U Langrova Lesa Svitavy</div>
+          <div class="prop-loc"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Svitavy</div>
+          <div class="prop-desc">Hledáte místo, kde můžete o víkendu vypadnout z bytu, zahodit starosti za hlavu a užívat si naprostý klid? Nab...</div>
+        </div>
+        <div class="prop-actions">
+          <a href="./nemovitost-1763.html" class="btn-prop-main" onclick="event.stopPropagation()">Zobrazit detail</a>
+          <a href="kalkulacka.html" class="btn-prop-hypo" onclick="event.stopPropagation()">Hypotéka</a>
+        </div>
+      </div>
+      <div class="prop-card reveal" onclick="window.location='./nemovitost-1758.html'">
+        <div class="prop-img" style="background:url('https://inzeraty.reality2u.cz/cache/offers/1758/1182x591_2.1769773599.jpg') center/cover no-repeat,linear-gradient(135deg,#3d3a1a,#8a7a35)">
+          <div class="prop-badges"><span class="pbadge pb-new">Prodej</span></div>
+          <button class="prop-fav" onclick="event.stopPropagation()">♡</button>
+          <div class="prop-price-tag">4 800 000 Kč</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-type">Byt · Prodej</div>
+          <div class="prop-name">Prodej Bytu 3+1 Smolín U Pohořelic</div>
+          <div class="prop-loc"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Brno-venkov</div>
+          <div class="prop-desc">Hledáte klidné zázemí pro svou rodinu, kde můžete ihned bydlet a případně si interiér doladit podle vlastního ...</div>
+        </div>
+        <div class="prop-actions">
+          <a href="./nemovitost-1758.html" class="btn-prop-main" onclick="event.stopPropagation()">Zobrazit detail</a>
+          <a href="kalkulacka.html" class="btn-prop-hypo" onclick="event.stopPropagation()">Hypotéka</a>
+        </div>
+      </div>
+      <div class="prop-card reveal" onclick="window.location='./nemovitost-1702.html'">
+        <div class="prop-img" style="background:url('https://inzeraty.reality2u.cz/cache/offers/1702/1182x591_1-kuchyn-viz.1767616975.jpg') center/cover no-repeat,linear-gradient(135deg,#1a3d3a,#2a7a6a)">
+          <div class="prop-badges"><span class="pbadge pb-new">Prodej</span></div>
+          <button class="prop-fav" onclick="event.stopPropagation()">♡</button>
+          <div class="prop-price-tag">3 999 000 Kč</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-type">Byt · Prodej</div>
+          <div class="prop-name">Prodej Bytu 4+1 U Centra Svitav</div>
+          <div class="prop-loc"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Svitavy</div>
+          <div class="prop-desc">Představte si místo, kde se spojí prostor, klid a výjimečná poloha. Přesně takový je tento byt 4+1 na ulici Pu...</div>
+        </div>
+        <div class="prop-actions">
+          <a href="./nemovitost-1702.html" class="btn-prop-main" onclick="event.stopPropagation()">Zobrazit detail</a>
+          <a href="kalkulacka.html" class="btn-prop-hypo" onclick="event.stopPropagation()">Hypotéka</a>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+document.querySelectorAll('.prop-fav').forEach(btn=>btn.addEventListener('click',()=>{btn.textContent=btn.textContent==='♡'?'♥':'♡';btn.style.color=btn.textContent==='♥'?'#ef4444':''}));
+
+const allCards=[...document.querySelectorAll('.prop-card')];
+document.querySelectorAll('.ftab').forEach(tab=>tab.addEventListener('click',function(){
+  document.querySelectorAll('.ftab').forEach(t=>t.classList.remove('active'));
+  this.classList.add('active');
+  const f=this.dataset.filter;
+  let visible=0;
+  allCards.forEach(c=>{
+    const title=c.querySelector('.prop-type')?.textContent.toLowerCase()||'';
+    const show=f==='all'||(f==='prodej'&&title.includes('prodej'))||(f==='pronajem'&&title.includes('pronájem'));
+    c.style.display=show?'':'none';
+    if(show)visible++;
+  });
+  document.getElementById('resCount').textContent=visible+' nemovitostí';
+}));
+document.getElementById('f-city').addEventListener('change',function(){
+  const city=this.value.toLowerCase();
+  let visible=0;
+  allCards.forEach(c=>{
+    const loc=c.querySelector('.prop-loc')?.textContent.toLowerCase()||'';
+    const show=!city||loc.includes(city);
+    c.style.display=show?'':'none';
+    if(show)visible++;
+  });
+  document.getElementById('resCount').textContent=visible+' nemovitostí';
+});
+</script>
+
+
+
+
+<style id="nav-update">
+.nav-links a { font-size: 1rem !important; font-weight: 700 !important; position: relative; }
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+  height: 2px; background: #99C6C3; border-radius: 2px;
+  transform: scaleX(0); transition: transform .2s;
+}
+.nav-links a:hover { color: #99C6C3 !important; }
+.nav-links a:hover::after { transform: scaleX(1); }
+.nav-links a.active { color: #99C6C3 !important; }
+.nav-links a.active::after { transform: scaleX(0) !important; }
+.btn-teal { font-size: .95rem !important; padding: .7rem 1.5rem !important; }
+
+</style>
+<script id="nav-active">
+(function(){
+  var page = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    var href = a.getAttribute('href').replace('./', '');
+    if (href === page || (page === '' && href === 'index.html')) {
+      a.classList.add('active');
+    }
+  });
+})();
+</script>
+
+<!-- CTA -->
+<section style="background:linear-gradient(135deg,#0A1628 0%,#0d2d4a 50%,#0A1628 100%);padding:6rem 5%;text-align:center;position:relative;overflow:hidden;width:100vw;margin-left:calc(-50vw + 50%);">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(153,198,195,.1) 0%,transparent 65%);pointer-events:none;"></div>
+  <div style="position:relative;z-index:1;max-width:640px;margin:0 auto;">
+    <p style="font-family:'Poppins',sans-serif;font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(153,198,195,.7);margin-bottom:.8rem;">Chcete prodat?</p>
+    <h2 style="font-family:'Poppins',sans-serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:900;color:#fff;margin-bottom:.8rem;line-height:1.2;">Prodáme vaši nemovitost<br><span style="background:linear-gradient(135deg,#99C6C3,#7caaa7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">rychle a za nejlepší cenu</span></h2>
+    <p style="font-size:1rem;color:rgba(255,255,255,.6);max-width:480px;margin:0 auto 2.2rem;line-height:1.7;">Průměrný prodej za 23 dní. Bezprovizní pro prodávající, profesionální marketing a právní servis v ceně.</p>
+    <div style="display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap;">
+      <a href="kontakt.html" class="btn btn-teal btn-lg" style="text-decoration:none;">Kontaktovat makléře</a>
+      <a href="odhad.html" class="btn btn-outline-light btn-lg" style="text-decoration:none;">Odhad nemovitosti zdarma</a>
+    </div>
+  </div>
+</section>
+
+<style>
+.btn-teal{background:linear-gradient(135deg,#99C6C3,#7caaa7);color:#0A1628;font-weight:700;border:none;border-radius:10px;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;transition:all .2s}
+.btn-teal:hover{box-shadow:0 4px 20px rgba(153,198,195,.45);transform:translateY(-1px);text-decoration:none;color:#0A1628}
+.btn-outline-light{border:1.5px solid rgba(255,255,255,.25);color:rgba(255,255,255,.85);background:transparent;border-radius:10px;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;transition:all .2s}
+.btn-outline-light:hover{border-color:#99C6C3;color:#99C6C3;text-decoration:none}
+.btn-lg{padding:.75rem 1.8rem;font-size:1rem}
+
+</style>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <span class="logo-main"><span class="reality">reality</span><span class="twou">2u</span></span>
+        <span class="logo-sub">Součást skupiny money2u</span>
+      </a>
+      <p>Váš spolehlivý realitní partner v Brně a okolí.</p>
+    </div>
+    <div class="footer-col footer-col-hide">
+      <h4>Nemovitosti</h4>
+      <ul>
+        <li><a href="nemovitosti.html">Všechny nabídky</a></li>
+        <li><a href="nemovitosti.html">Prodej</a></li>
+        <li><a href="nemovitosti.html">Pronájem</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="index.html">Úvod</a></li>
+        <li><a href="nemovitosti.html">Nabídka</a></li>
+        <li><a href="sluzby.html">Služby</a></li>
+        <li><a href="o-nas.html">O nás</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="https://money2u.cz" target="_blank">money2u.cz</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-col-hide">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="#">Tolstého 35, Brno</a></li>
+        <li><a href="tel:+420799794670">+420 799 794 670</a></li>
+        <li><a href="mailto:info@reality2u.cz">info@reality2u.cz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 reality2u s.r.o. Všechna práva vyhrazena.</p>
+    <p><a href="https://money2u.cz" target="_blank">Součást skupiny money2u</a></p>
+  </div>
+</footer>
+
+<style>
+footer{background:#060e1a;padding:4rem 5% 2rem;border-top:1px solid rgba(153,198,195,.1);font-family:'Inter',sans-serif}
+footer .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+footer .footer-brand p{color:rgba(255,255,255,.55);font-size:.9rem;margin-top:.8rem;line-height:1.7}
+footer .logo{text-decoration:none;display:block;margin-bottom:.5rem}
+footer .logo-main{display:block;font-family:'Poppins',sans-serif;font-weight:900;font-size:1.5rem}
+footer .logo-main .reality{color:#fff}
+footer .logo-main .twou{color:#99C6C3}
+footer .logo-sub{display:block;font-size:.72rem;color:rgba(255,255,255,.4);letter-spacing:.05em;margin-top:.15rem}
+footer .footer-col h4{font-family:'Poppins',sans-serif;font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#99C6C3;margin-bottom:1rem}
+footer .footer-col ul{list-style:none;padding:0;margin:0}
+footer .footer-col ul li{margin-bottom:.5rem}
+footer .footer-col ul li a{color:rgba(255,255,255,.6);font-size:.9rem;text-decoration:none;transition:color .2s}
+footer .footer-col ul li a:hover{color:#99C6C3}
+footer .footer-bottom{max-width:1200px;margin:0 auto;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+footer .footer-bottom p{font-size:.82rem;color:rgba(255,255,255,.4);margin:0}
+footer .footer-bottom a{color:#99C6C3}
+/* Mobil: skryj Nemovitosti + Kontakt sloupce, zobraz jen Brand + Menu */
+@media(max-width:768px){
+  footer .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+  footer .footer-col-hide{display:none}
+}
+@media(max-width:500px){
+  footer .footer-grid{grid-template-columns:1fr}
+  footer .footer-col-hide{display:none}
+}
+
+</style>
+
+
+<script>
+(function(){
+  var activeTab = 'prodej';
+
+  // Tab kliknutí
+  document.querySelectorAll('.stab').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.stab').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      activeTab = btn.getAttribute('data-tab') || 'prodej';
+      runFilter();
+    });
+  });
+
+  function parsePrice(str){
+    var m = str.replace(/\s/g,'').match(/\d+/g);
+    if(!m) return 0;
+    return parseInt(m.join(''));
+  }
+  function normalize(s){
+    return (s||'').toLowerCase()
+      .replace(/á/g,'a').replace(/č/g,'c').replace(/ď/g,'d')
+      .replace(/é/g,'e').replace(/ě/g,'e').replace(/í/g,'i')
+      .replace(/ň/g,'n').replace(/ó/g,'o').replace(/ř/g,'r')
+      .replace(/š/g,'s').replace(/ť/g,'t').replace(/ú/g,'u').replace(/ů/g,'u')
+      .replace(/ý/g,'y').replace(/ž/g,'z');
+  }
+
+  function runFilter(){
+    var lokInput = document.getElementById('s-lokalita');
+    var typSel   = document.getElementById('s-typ');
+    var cenaSel  = document.getElementById('s-cena');
+    if(!lokInput) return;
+
+    var lok  = normalize(lokInput.value.trim());
+    var typ  = (typSel ? typSel.value : '').toLowerCase();
+    var maxC = cenaSel ? parseInt(cenaSel.value) : 0;
+
+    var cards = document.querySelectorAll('#propGrid .prop-card');
+    var visible = 0;
+    cards.forEach(function(card){
+      var cardLok   = normalize(card.querySelector('.prop-loc') ? card.querySelector('.prop-loc').textContent : '');
+      var cardTyp   = normalize(card.querySelector('.prop-type') ? card.querySelector('.prop-type').textContent : '');
+      var cardPrice = card.querySelector('.prop-price-tag') ? card.querySelector('.prop-price-tag').textContent : '';
+      var price     = parsePrice(cardPrice);
+
+      // Tab filtr
+      var matchTab = true;
+      if(activeTab === 'pronajem') matchTab = cardTyp.indexOf('pronajem') !== -1;
+      if(activeTab === 'prodej')   matchTab = cardTyp.indexOf('prodej') !== -1;
+
+      var matchLok  = !lok || cardLok.indexOf(lok) !== -1;
+      var matchTyp  = !typ || cardTyp.indexOf(normalize(typ)) !== -1;
+      var matchCena = !maxC || price <= maxC;
+
+      if(matchTab && matchLok && matchTyp && matchCena){
+        card.style.display = '';
+        visible++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    var rc = document.getElementById('resCount');
+    if(rc) rc.textContent = visible + ' nemovitost' + (visible===1?'':visible<5?'i':'í');
+  }
+
+  var btnSearch = document.querySelector('.btn-search');
+  if(btnSearch) btnSearch.addEventListener('click', function(e){
+    e.preventDefault();
+    runFilter();
+    var grid = document.getElementById('propGrid');
+    if(grid) grid.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+
+  var lokEl = document.getElementById('s-lokalita');
+  if(lokEl) lokEl.addEventListener('keydown', function(e){ if(e.key==='Enter') runFilter(); });
+
+  ['s-typ','s-cena'].forEach(function(id){
+    var el = document.getElementById(id);
+    // live filtr vypnut — aktivuje se jen tlačítkem Hledat
+  });
+})();
+</script>
+<script>
+function toggleMenu(){
+  var m=document.getElementById('navLinks');
+  var btn=document.getElementById('menuClose');
+  if(!m)return;
+  var isOpen=m.classList.contains('open');
+  if(isOpen){m.classList.remove('open');if(btn)btn.classList.remove('visible');document.body.style.overflow='';}
+  else{m.classList.add('open');if(btn)btn.classList.add('visible');document.body.style.overflow='hidden';}
+}
+function closeMenu(){
+  var m=document.getElementById('navLinks');var btn=document.getElementById('menuClose');
+  if(m)m.classList.remove('open');if(btn)btn.classList.remove('visible');document.body.style.overflow='';
+}
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('#navLinks a').forEach(function(a){a.addEventListener('click',closeMenu);});
+});
+</script>
+<script>window.addEventListener("scroll",function(){var n=document.getElementById("navbar");if(n){if(window.scrollY>20){n.classList.add("scrolled");}else{n.classList.remove("scrolled");}}});</script>
+</body>
+</html>

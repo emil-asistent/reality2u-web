@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt — reality2u</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+<style>
+#navbar{position:fixed;top:0;left:0;right:0;z-index:900;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;transition:background .4s,box-shadow .4s;background:transparent}
+#navbar.scrolled{background:rgba(10,22,40,.96);backdrop-filter:blur(20px);box-shadow:0 2px 30px rgba(0,0,0,.4)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-img{height:120px;width:auto;object-fit:contain}
+.nav-links{display:flex;gap:2rem;list-style:none;margin:0;padding:0}
+.nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.9rem;font-weight:700;transition:color .2s}
+.nav-links a:hover{color:#99C6C3}
+.nav-ctas{display:flex;gap:.6rem;align-items:center}
+.btn{padding:.55rem 1.2rem;border-radius:10px;font-size:.85rem;font-weight:600;text-decoration:none;transition:all .2s;border:none;cursor:pointer;font-family:inherit}
+.btn-teal{background:linear-gradient(135deg,#99C6C3,#6AAAA7);color:#0A1628;font-weight:700}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{width:22px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+@media(max-width:700px){.nav-links,.nav-ctas{display:none}.hamburger{display:flex}}
+
+
+@media(max-width:700px){
+  #navLinks{display:none;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;min-height:100vh;z-index:9999;flex-direction:column;align-items:center;justify-content:center;background:#99C6C3;list-style:none;padding:0;margin:0;overflow-y:auto;}
+  #navLinks.open{display:flex;}
+  #navLinks li{width:100%;text-align:center;}
+  #navLinks a{display:block;padding:18px 0;font-size:clamp(2.2rem,10vw,4rem);color:#0D1F3A;font-weight:900;text-decoration:none;letter-spacing:-.02em;}
+  #navLinks a:hover{opacity:.6;}
+  .hamburger{display:flex;}
+  .nav-ctas{display:none;}
+  #menuClose{display:none;position:fixed;top:20px;right:20px;z-index:10000;background:none;border:none;cursor:pointer;padding:8px;font-size:2rem;color:#0D1F3A;font-weight:900;line-height:1;}
+  #menuClose.visible{display:block;}
+}
+/* ═══ MOBILE MENU ═══ */
+@media(max-width:700px){
+  #navLinks{
+    display:none;
+    position:fixed;
+    top:0;left:0;
+    width:100vw;height:100vh;
+    z-index:9999;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    background:#99C6C3 !important;
+    list-style:none;
+    padding:0;margin:0;
+  }
+  #navLinks.open{display:flex !important;}
+  #navLinks li{width:90%;text-align:center;border-bottom:1px solid rgba(13,31,58,.2);}
+  #navLinks a,
+  #navLinks a.active,
+  #navLinks a:hover{
+    display:block;
+    padding:20px 0;
+    font-size:clamp(2rem,9vw,3.5rem) !important;
+    color:#0D1F3A !important;
+    font-weight:900 !important;
+    text-decoration:none !important;
+    letter-spacing:-.02em;
+    opacity:1 !important;
+  }
+  #navLinks a:hover{opacity:.6 !important;}
+  .hamburger{display:flex !important;}
+  .nav-ctas{display:none !important;}
+  #menuClose{
+    display:none;
+    position:fixed;top:24px;right:24px;
+    z-index:10000;
+    background:none;border:none;cursor:pointer;
+    font-size:2.2rem;color:#0D1F3A;font-weight:900;line-height:1;padding:0;
+  }
+  #menuClose.visible{display:block !important;}
+}
+#menuClose{display:none;}
+</style>
+
+<style id="hero-fix">
+.page-hero { min-height: 60vh !important; padding: 140px 5% 5rem !important; display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; }
+
+</style>
+<style id="page-hero-bg-style">
+.page-hero {
+  position: relative;
+  min-height: 60vh;
+  padding: 160px 5% 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('./assets/hero-bg.jpg') center/cover no-repeat;
+  z-index: 0;
+}
+.page-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(10,22,40,0.82) 0%, rgba(10,22,40,0.65) 100%);
+  z-index: 1;
+}
+.page-hero > * {
+  position: relative;
+  z-index: 2;
+}
+.page-hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  color: #fff;
+  margin-bottom: 0.7rem;
+  line-height: 1.15;
+}
+.page-hero p {
+  color: var(--teal, #99C6C3);
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="./" class="nav-logo">
+    <img src="./assets/logo.png" alt="Reality2u" class="nav-logo-img">
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="./nemovitosti">Nabídka</a></li>
+    <li><a href="./sluzby">Služby</a></li>
+    <li><a href="./o-nas">O nás</a></li>
+    <li><a href="./kontakt">Kontakt</a></li>
+    <li><a href="https://money2u.cz" target="_blank">Financování</a></li>
+  </ul>
+  <div class="nav-ctas">
+    <a href="./kontakt" class="btn btn-teal">Kontaktovat makléře</a>
+  </div>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+<button id="menuClose" onclick="closeMenu()">&#10005;</button>
+</nav>
+
+<div class="page-hero">
+  <h1>Kontaktujte nás</h1>
+  <p>Jsme tu pro vás. Ozvěte se a my se vám ozveme zpět do 2 hodin.</p>
+</div>
+
+<div style="background:white;">
+  <div class="kontakt-layout">
+    <!-- INFO -->
+    <div class="kontakt-info">
+      <h2>Kde nás najdete</h2>
+
+      <div class="kontakt-info-item">
+        <div class="kontakt-info-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7caaa7" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="kontakt-info-text">
+          <h4>Adresa</h4>
+          <p>Tolstého 35<br>616 00 Brno</p>
+        </div>
+      </div>
+
+      <div class="kontakt-info-item">
+        <div class="kontakt-info-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7caaa7" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.18 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div class="kontakt-info-text">
+          <h4>Telefon</h4>
+          <p><a href="tel:+420722967163" style="color:#7caaa7;">+420 722 967 163</a></p>
+        </div>
+      </div>
+
+      <div class="kontakt-info-item">
+        <div class="kontakt-info-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7caaa7" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="kontakt-info-text">
+          <h4>E-mail</h4>
+          <p><a href="mailto:asistentka@reality2u.cz" style="color:#7caaa7;">asistentka@reality2u.cz</a></p>
+        </div>
+      </div>
+
+
+
+      <div class="kontakt-info-item">
+        <div class="kontakt-info-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7caaa7" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="kontakt-info-text">
+          <h4>Pracovní doba</h4>
+          <p>Po–Pá: 8:00 – 18:00<br>So: 9:00 – 14:00</p>
+        </div>
+      </div>
+
+      <div class="kontakt-info-item" style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(10,22,40,.08);">
+        <div class="kontakt-info-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7caaa7" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+        </div>
+        <div class="kontakt-info-text">
+          <h4>Fakturační údaje</h4>
+          <p>reality2u s.r.o.<br>Tolstého 562/35, Žabovřesky<br>616 00 Brno<br><br>IČ: 04690915<br><small style="color:rgba(10,22,40,.45);">Společnost zapsaná v OR vedeném u Krajského soudu v Brně, oddíl C, vložka 91445</small></p>
+        </div>
+      </div>
+
+            <div class="map-placeholder">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2606.7!2d16.5948!3d49.1882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47129458bfedfe2f%3A0x13af11d7d8a58b26!2sTolst%C3%A9ho%2035%2C%20616%2000%20Brno-Žabovřesky!5e0!3m2!1scs!2scz!4v1" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div>
+      <div class="form-card">
+        <h2>Napište nám</h2>
+        <div class="form-field">
+          <label>Jméno a příjmení *</label>
+          <input type="text" placeholder="Jan Novák">
+        </div>
+        <div class="form-field">
+          <label>E-mail *</label>
+          <input type="email" placeholder="vas@email.cz">
+        </div>
+        <div class="form-field">
+          <label>Telefon</label>
+          <input type="tel" placeholder="+420 XXX XXX XXX">
+        </div>
+        <div class="form-field">
+          <label>Typ poptávky</label>
+          <select>
+            <option value="">Vyberte...</option>
+            <option>Prodej nemovitosti</option>
+            <option>Koupě nemovitosti</option>
+            <option>Pronájem</option>
+            <option>Bezplatný odhad</option>
+            <option>Správa nemovitosti</option>
+            <option>Jiné</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label>Zpráva *</label>
+          <textarea rows="5" placeholder="Popište svůj požadavek..."></textarea>
+        </div>
+        <button class="btn-full" style="margin-bottom:1rem;">Odeslat zprávu</button>
+
+      </div>
+
+      <div style="margin-top:1.5rem;background:linear-gradient(135deg,#99C6C3,#7caaa7);border-radius:16px;padding:1.5rem;color:#0A1628;text-align:center;box-shadow:0 8px 32px rgba(153,198,195,.35);">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0A1628" stroke-width="1.8" style="margin-bottom:0.8rem;opacity:.8;"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <h3 style="font-family:'Poppins',sans-serif;font-weight:800;color:#0A1628;margin-bottom:0.5rem;">Finanční služby money2u</h3>
+        <p style="color:rgba(10,22,40,.65);font-size:0.88rem;margin-bottom:1.2rem;line-height:1.6;">Hypotéky, pojištění, investice a spoření na jednom místě. Propojení s naší mateřskou skupinou money2u.</p>
+        <a href="https://money2u.cz" target="_blank" style="display:inline-block;background:#0A1628;color:#99C6C3;padding:0.65rem 1.5rem;border-radius:10px;font-weight:700;font-size:0.88rem;text-decoration:none;transition:all .2s;">Přejít na money2u.cz →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
+
+
+<style id="nav-update">
+.nav-links a { font-size: 1rem !important; font-weight: 700 !important; position: relative; }
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+  height: 2px; background: #99C6C3; border-radius: 2px;
+  transform: scaleX(0); transition: transform .2s;
+}
+.nav-links a:hover { color: #99C6C3 !important; }
+.nav-links a:hover::after { transform: scaleX(1); }
+.nav-links a.active { color: #99C6C3 !important; }
+.nav-links a.active::after { transform: scaleX(0) !important; }
+.btn-teal { font-size: .95rem !important; padding: .7rem 1.5rem !important; }
+
+</style>
+<script id="nav-active">
+(function(){
+  var page = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    var href = a.getAttribute('href').replace('./', '');
+    if (href === page || (page === '' && href === 'index.html')) {
+      a.classList.add('active');
+    }
+  });
+})();
+</script>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="./" class="logo">
+        <span class="logo-main"><span class="reality">reality</span><span class="twou">2u</span></span>
+        <span class="logo-sub">Součást skupiny money2u</span>
+      </a>
+      <p>Váš spolehlivý realitní partner v Brně a okolí.</p>
+    </div>
+    <div class="footer-col footer-col-hide">
+      <h4>Nemovitosti</h4>
+      <ul>
+        <li><a href="nemovitosti">Všechny nabídky</a></li>
+        <li><a href="nemovitosti">Prodej</a></li>
+        <li><a href="nemovitosti">Pronájem</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="./">Úvod</a></li>
+        <li><a href="nemovitosti">Nabídka</a></li>
+        <li><a href="sluzby">Služby</a></li>
+        <li><a href="o-nas">O nás</a></li>
+        <li><a href="kontakt">Kontakt</a></li>
+        <li><a href="https://money2u.cz" target="_blank">money2u.cz</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-col-hide">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="#">Tolstého 35, Brno</a></li>
+        <li><a href="tel:+420799794670">+420 799 794 670</a></li>
+        <li><a href="mailto:info@reality2u.cz">info@reality2u.cz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 reality2u s.r.o. Všechna práva vyhrazena.</p>
+    <p><a href="https://money2u.cz" target="_blank">Součást skupiny money2u</a></p>
+  </div>
+</footer>
+
+<style>
+footer{background:#060e1a;padding:4rem 5% 2rem;border-top:1px solid rgba(153,198,195,.1);font-family:'Inter',sans-serif}
+footer .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+footer .footer-brand p{color:rgba(255,255,255,.55);font-size:.9rem;margin-top:.8rem;line-height:1.7}
+footer .logo{text-decoration:none;display:block;margin-bottom:.5rem}
+footer .logo-main{display:block;font-family:'Poppins',sans-serif;font-weight:900;font-size:1.5rem}
+footer .logo-main .reality{color:#fff}
+footer .logo-main .twou{color:#99C6C3}
+footer .logo-sub{display:block;font-size:.72rem;color:rgba(255,255,255,.4);letter-spacing:.05em;margin-top:.15rem}
+footer .footer-col h4{font-family:'Poppins',sans-serif;font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#99C6C3;margin-bottom:1rem}
+footer .footer-col ul{list-style:none;padding:0;margin:0}
+footer .footer-col ul li{margin-bottom:.5rem}
+footer .footer-col ul li a{color:rgba(255,255,255,.6);font-size:.9rem;text-decoration:none;transition:color .2s}
+footer .footer-col ul li a:hover{color:#99C6C3}
+footer .footer-bottom{max-width:1200px;margin:0 auto;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+footer .footer-bottom p{font-size:.82rem;color:rgba(255,255,255,.4);margin:0}
+footer .footer-bottom a{color:#99C6C3}
+/* Mobil: skryj Nemovitosti + Kontakt sloupce, zobraz jen Brand + Menu */
+@media(max-width:768px){
+  footer .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+  footer .footer-col-hide{display:none}
+}
+@media(max-width:500px){
+  footer .footer-grid{grid-template-columns:1fr}
+  footer .footer-col-hide{display:none}
+}
+
+</style>
+<script>
+function toggleMenu(){
+  var m=document.getElementById('navLinks');
+  var btn=document.getElementById('menuClose');
+  if(!m)return;
+  var isOpen=m.classList.contains('open');
+  if(isOpen){m.classList.remove('open');if(btn)btn.classList.remove('visible');document.body.style.overflow='';}
+  else{m.classList.add('open');if(btn)btn.classList.add('visible');document.body.style.overflow='hidden';}
+}
+function closeMenu(){
+  var m=document.getElementById('navLinks');var btn=document.getElementById('menuClose');
+  if(m)m.classList.remove('open');if(btn)btn.classList.remove('visible');document.body.style.overflow='';
+}
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('#navLinks a').forEach(function(a){a.addEventListener('click',closeMenu);});
+});
+</script>
+<script>window.addEventListener("scroll",function(){var n=document.getElementById("navbar");if(n){if(window.scrollY>20){n.classList.add("scrolled");}else{n.classList.remove("scrolled");}}});</script>
+</body>
+</html>

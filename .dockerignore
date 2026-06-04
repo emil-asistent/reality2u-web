@@ -1,0 +1,9 @@
+.git
+.vercel
+public/.vercel
+reality2u.djai.cz
+deploy
+tools
+source
+*.zip
+*.log

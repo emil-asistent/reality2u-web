@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bezplatný odhad nemovitosti — reality2u</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+<style>
+#navbar{position:fixed;top:0;left:0;right:0;z-index:900;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;transition:background .4s,box-shadow .4s;background:transparent}
+#navbar.scrolled{background:rgba(10,22,40,.96);backdrop-filter:blur(20px);box-shadow:0 2px 30px rgba(0,0,0,.4)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-img{height:120px;width:auto;object-fit:contain}
+.nav-links{display:flex;gap:2rem;list-style:none;margin:0;padding:0}
+.nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.9rem;font-weight:700;transition:color .2s}
+.nav-links a:hover{color:#99C6C3}
+.nav-ctas{display:flex;gap:.6rem;align-items:center}
+.btn{padding:.55rem 1.2rem;border-radius:10px;font-size:.85rem;font-weight:600;text-decoration:none;transition:all .2s;border:none;cursor:pointer;font-family:inherit}
+.btn-teal{background:linear-gradient(135deg,#99C6C3,#6AAAA7);color:#0A1628;font-weight:700}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{width:22px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+@media(max-width:700px){.nav-links,.nav-ctas{display:none}.hamburger{display:flex}}
+@media(max-width:700px){
+  #navLinks{display:none;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;min-height:100vh;z-index:9999;flex-direction:column;align-items:center;justify-content:center;background:#99C6C3;list-style:none;padding:0;margin:0;overflow-y:auto;}
+  #navLinks.open{display:flex;}
+  #navLinks li{width:100%;text-align:center;}
+  #navLinks a{display:block;padding:18px 0;font-size:clamp(2.2rem,10vw,4rem);color:#0D1F3A;font-weight:900;text-decoration:none;letter-spacing:-.02em;}
+  .hamburger{display:flex;}
+  .nav-ctas{display:none;}
+  #menuClose{display:none;position:fixed;top:20px;right:20px;z-index:10000;background:none;border:none;cursor:pointer;padding:8px;font-size:2rem;color:#0D1F3A;font-weight:900;line-height:1;}
+  #menuClose.visible{display:block;}
+}
+#menuClose{display:none;}
+
+.page-hero{position:relative;min-height:55vh;padding:140px 5% 4rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:url('./assets/hero-bg.jpg') center/cover no-repeat;z-index:0}
+.page-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,22,40,.85) 0%,rgba(10,22,40,.65) 100%);z-index:1}
+.page-hero > *{position:relative;z-index:2}
+.page-hero .badge{display:inline-block;background:rgba(245,166,35,.15);border:1px solid rgba(245,166,35,.4);color:#F5A623;font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;padding:.5rem 1rem;border-radius:30px;margin-bottom:1.2rem}
+.page-hero h1{font-family:'Poppins',sans-serif;font-weight:900;font-size:clamp(2rem,4.8vw,3.4rem);color:#fff;margin-bottom:.7rem;line-height:1.15}
+.page-hero p{color:#99C6C3;font-size:1.1rem;font-weight:500;max-width:720px;line-height:1.6}
+
+.stats-row{display:flex;gap:2.5rem;margin-top:2.5rem;flex-wrap:wrap;justify-content:center}
+.stat-item{text-align:center}
+.stat-num{font-family:'Poppins',sans-serif;font-weight:900;font-size:2rem;color:#F5A623;line-height:1}
+.stat-lbl{color:rgba(255,255,255,.7);font-size:.85rem;margin-top:.3rem}
+
+.how-block{background:#F8F6F0;padding:5rem 5%}
+.how-inner{max-width:1100px;margin:0 auto}
+.how-head{text-align:center;margin-bottom:3rem}
+.how-head .label{color:#7caaa7;font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.6rem}
+.how-head h2{font-family:'Poppins',sans-serif;font-weight:800;color:#0A1628;font-size:clamp(1.7rem,3vw,2.4rem);margin:0}
+.how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+@media(max-width:900px){.how-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.how-grid{grid-template-columns:1fr}}
+.how-card{background:#fff;border-radius:18px;padding:1.8rem 1.5rem;box-shadow:0 4px 24px rgba(10,22,40,.06);border:1px solid rgba(10,22,40,.04);position:relative}
+.how-card .step{position:absolute;top:1rem;right:1.2rem;font-family:'Poppins',sans-serif;font-weight:900;color:rgba(122,170,167,.18);font-size:2.6rem;line-height:1}
+.how-card .icon{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#99C6C3,#7caaa7);display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.how-card h3{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.05rem;color:#0A1628;margin:0 0 .5rem}
+.how-card p{color:rgba(10,22,40,.6);font-size:.92rem;margin:0;line-height:1.55}
+
+.form-block{background:#fff;padding:5rem 5%}
+.form-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:.9fr 1.1fr;gap:3rem;align-items:start}
+@media(max-width:900px){.form-inner{grid-template-columns:1fr}}
+
+.form-left h2{font-family:'Poppins',sans-serif;font-weight:800;color:#0A1628;font-size:2rem;margin:0 0 1rem;line-height:1.2}
+.form-left .lead{color:rgba(10,22,40,.65);font-size:1.02rem;line-height:1.65;margin-bottom:2rem}
+.benefit-list{list-style:none;padding:0;margin:0}
+.benefit-list li{display:flex;gap:.8rem;align-items:flex-start;padding:.6rem 0;color:#0A1628;font-size:.95rem;line-height:1.5}
+.benefit-list li svg{flex-shrink:0;color:#7caaa7;margin-top:.15rem}
+
+.form-card{background:#F8F6F0;border-radius:20px;padding:2.5rem;box-shadow:0 8px 40px rgba(10,22,40,.06)}
+.form-card h3{font-family:'Poppins',sans-serif;font-weight:800;color:#0A1628;font-size:1.4rem;margin:0 0 .4rem}
+.form-card .sub{color:rgba(10,22,40,.55);font-size:.9rem;margin-bottom:1.8rem}
+.form-field{margin-bottom:1.2rem}
+.form-field label{display:block;font-weight:700;color:#0A1628;font-size:.88rem;margin-bottom:.4rem}
+.form-field input,.form-field select,.form-field textarea{width:100%;padding:.8rem 1rem;border:1px solid rgba(10,22,40,.1);border-radius:10px;font-size:.95rem;font-family:inherit;color:#0A1628;background:#fff;box-sizing:border-box}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{outline:none;border-color:#99C6C3}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:500px){.form-row{grid-template-columns:1fr}}
+.btn-submit{width:100%;background:linear-gradient(135deg,#F5A623,#e8941a);color:#0A1628;font-weight:800;font-size:1rem;padding:1rem;border:none;border-radius:12px;cursor:pointer;font-family:inherit;transition:all .2s;margin-top:.5rem}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(245,166,35,.3)}
+.form-note{margin-top:1rem;color:rgba(10,22,40,.5);font-size:.78rem;text-align:center;line-height:1.5}
+
+.cta-block{background:linear-gradient(135deg,#0A1628,#1a3a5c);padding:4rem 5%;text-align:center;color:#fff}
+.cta-block h2{font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(1.7rem,3vw,2.2rem);color:#fff;margin:0 0 .8rem}
+.cta-block p{color:rgba(255,255,255,.7);font-size:1.05rem;margin-bottom:2rem;max-width:600px;margin-left:auto;margin-right:auto}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cta-btns a{display:inline-block;padding:.95rem 1.8rem;border-radius:12px;font-weight:700;text-decoration:none;font-size:.95rem;transition:all .2s}
+.cta-btns .gold{background:#F5A623;color:#0A1628}
+.cta-btns .gold:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(245,166,35,.3)}
+.cta-btns .outline{border:1px solid rgba(153,198,195,.4);color:#99C6C3}
+.cta-btns .outline:hover{background:rgba(255,255,255,.06)}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="./index.html" class="nav-logo">
+    <img src="./assets/logo.png" alt="Reality2u" class="nav-logo-img">
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="./nemovitosti.html">Nabídka</a></li>
+    <li><a href="./sluzby.html">Služby</a></li>
+    <li><a href="./o-nas.html">O nás</a></li>
+    <li><a href="./kontakt.html">Kontakt</a></li>
+    <li><a href="https://money2u.cz" target="_blank">Financování</a></li>
+  </ul>
+  <div class="nav-ctas">
+    <a href="./kontakt.html" class="btn btn-teal">Kontaktovat makléře</a>
+  </div>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+  <button id="menuClose" onclick="closeMenu()">&#10005;</button>
+</nav>
+
+<div class="page-hero">
+  <div class="badge">ZDARMA · DO 24 HODIN</div>
+  <h1>Bezplatný odhad nemovitosti</h1>
+  <p>Zjistěte tržní cenu své nemovitosti od profesionálních makléřů. Bez závazků, bez poplatků, výstupem je písemný odhad s odůvodněním ceny.</p>
+
+  <div class="stats-row">
+    <div class="stat-item"><div class="stat-num">24 h</div><div class="stat-lbl">Doba dodání</div></div>
+    <div class="stat-item"><div class="stat-num">±3 %</div><div class="stat-lbl">Přesnost odhadu</div></div>
+    <div class="stat-item"><div class="stat-num">500+</div><div class="stat-lbl">Ověřených transakcí</div></div>
+    <div class="stat-item"><div class="stat-num">0 Kč</div><div class="stat-lbl">Cena odhadu</div></div>
+  </div>
+</div>
+
+<div class="how-block">
+  <div class="how-inner">
+    <div class="how-head">
+      <div class="label">Jak to funguje</div>
+      <h2>Čtyři kroky k tržnímu odhadu</h2>
+    </div>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="step">1</div>
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <h3>Vyplníte formulář</h3>
+        <p>Sdělíte nám základní údaje o nemovitosti — typ, lokalitu, výměru a stav. Trvá zhruba 2 minuty.</p>
+      </div>
+      <div class="how-card">
+        <div class="step">2</div>
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+        <h3>Analýza trhu</h3>
+        <p>Porovnáme aktuální nabídky, realizované prodeje v lokalitě a vývoj poptávky za poslední měsíce.</p>
+      </div>
+      <div class="how-card">
+        <div class="step">3</div>
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <h3>Konzultace s makléřem</h3>
+        <p>Náš lokální specialista doplní expertízu z prohlídek a osobní znalost lokality.</p>
+      </div>
+      <div class="how-card">
+        <div class="step">4</div>
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <h3>Písemný odhad e-mailem</h3>
+        <p>Do 24 hodin dostanete report s tržní cenou, rozpětím a odůvodněním. Bez závazku k dalším službám.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="form-block">
+  <div class="form-inner">
+    <div class="form-left">
+      <h2>Vyžádejte si svůj odhad</h2>
+      <p class="lead">Vyplňte formulář a do 24 hodin obdržíte profesionální odhad tržní ceny vaší nemovitosti. Zcela zdarma a bez závazků.</p>
+      <ul class="benefit-list">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Tržní cena + reprodukční hodnota</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Cenové rozpětí podle stavu trhu</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Srovnání s aktuálními prodeji v okolí</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Doporučení strategie prodeje</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Bez závazku k dalším službám</li>
+      </ul>
+    </div>
+
+    <div class="form-card">
+      <h3>Formulář pro odhad</h3>
+      <p class="sub">Všechny údaje slouží pouze k vypracování odhadu.</p>
+
+      <div class="form-field">
+        <label>Jméno a příjmení *</label>
+        <input type="text" placeholder="Jan Novák">
+      </div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label>E-mail *</label>
+          <input type="email" placeholder="vas@email.cz">
+        </div>
+        <div class="form-field">
+          <label>Telefon *</label>
+          <input type="tel" placeholder="+420 XXX XXX XXX">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label>Typ nemovitosti *</label>
+          <select>
+            <option value="">Vyberte…</option>
+            <option>Byt</option>
+            <option>Rodinný dům</option>
+            <option>Pozemek</option>
+            <option>Komerční prostor</option>
+            <option>Chalupa / chata</option>
+            <option>Jiné</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label>Výměra (m²) *</label>
+          <input type="number" placeholder="např. 75">
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label>Adresa / lokalita *</label>
+        <input type="text" placeholder="Ulice, město, PSČ">
+      </div>
+
+      <div class="form-field">
+        <label>Stav nemovitosti</label>
+        <select>
+          <option value="">Vyberte…</option>
+          <option>Novostavba</option>
+          <option>Po rekonstrukci</option>
+          <option>Dobrý stav</option>
+          <option>Před rekonstrukcí</option>
+          <option>K demolici / pozemek</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label>Poznámka</label>
+        <textarea rows="3" placeholder="Cokoliv, co by mělo být zohledněno (patro, balkon, parkování, věcná břemena…)"></textarea>
+      </div>
+
+      <button class="btn-submit">Chci bezplatný odhad</button>
+      <p class="form-note">Ozveme se vám zpět nejpozději do 2 hodin v pracovní době.</p>
+    </div>
+  </div>
+</div>
+
+<div class="cta-block">
+  <h2>Plánujete koupi a chcete znát i splátku?</h2>
+  <p>Spočítejte si orientační měsíční splátku hypotéky. Náš poradce ze skupiny money2u vám pak sjedná konkrétní nabídku.</p>
+  <div class="cta-btns">
+    <a href="kalkulacka.html" class="gold">Kalkulačka hypotéky →</a>
+    <a href="kontakt.html" class="outline">Kontaktujte makléře</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <span class="logo-main"><span class="reality">reality</span><span class="twou">2u</span></span>
+        <span class="logo-sub">Součást skupiny money2u</span>
+      </a>
+      <p>Váš spolehlivý realitní partner v Brně a okolí.</p>
+    </div>
+    <div class="footer-col footer-col-hide">
+      <h4>Nemovitosti</h4>
+      <ul>
+        <li><a href="nemovitosti.html">Všechny nabídky</a></li>
+        <li><a href="nemovitosti.html">Prodej</a></li>
+        <li><a href="nemovitosti.html">Pronájem</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="index.html">Úvod</a></li>
+        <li><a href="nemovitosti.html">Nabídka</a></li>
+        <li><a href="sluzby.html">Služby</a></li>
+        <li><a href="o-nas.html">O nás</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="https://money2u.cz" target="_blank">money2u.cz</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-col-hide">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="#">Tolstého 35, Brno</a></li>
+        <li><a href="tel:+420799794670">+420 799 794 670</a></li>
+        <li><a href="mailto:info@reality2u.cz">info@reality2u.cz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 reality2u s.r.o. Všechna práva vyhrazena.</p>
+    <p><a href="https://money2u.cz" target="_blank">Součást skupiny money2u</a></p>
+  </div>
+</footer>
+
+<style>
+footer{background:#060e1a;padding:4rem 5% 2rem;border-top:1px solid rgba(153,198,195,.1);font-family:'Inter',sans-serif}
+footer .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+footer .footer-brand p{color:rgba(255,255,255,.55);font-size:.9rem;margin-top:.8rem;line-height:1.7}
+footer .logo{text-decoration:none;display:block;margin-bottom:.5rem}
+footer .logo-main{display:block;font-family:'Poppins',sans-serif;font-weight:900;font-size:1.5rem}
+footer .logo-main .reality{color:#fff}
+footer .logo-main .twou{color:#99C6C3}
+footer .logo-sub{display:block;font-size:.72rem;color:rgba(255,255,255,.4);letter-spacing:.05em;margin-top:.15rem}
+footer .footer-col h4{font-family:'Poppins',sans-serif;font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#99C6C3;margin-bottom:1rem}
+footer .footer-col ul{list-style:none;padding:0;margin:0}
+footer .footer-col ul li{margin-bottom:.5rem}
+footer .footer-col ul li a{color:rgba(255,255,255,.6);font-size:.9rem;text-decoration:none;transition:color .2s}
+footer .footer-col ul li a:hover{color:#99C6C3}
+footer .footer-bottom{max-width:1200px;margin:0 auto;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+footer .footer-bottom p{font-size:.82rem;color:rgba(255,255,255,.4);margin:0}
+footer .footer-bottom a{color:#99C6C3}
+@media(max-width:768px){footer .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}footer .footer-col-hide{display:none}}
+@media(max-width:500px){footer .footer-grid{grid-template-columns:1fr}footer .footer-col-hide{display:none}}
+.nav-links a{font-size:1rem!important;font-weight:700!important;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:#99C6C3;border-radius:2px;transform:scaleX(0);transition:transform .2s}
+.nav-links a:hover{color:#99C6C3!important}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-links a.active{color:#99C6C3!important}
+.btn-teal{font-size:.95rem!important;padding:.7rem 1.5rem!important}
+</style>
+
+<script>
+function toggleMenu(){var m=document.getElementById('navLinks');var btn=document.getElementById('menuClose');if(!m)return;var isOpen=m.classList.contains('open');if(isOpen){m.classList.remove('open');if(btn)btn.classList.remove('visible');document.body.style.overflow='';}else{m.classList.add('open');if(btn)btn.classList.add('visible');document.body.style.overflow='hidden';}}
+function closeMenu(){var m=document.getElementById('navLinks');var btn=document.getElementById('menuClose');if(m)m.classList.remove('open');if(btn)btn.classList.remove('visible');document.body.style.overflow='';}
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('#navLinks a').forEach(function(a){a.addEventListener('click',closeMenu);});});
+window.addEventListener('scroll',function(){var n=document.getElementById('navbar');if(n){if(window.scrollY>20){n.classList.add('scrolled');}else{n.classList.remove('scrolled');}}});
+</script>
+</body>
+</html>

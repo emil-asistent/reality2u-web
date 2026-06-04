@@ -1,0 +1,6 @@
+{
+  "_help": "Ruční přepisy stavů inzerátů. Doplň ID inzerátu (číslo z URL ?inzerat_id=) do příslušného seznamu. Volné je default pro vše ve feedu; prodané se detekují automaticky když zmizí z feedu.",
+  "rezervovano": [],
+  "prodano": [],
+  "skryto": []
+}

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulačka hypotéky — reality2u</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+<style>
+#navbar{position:fixed;top:0;left:0;right:0;z-index:900;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;transition:background .4s,box-shadow .4s;background:transparent}
+#navbar.scrolled{background:rgba(10,22,40,.96);backdrop-filter:blur(20px);box-shadow:0 2px 30px rgba(0,0,0,.4)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-img{height:120px;width:auto;object-fit:contain}
+.nav-links{display:flex;gap:2rem;list-style:none;margin:0;padding:0}
+.nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.9rem;font-weight:700;transition:color .2s}
+.nav-links a:hover{color:#99C6C3}
+.nav-ctas{display:flex;gap:.6rem;align-items:center}
+.btn{padding:.55rem 1.2rem;border-radius:10px;font-size:.85rem;font-weight:600;text-decoration:none;transition:all .2s;border:none;cursor:pointer;font-family:inherit}
+.btn-teal{background:linear-gradient(135deg,#99C6C3,#6AAAA7);color:#0A1628;font-weight:700}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{width:22px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+@media(max-width:700px){.nav-links,.nav-ctas{display:none}.hamburger{display:flex}}
+@media(max-width:700px){
+  #navLinks{display:none;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;min-height:100vh;z-index:9999;flex-direction:column;align-items:center;justify-content:center;background:#99C6C3;list-style:none;padding:0;margin:0;overflow-y:auto;}
+  #navLinks.open{display:flex;}
+  #navLinks li{width:100%;text-align:center;}
+  #navLinks a{display:block;padding:18px 0;font-size:clamp(2.2rem,10vw,4rem);color:#0D1F3A;font-weight:900;text-decoration:none;letter-spacing:-.02em;}
+  #navLinks a:hover{opacity:.6;}
+  .hamburger{display:flex;}
+  .nav-ctas{display:none;}
+  #menuClose{display:none;position:fixed;top:20px;right:20px;z-index:10000;background:none;border:none;cursor:pointer;padding:8px;font-size:2rem;color:#0D1F3A;font-weight:900;line-height:1;}
+  #menuClose.visible{display:block;}
+}
+#menuClose{display:none;}
+
+.page-hero{position:relative;min-height:50vh;padding:140px 5% 4rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:url('./assets/hero-bg.jpg') center/cover no-repeat;z-index:0}
+.page-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,22,40,.82) 0%,rgba(10,22,40,.65) 100%);z-index:1}
+.page-hero > *{position:relative;z-index:2}
+.page-hero h1{font-family:'Poppins',sans-serif;font-weight:900;font-size:clamp(2rem,4.5vw,3.2rem);color:#fff;margin-bottom:.7rem;line-height:1.15}
+.page-hero p{color:#99C6C3;font-size:1.05rem;font-weight:500;max-width:680px}
+
+.calc-wrap{background:#F8F6F0;padding:5rem 5%}
+.calc-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:2.5rem}
+@media(max-width:900px){.calc-inner{grid-template-columns:1fr}}
+
+.calc-card{background:#fff;border-radius:20px;padding:2.5rem;box-shadow:0 8px 40px rgba(10,22,40,.08)}
+.calc-card h2{font-family:'Poppins',sans-serif;font-weight:800;color:#0A1628;font-size:1.6rem;margin:0 0 .4rem}
+.calc-card .sub{color:rgba(10,22,40,.55);font-size:.95rem;margin-bottom:2rem}
+
+.calc-field{margin-bottom:1.8rem}
+.calc-field label{display:flex;justify-content:space-between;align-items:center;font-weight:700;color:#0A1628;font-size:.95rem;margin-bottom:.5rem}
+.calc-field .val{color:#7caaa7;font-weight:800;font-family:'Poppins',sans-serif;font-size:1.05rem}
+.calc-field input[type=range]{-webkit-appearance:none;width:100%;height:6px;border-radius:3px;background:linear-gradient(to right,#99C6C3 0%,#99C6C3 50%,#e8eef3 50%,#e8eef3 100%);outline:none;cursor:pointer}
+.calc-field input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;background:#0A1628;border:3px solid #99C6C3;cursor:pointer;box-shadow:0 2px 8px rgba(10,22,40,.25)}
+.calc-field input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#0A1628;border:3px solid #99C6C3;cursor:pointer;box-shadow:0 2px 8px rgba(10,22,40,.25)}
+.calc-field .row{display:flex;justify-content:space-between;font-size:.78rem;color:rgba(10,22,40,.4);margin-top:.4rem}
+.calc-field input[type=number]{width:100%;padding:.75rem 1rem;border:1px solid rgba(10,22,40,.1);border-radius:10px;font-size:1rem;font-family:inherit;color:#0A1628;background:#F8F6F0}
+.calc-field input[type=number]:focus{outline:none;border-color:#99C6C3;background:#fff}
+
+.result-card{background:linear-gradient(135deg,#0A1628,#1a3a5c);border-radius:20px;padding:2.5rem;color:#fff;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 8px 40px rgba(10,22,40,.18)}
+.result-card .label-sm{font-size:.78rem;color:rgba(153,198,195,.85);letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin-bottom:.5rem}
+.result-main{font-family:'Poppins',sans-serif;font-weight:900;font-size:clamp(2.4rem,5vw,3.6rem);color:#99C6C3;line-height:1.05;margin-bottom:.5rem}
+.result-sub{color:rgba(255,255,255,.7);font-size:.95rem;margin-bottom:2rem}
+.result-rows{border-top:1px solid rgba(153,198,195,.18);padding-top:1.5rem}
+.result-row{display:flex;justify-content:space-between;align-items:baseline;padding:.7rem 0;border-bottom:1px solid rgba(153,198,195,.1)}
+.result-row:last-child{border-bottom:none}
+.result-row .k{color:rgba(255,255,255,.65);font-size:.9rem}
+.result-row .v{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.05rem;color:#fff}
+.result-cta{margin-top:2rem;display:flex;flex-direction:column;gap:.6rem}
+.result-cta a{display:block;padding:.95rem 1.3rem;border-radius:12px;text-align:center;font-weight:700;text-decoration:none;font-size:.95rem;transition:all .2s}
+.result-cta .primary{background:#F5A623;color:#0A1628}
+.result-cta .primary:hover{background:#fbb53a;transform:translateY(-2px)}
+.result-cta .secondary{background:rgba(255,255,255,.08);color:#99C6C3;border:1px solid rgba(153,198,195,.3)}
+.result-cta .secondary:hover{background:rgba(255,255,255,.12)}
+
+.disclaimer{max-width:1100px;margin:2rem auto 0;color:rgba(10,22,40,.55);font-size:.85rem;text-align:center;line-height:1.6;padding:0 1rem}
+
+.banks-block{background:#fff;padding:4rem 5%;border-top:1px solid rgba(10,22,40,.06)}
+.banks-inner{max-width:1100px;margin:0 auto;text-align:center}
+.banks-inner h2{font-family:'Poppins',sans-serif;font-weight:800;color:#0A1628;font-size:1.8rem;margin-bottom:.5rem}
+.banks-inner > p{color:rgba(10,22,40,.6);margin-bottom:2.5rem;font-size:1rem}
+.banks-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;max-width:780px;margin:0 auto}
+.bank-chip{background:#F8F6F0;border-radius:12px;padding:1.2rem .8rem;font-weight:700;color:#0A1628;font-size:.95rem;border:1px solid rgba(10,22,40,.06)}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="./index.html" class="nav-logo">
+    <img src="./assets/logo.png" alt="Reality2u" class="nav-logo-img">
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="./nemovitosti.html">Nabídka</a></li>
+    <li><a href="./sluzby.html">Služby</a></li>
+    <li><a href="./o-nas.html">O nás</a></li>
+    <li><a href="./kontakt.html">Kontakt</a></li>
+    <li><a href="https://money2u.cz" target="_blank">Financování</a></li>
+  </ul>
+  <div class="nav-ctas">
+    <a href="./kontakt.html" class="btn btn-teal">Kontaktovat makléře</a>
+  </div>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+  <button id="menuClose" onclick="closeMenu()">&#10005;</button>
+</nav>
+
+<div class="page-hero">
+  <h1>Kalkulačka hypotéky</h1>
+  <p>Spočítejte si orientační měsíční splátku. Pak vám náš poradce ze skupiny money2u sjedná konkrétní nabídku z porovnání 5 bank.</p>
+</div>
+
+<div class="calc-wrap">
+  <div class="calc-inner">
+    <!-- INPUTS -->
+    <div class="calc-card">
+      <h2>Vstupní údaje</h2>
+      <p class="sub">Posuvníky upravte podle své situace. Výpočet se aktualizuje okamžitě.</p>
+
+      <div class="calc-field">
+        <label>Výše úvěru <span class="val" id="amount-val">3 500 000 Kč</span></label>
+        <input type="range" id="amount" min="500000" max="15000000" step="50000" value="3500000">
+        <div class="row"><span>500 000 Kč</span><span>15 000 000 Kč</span></div>
+      </div>
+
+      <div class="calc-field">
+        <label>Doba splatnosti <span class="val" id="years-val">30 let</span></label>
+        <input type="range" id="years" min="5" max="40" step="1" value="30">
+        <div class="row"><span>5 let</span><span>40 let</span></div>
+      </div>
+
+      <div class="calc-field">
+        <label>Úroková sazba p.a. <span class="val" id="rate-val">4,89 %</span></label>
+        <input type="range" id="rate" min="2" max="8" step="0.01" value="4.89">
+        <div class="row"><span>2,00 %</span><span>8,00 %</span></div>
+      </div>
+
+      <div class="calc-field">
+        <label>Hodnota nemovitosti (pro LTV) <span class="val" id="property-val">4 000 000 Kč</span></label>
+        <input type="range" id="property" min="500000" max="20000000" step="50000" value="4000000">
+        <div class="row"><span>500 000 Kč</span><span>20 000 000 Kč</span></div>
+      </div>
+    </div>
+
+    <!-- RESULT -->
+    <div class="result-card">
+      <div>
+        <div class="label-sm">Měsíční splátka</div>
+        <div class="result-main" id="payment">— Kč</div>
+        <div class="result-sub">Anuitní splátka po celou dobu fixace.</div>
+
+        <div class="result-rows">
+          <div class="result-row"><span class="k">Celkem zaplaceno</span><span class="v" id="total">— Kč</span></div>
+          <div class="result-row"><span class="k">Z toho úroky</span><span class="v" id="interest">— Kč</span></div>
+          <div class="result-row"><span class="k">LTV</span><span class="v" id="ltv">— %</span></div>
+          <div class="result-row"><span class="k">Splatnost</span><span class="v" id="term-text">—</span></div>
+        </div>
+      </div>
+
+      <div class="result-cta">
+        <a href="kontakt.html?typ=hypoteka" class="primary">Chci konkrétní nabídku</a>
+        <a href="https://money2u.cz" target="_blank" class="secondary">Více o money2u →</a>
+      </div>
+    </div>
+  </div>
+
+  <p class="disclaimer">
+    Výpočet je pouze orientační a nezahrnuje poplatky banky, pojištění schopnosti splácet ani pojištění nemovitosti. Skutečná sazba se odvíjí od vaší bonity, LTV a aktuální nabídky bank. Pro závaznou kalkulaci kontaktujte našeho hypotečního poradce.
+  </p>
+</div>
+
+<div class="banks-block">
+  <div class="banks-inner">
+    <h2>Srovnáváme nabídky z 5 bank</h2>
+    <p>Vyjednáme pro vás nejnižší dostupnou sazbu a nejlepší podmínky napříč trhem.</p>
+    <div class="banks-grid">
+      <div class="bank-chip">Česká spořitelna</div>
+      <div class="bank-chip">ČSOB</div>
+      <div class="bank-chip">Komerční banka</div>
+      <div class="bank-chip">Raiffeisenbank</div>
+      <div class="bank-chip">UniCredit Bank</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <span class="logo-main"><span class="reality">reality</span><span class="twou">2u</span></span>
+        <span class="logo-sub">Součást skupiny money2u</span>
+      </a>
+      <p>Váš spolehlivý realitní partner v Brně a okolí.</p>
+    </div>
+    <div class="footer-col footer-col-hide">
+      <h4>Nemovitosti</h4>
+      <ul>
+        <li><a href="nemovitosti.html">Všechny nabídky</a></li>
+        <li><a href="nemovitosti.html">Prodej</a></li>
+        <li><a href="nemovitosti.html">Pronájem</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="index.html">Úvod</a></li>
+        <li><a href="nemovitosti.html">Nabídka</a></li>
+        <li><a href="sluzby.html">Služby</a></li>
+        <li><a href="o-nas.html">O nás</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="https://money2u.cz" target="_blank">money2u.cz</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-col-hide">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="#">Tolstého 35, Brno</a></li>
+        <li><a href="tel:+420799794670">+420 799 794 670</a></li>
+        <li><a href="mailto:info@reality2u.cz">info@reality2u.cz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 reality2u s.r.o. Všechna práva vyhrazena.</p>
+    <p><a href="https://money2u.cz" target="_blank">Součást skupiny money2u</a></p>
+  </div>
+</footer>
+
+<style>
+footer{background:#060e1a;padding:4rem 5% 2rem;border-top:1px solid rgba(153,198,195,.1);font-family:'Inter',sans-serif}
+footer .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+footer .footer-brand p{color:rgba(255,255,255,.55);font-size:.9rem;margin-top:.8rem;line-height:1.7}
+footer .logo{text-decoration:none;display:block;margin-bottom:.5rem}
+footer .logo-main{display:block;font-family:'Poppins',sans-serif;font-weight:900;font-size:1.5rem}
+footer .logo-main .reality{color:#fff}
+footer .logo-main .twou{color:#99C6C3}
+footer .logo-sub{display:block;font-size:.72rem;color:rgba(255,255,255,.4);letter-spacing:.05em;margin-top:.15rem}
+footer .footer-col h4{font-family:'Poppins',sans-serif;font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#99C6C3;margin-bottom:1rem}
+footer .footer-col ul{list-style:none;padding:0;margin:0}
+footer .footer-col ul li{margin-bottom:.5rem}
+footer .footer-col ul li a{color:rgba(255,255,255,.6);font-size:.9rem;text-decoration:none;transition:color .2s}
+footer .footer-col ul li a:hover{color:#99C6C3}
+footer .footer-bottom{max-width:1200px;margin:0 auto;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+footer .footer-bottom p{font-size:.82rem;color:rgba(255,255,255,.4);margin:0}
+footer .footer-bottom a{color:#99C6C3}
+@media(max-width:768px){footer .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}footer .footer-col-hide{display:none}}
+@media(max-width:500px){footer .footer-grid{grid-template-columns:1fr}footer .footer-col-hide{display:none}}
+.nav-links a{font-size:1rem!important;font-weight:700!important;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:#99C6C3;border-radius:2px;transform:scaleX(0);transition:transform .2s}
+.nav-links a:hover{color:#99C6C3!important}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-links a.active{color:#99C6C3!important}
+.btn-teal{font-size:.95rem!important;padding:.7rem 1.5rem!important}
+</style>
+
+<script>
+function fmtCZK(n){return new Intl.NumberFormat('cs-CZ',{maximumFractionDigits:0}).format(Math.round(n))+' Kč';}
+function fmtPct(n){return n.toFixed(2).replace('.',',')+' %';}
+function calc(){
+  var P=+document.getElementById('amount').value;
+  var Y=+document.getElementById('years').value;
+  var R=+document.getElementById('rate').value;
+  var V=+document.getElementById('property').value;
+  document.getElementById('amount-val').textContent=fmtCZK(P);
+  document.getElementById('years-val').textContent=Y+' let';
+  document.getElementById('rate-val').textContent=fmtPct(R);
+  document.getElementById('property-val').textContent=fmtCZK(V);
+  var i=(R/100)/12, n=Y*12;
+  var pmt = i===0 ? P/n : P*i*Math.pow(1+i,n)/(Math.pow(1+i,n)-1);
+  var total = pmt*n;
+  var interest = total - P;
+  var ltv = V>0 ? (P/V*100) : 0;
+  document.getElementById('payment').textContent = fmtCZK(pmt);
+  document.getElementById('total').textContent = fmtCZK(total);
+  document.getElementById('interest').textContent = fmtCZK(interest);
+  document.getElementById('ltv').textContent = ltv.toFixed(1).replace('.',',') + ' %';
+  document.getElementById('term-text').textContent = Y + ' let / ' + n + ' splátek';
+  ['amount','years','rate','property'].forEach(function(id){
+    var el=document.getElementById(id);
+    var pct=(el.value-el.min)/(el.max-el.min)*100;
+    el.style.background='linear-gradient(to right,#99C6C3 0%,#99C6C3 '+pct+'%,#e8eef3 '+pct+'%,#e8eef3 100%)';
+  });
+}
+['amount','years','rate','property'].forEach(function(id){document.getElementById(id).addEventListener('input',calc);});
+calc();
+
+function toggleMenu(){var m=document.getElementById('navLinks');var btn=document.getElementById('menuClose');if(!m)return;var isOpen=m.classList.contains('open');if(isOpen){m.classList.remove('open');if(btn)btn.classList.remove('visible');document.body.style.overflow='';}else{m.classList.add('open');if(btn)btn.classList.add('visible');document.body.style.overflow='hidden';}}
+function closeMenu(){var m=document.getElementById('navLinks');var btn=document.getElementById('menuClose');if(m)m.classList.remove('open');if(btn)btn.classList.remove('visible');document.body.style.overflow='';}
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('#navLinks a').forEach(function(a){a.addEventListener('click',closeMenu);});});
+window.addEventListener('scroll',function(){var n=document.getElementById('navbar');if(n){if(window.scrollY>20){n.classList.add('scrolled');}else{n.classList.remove('scrolled');}}});
+</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+.vercel/
+public/.vercel/
+reality2u.djai.cz/
+deploy/reality2u-site.zip
+*.log
+.DS_Store
