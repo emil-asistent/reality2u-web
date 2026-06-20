@@ -1,5 +1,47 @@
 [
  {
+  "id": 2177,
+  "title": "Prodej prostorného bytu 2+kk Svitavy, Lanškrounská",
+  "address": "Pardubický kraj, Svitavy, Předměstí, Lanškrounská 407/40, 56802",
+  "price": "4 700 000 Kč",
+  "trans": "Prodej",
+  "label": "Byt",
+  "short": "Svitavy",
+  "disp": "2+kk",
+  "plocha": null,
+  "pozemek": null,
+  "avail": null,
+  "imgs": [
+   "https://inzeraty.reality2u.cz/cache/offers/2177/1182x591_1.1781941587.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2177/1182x591_2.1781941587.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2177/1182x591_3.1781941589.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2177/1182x591_4.1781941589.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2177/1182x591_6.1781941591.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2177/1182x591_5.1781941591.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2177/1182x591_8.1781941592.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2177/1182x591_7.1781941592.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2177/1182x591_9.1781941594.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2177/1182x591_10.1781941594.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2177/1182x591_11.1781941595.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2177/1182x591_12.1781941596.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2177/1182x591_13.1781941597.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2177/1182x591_14.1781941597.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2177/1182x591_15.1781941599.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2177/1182x591_16.1781941599.jpg"
+  ],
+  "gps": [
+   "49.760099833238",
+   "16.473749207427"
+  ],
+  "agent": [
+   "Honza Čermák",
+   "733 411 446",
+   "reality@cermakhonza.cz"
+  ],
+  "status": "volne",
+  "paras_n": 8
+ },
+ {
   "id": 2126,
   "title": "Prodej stavebního pozemku Střelice u Brna",
   "address": "Brno-venkov, Jihomoravský kraj, Střelice, 664 47",
