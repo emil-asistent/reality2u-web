@@ -428,47 +428,6 @@
   "paras_n": 1
  },
  {
-  "id": 1763,
-  "title": "Prodej nádherné chaty u Langrova lesa Svitavy",
-  "address": "Pardubický kraj, Svitavy, Předměstí, U Langrova lesa 100, 56802",
-  "price": "2 690 000 Kč",
-  "trans": "Prodej",
-  "label": "Chata",
-  "short": "Svitavy",
-  "disp": null,
-  "plocha": "37 m²",
-  "pozemek": "898 m²",
-  "avail": null,
-  "imgs": [
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_1.1770041549.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_2.1770041549.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_3.1770041558.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_4.1770041559.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_5.1770041569.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_6.1770041570.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_7.1770041579.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_8.1770041580.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_9.1770041590.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_10.1770041591.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_11.1770041599.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_12.1770041600.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_sv-chatka-2.1771944565.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_sv-chatka-6.1771944567.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_sv-chatka-7.1771944577.jpg"
-  ],
-  "gps": [
-   "49.754915907319",
-   "16.444267836568"
-  ],
-  "agent": [
-   "Honza Čermák",
-   "733 411 446",
-   "reality@cermakhonza.cz"
-  ],
-  "status": "volne",
-  "paras_n": 7
- },
- {
   "id": 1688,
   "title": "Novostavba finského srubového domu",
   "address": "Středočeský kraj, Mladá Boleslav, Jivina, 1, 29414",
@@ -623,6 +582,47 @@
   ],
   "status": "volne",
   "paras_n": 1
+ },
+ {
+  "id": 1763,
+  "title": "Prodej nádherné chaty u Langrova lesa Svitavy",
+  "address": "Pardubický kraj, Svitavy, Předměstí, U Langrova lesa 100, 56802",
+  "price": "2 690 000 Kč",
+  "trans": "Prodej",
+  "label": "Chata",
+  "short": "Svitavy",
+  "disp": null,
+  "plocha": "37 m²",
+  "pozemek": "898 m²",
+  "avail": null,
+  "imgs": [
+   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_1.1770041549.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_2.1770041549.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_3.1770041558.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_4.1770041559.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_5.1770041569.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_6.1770041570.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_7.1770041579.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_8.1770041580.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_9.1770041590.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_10.1770041591.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_11.1770041599.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_12.1770041600.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_sv-chatka-2.1771944565.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_sv-chatka-6.1771944567.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_sv-chatka-7.1771944577.jpg"
+  ],
+  "gps": [
+   "49.754915907319",
+   "16.444267836568"
+  ],
+  "agent": [
+   "Honza Čermák",
+   "733 411 446",
+   "reality@cermakhonza.cz"
+  ],
+  "status": "prodano",
+  "paras_n": 7
  },
  {
   "id": 2125,
@@ -798,53 +798,6 @@
   "gps": [
    "49.214675539894",
    "16.524093011723"
-  ],
-  "agent": [
-   "Honza Čermák",
-   "733 411 446",
-   "reality@cermakhonza.cz"
-  ],
-  "status": "prodano",
-  "paras_n": 7
- },
- {
-  "id": 1953,
-  "title": "Pronájem zařízené jednotky Nad Arboretem Brno - třída Gerenála Píky",
-  "address": "Jihomoravský kraj, Brno-město, Brno, Brno-Královo Pole, Černá Pole, třída Generála Píky 2057/3, 61300",
-  "price": "20 000 Kč / měsíc",
-  "trans": "Pronájem",
-  "label": "Apartmán",
-  "short": "Brno",
-  "disp": "1+kk",
-  "plocha": null,
-  "pozemek": null,
-  "avail": "Ihned",
-  "imgs": [
-   "https://inzeraty.reality2u.cz/cache/offers/1953/1182x591_2.1771499011.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1953/1182x591_1.1771499012.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1953/1182x591_3.1771499038.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1953/1182x591_4.1771499039.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1953/1182x591_5.1771499063.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1953/1182x591_6.1771499062.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1953/1182x591_7.1771499086.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1953/1182x591_8.1771499088.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1953/1182x591_9.1771499093.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1953/1182x591_10.1771499111.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1953/1182x591_11.1771499117.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1953/1182x591_12.1771499136.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1953/1182x591_13.1771499138.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1953/1182x591_16.1771499183.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1953/1182x591_17.1771499184.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1953/1182x591_14.1771499159.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1953/1182x591_15.1771499164.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1953/1182x591_18.1771499188.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1953/1182x591_19.1771499189.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1953/1182x591_20.1771499193.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1953/1182x591_21.1771499189.png"
-  ],
-  "gps": [
-   "49.216226745723",
-   "16.61424226386"
   ],
   "agent": [
    "Honza Čermák",
