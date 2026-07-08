@@ -135,58 +135,6 @@
   "paras_n": 5
  },
  {
-  "id": 2078,
-  "title": "Pronájem domu 5+kk Třebíč",
-  "address": "Kraj Vysočina, Třebíč, Nové Dvory, Kpt. Nálepky 765/4, 67401",
-  "price": "27 000 Kč / měsíc",
-  "trans": "Pronájem",
-  "label": "Rodinný dům",
-  "short": "Třebíč",
-  "disp": "5+kk",
-  "plocha": null,
-  "pozemek": null,
-  "avail": "Volné od 1.7.2026",
-  "imgs": [
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_2.1779196887.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_1.1779196888.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_3.1779196892.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_4.1779196893.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_5.1779196896.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_6.1779196898.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_7.1779196901.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_8.1779196904.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_9.1779196908.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_10.1779196910.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_11.1779196913.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_12.1779196915.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_13.1779196917.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_14.1779196920.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_15.1779196922.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_16.1779196924.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_17.1779196927.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_18.1779196929.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_19.1779196932.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_20.1779196933.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_21.1779196936.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_22.1779196937.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_23.1779196941.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_24.1779196941.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_sni-mek-obrazovky-2026-05-19-v-15.25.30.1779197154.png",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_sni-mek-obrazovky-2026-05-19-v-15.25.12.1779197154.png"
-  ],
-  "gps": [
-   "49.226199569054",
-   "15.883391038671"
-  ],
-  "agent": [
-   "Honza Čermák",
-   "733 411 446",
-   "reality@cermakhonza.cz"
-  ],
-  "status": "volne",
-  "paras_n": 5
- },
- {
   "id": 2066,
   "title": "Prodej panelového bytu 3+1 v OV s komorou a balkónem",
   "address": "Jihomoravský kraj, Břeclav, Hustopeče, Svat. Čecha",
@@ -287,45 +235,6 @@
    "https://inzeraty.reality2u.cz/cache/offers/1972/1182x591_14.1773049695.jpg",
    "https://inzeraty.reality2u.cz/cache/offers/1972/1182x591_15.1773049698.jpg",
    "https://inzeraty.reality2u.cz/cache/offers/1972/1182x591_sni-mek-obrazovky-2026-03-09-v-11.03.31.1773050784.png"
-  ],
-  "gps": [
-   "49.206569472712",
-   "16.480807052613"
-  ],
-  "agent": [
-   "Honza Čermák",
-   "733 411 446",
-   "reality@cermakhonza.cz"
-  ],
-  "status": "volne",
-  "paras_n": 6
- },
- {
-  "id": 1971,
-  "title": "Pronájem bytu 1+kk po rekonstrukci Žebětín",
-  "address": "Jihomoravský kraj, Brno-město, Brno, Brno-Žebětín, Žebětín, Pramenná 225/3, 64100",
-  "price": "13 000 Kč / měsíc",
-  "trans": "Pronájem",
-  "label": "Byt",
-  "short": "Brno",
-  "disp": "1+kk",
-  "plocha": null,
-  "pozemek": null,
-  "avail": "Ihned",
-  "imgs": [
-   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_1.1773047336.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_2.1773047337.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_3.1773047340.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_4.1773047340.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_5.1773047344.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_6.1773047344.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_7.1773047347.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_8.1773047348.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_9.1773047351.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_10.1773047352.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_11.1773047355.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_12.1773047355.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_sni-mek-obrazovky-2026-03-09-v-11.04.18.1773050914.png"
   ],
   "gps": [
    "49.206569472712",
@@ -584,6 +493,97 @@
   "paras_n": 1
  },
  {
+  "id": 2078,
+  "title": "Pronájem domu 5+kk Třebíč",
+  "address": "Kraj Vysočina, Třebíč, Nové Dvory, Kpt. Nálepky 765/4, 67401",
+  "price": "27 000 Kč / měsíc",
+  "trans": "Pronájem",
+  "label": "Rodinný dům",
+  "short": "Třebíč",
+  "disp": "5+kk",
+  "plocha": null,
+  "pozemek": null,
+  "avail": "Volné od 1.7.2026",
+  "imgs": [
+   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_2.1779196887.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_1.1779196888.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_3.1779196892.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_4.1779196893.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_5.1779196896.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_6.1779196898.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_7.1779196901.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_8.1779196904.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_9.1779196908.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_10.1779196910.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_11.1779196913.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_12.1779196915.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_13.1779196917.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_14.1779196920.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_15.1779196922.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_16.1779196924.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_17.1779196927.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_18.1779196929.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_19.1779196932.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_20.1779196933.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_21.1779196936.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_22.1779196937.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_23.1779196941.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_24.1779196941.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_sni-mek-obrazovky-2026-05-19-v-15.25.30.1779197154.png",
+   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_sni-mek-obrazovky-2026-05-19-v-15.25.12.1779197154.png"
+  ],
+  "gps": [
+   "49.226199569054",
+   "15.883391038671"
+  ],
+  "agent": [
+   "Honza Čermák",
+   "733 411 446",
+   "reality@cermakhonza.cz"
+  ],
+  "status": "prodano",
+  "paras_n": 5
+ },
+ {
+  "id": 1971,
+  "title": "Pronájem bytu 1+kk po rekonstrukci Žebětín",
+  "address": "Jihomoravský kraj, Brno-město, Brno, Brno-Žebětín, Žebětín, Pramenná 225/3, 64100",
+  "price": "13 000 Kč / měsíc",
+  "trans": "Pronájem",
+  "label": "Byt",
+  "short": "Brno",
+  "disp": "1+kk",
+  "plocha": null,
+  "pozemek": null,
+  "avail": "Ihned",
+  "imgs": [
+   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_1.1773047336.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_2.1773047337.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_3.1773047340.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_4.1773047340.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_5.1773047344.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_6.1773047344.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_7.1773047347.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_8.1773047348.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_9.1773047351.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_10.1773047352.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_11.1773047355.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_12.1773047355.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_sni-mek-obrazovky-2026-03-09-v-11.04.18.1773050914.png"
+  ],
+  "gps": [
+   "49.206569472712",
+   "16.480807052613"
+  ],
+  "agent": [
+   "Honza Čermák",
+   "733 411 446",
+   "reality@cermakhonza.cz"
+  ],
+  "status": "prodano",
+  "paras_n": 6
+ },
+ {
   "id": 1763,
   "title": "Prodej nádherné chaty u Langrova lesa Svitavy",
   "address": "Pardubický kraj, Svitavy, Předměstí, U Langrova lesa 100, 56802",
@@ -732,79 +732,5 @@
   ],
   "status": "prodano",
   "paras_n": 6
- },
- {
-  "id": 2062,
-  "title": "Pronájem bytu 3+kk Černého, Brno - Bystrc",
-  "address": "Jihomoravský kraj, Brno-město, Brno, Brno-Bystrc, Bystrc, Černého 837/26, 63500",
-  "price": "22 000 Kč / měsíc",
-  "trans": "Pronájem",
-  "label": "Byt",
-  "short": "Brno",
-  "disp": "3+kk",
-  "plocha": "67 m²",
-  "pozemek": null,
-  "avail": "Volné od 1.6.2026",
-  "imgs": [
-   "https://inzeraty.reality2u.cz/cache/offers/2062/1182x591_1.1778590921.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2062/1182x591_2.1778590922.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2062/1182x591_3.1778590927.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2062/1182x591_4.1778590927.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2062/1182x591_5.1778590931.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2062/1182x591_6.1778590932.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2062/1182x591_7.1778590936.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2062/1182x591_8.1778590938.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2062/1182x591_9.1778590943.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2062/1182x591_10.1778590944.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2062/1182x591_11.1778590948.jpg"
-  ],
-  "gps": [
-   "49.214675539894",
-   "16.524093011723"
-  ],
-  "agent": [
-   "Honza Čermák",
-   "733 411 446",
-   "reality@cermakhonza.cz"
-  ],
-  "status": "prodano",
-  "paras_n": 7
- },
- {
-  "id": 2044,
-  "title": "Pronájem vzdušného bytu 3+kk Černého, Brno - Bystrc",
-  "address": "Jihomoravský kraj, Brno-město, Brno, Brno-Bystrc, Bystrc, Černého 837/26, 63500",
-  "price": "22 000 Kč / měsíc",
-  "trans": "Pronájem",
-  "label": "Byt",
-  "short": "Brno",
-  "disp": "3+kk",
-  "plocha": "67 m²",
-  "pozemek": null,
-  "avail": "Volné od 1.6.2026",
-  "imgs": [
-   "https://inzeraty.reality2u.cz/cache/offers/2044/1182x591_1.1771257412.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2044/1182x591_2.1771257409.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2044/1182x591_4.1771257417.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2044/1182x591_5.1771257417.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2044/1182x591_6.1771257422.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2044/1182x591_7.1771257422.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2044/1182x591_8.1771257426.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2044/1182x591_9.1771257426.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2044/1182x591_10.1771257430.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2044/1182x591_3.1771257413.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2044/1182x591_11.1771257431.jpg"
-  ],
-  "gps": [
-   "49.214675539894",
-   "16.524093011723"
-  ],
-  "agent": [
-   "Honza Čermák",
-   "733 411 446",
-   "reality@cermakhonza.cz"
-  ],
-  "status": "prodano",
-  "paras_n": 7
  }
 ]
