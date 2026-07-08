@@ -234,10 +234,7 @@
   "pozemek": null,
   "avail": null,
   "imgs": [
-   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_20260420-101812.1776693477.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_20260420-101803.1776693481.jpg",
    "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_20260420-095653.1776693497.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_20260420-095806.1776693513.jpg",
    "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_20260420-095516.1776693522.jpg",
    "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_20260420-095537.1776693536.jpg",
    "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_20260420-095908.1776703743.jpg",
@@ -246,8 +243,8 @@
    "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_img-20260420-wa0015.1776703763.jpg",
    "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_img-20260420-wa0013.1776703777.jpg",
    "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_img-20260420-wa0012.1776703800.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_20260420-101024.1776703827.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_img-20260420-wa0010-2-.1776703829.jpg"
+   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_img-20260420-wa0010-2-.1776703829.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_20260420-101812.1783495945.jpg"
   ],
   "gps": [
    "48.943343767471",
@@ -514,7 +511,7 @@
   "id": 1535,
   "title": "Prodej moderní novostavby rodinného domu v Mouřínově, 117m2",
   "address": "Vyškov, Jihomoravský kraj, Mouřínov, 685 01",
-  "price": "9 850 000 Kč",
+  "price": "9 800 000 Kč",
   "trans": "Prodej",
   "label": "Rodinný dům",
   "short": "Mouřínov",
