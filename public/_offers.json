@@ -99,42 +99,6 @@
   "paras_n": 8
  },
  {
-  "id": 2126,
-  "title": "Prodej stavebního pozemku Střelice u Brna",
-  "address": "Brno-venkov, Jihomoravský kraj, Střelice, 664 47",
-  "price": "5 900 000 Kč",
-  "trans": "Prodej",
-  "label": "Pozemek",
-  "short": "Střelice",
-  "disp": null,
-  "plocha": null,
-  "pozemek": null,
-  "avail": null,
-  "imgs": [
-   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_2.1780490260.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_3.1780490260.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_5.1780490271.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_4.1780490273.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_6.1780490283.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_7.1780490285.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_8.1780490293.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_9.1780490294.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_honza-c-erma-k-str-elice-vyznac-eni-do-dronu-vodoznak-1.1780499210.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_honza-c-erma-k-str-elice-vyznac-eni-do-dronu-vodoznak-2.1780499228.jpg"
-  ],
-  "gps": [
-   "49.1502527",
-   "16.5022317"
-  ],
-  "agent": [
-   "Honza Čermák",
-   "733 411 446",
-   "reality@cermakhonza.cz"
-  ],
-  "status": "volne",
-  "paras_n": 5
- },
- {
   "id": 2066,
   "title": "Prodej panelového bytu 3+1 v OV s komorou a balkónem",
   "address": "Jihomoravský kraj, Břeclav, Hustopeče, Svat. Čecha",
@@ -493,6 +457,42 @@
   "paras_n": 1
  },
  {
+  "id": 2126,
+  "title": "Prodej stavebního pozemku Střelice u Brna",
+  "address": "Brno-venkov, Jihomoravský kraj, Střelice, 664 47",
+  "price": "5 900 000 Kč",
+  "trans": "Prodej",
+  "label": "Pozemek",
+  "short": "Střelice",
+  "disp": null,
+  "plocha": null,
+  "pozemek": null,
+  "avail": null,
+  "imgs": [
+   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_2.1780490260.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_3.1780490260.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_5.1780490271.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_4.1780490273.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_6.1780490283.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_7.1780490285.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_8.1780490293.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_9.1780490294.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_honza-c-erma-k-str-elice-vyznac-eni-do-dronu-vodoznak-1.1780499210.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_honza-c-erma-k-str-elice-vyznac-eni-do-dronu-vodoznak-2.1780499228.jpg"
+  ],
+  "gps": [
+   "49.1502527",
+   "16.5022317"
+  ],
+  "agent": [
+   "Honza Čermák",
+   "733 411 446",
+   "reality@cermakhonza.cz"
+  ],
+  "status": "prodano",
+  "paras_n": 5
+ },
+ {
   "id": 2078,
   "title": "Pronájem domu 5+kk Třebíč",
   "address": "Kraj Vysočina, Třebíč, Nové Dvory, Kpt. Nálepky 765/4, 67401",
@@ -696,41 +696,5 @@
   ],
   "status": "prodano",
   "paras_n": 2
- },
- {
-  "id": 2092,
-  "title": "Pronájem bytu 1+kk Brno - Ponava",
-  "address": "Jihomoravský kraj, Brno-město, Brno, Brno-Královo Pole, Ponava, Staňkova 369/12cc, 60200",
-  "price": "11 000 Kč / měsíc",
-  "trans": "Pronájem",
-  "label": "Byt",
-  "short": "Brno",
-  "disp": "1+kk",
-  "plocha": "25 m²",
-  "pozemek": null,
-  "avail": "Volné od 1.7.2026",
-  "imgs": [
-   "https://inzeraty.reality2u.cz/cache/offers/2092/1182x591_img-0821.1779883542.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2092/1182x591_img-0826.1779883544.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2092/1182x591_img-0806.1779883545.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2092/1182x591_img-0798.1779883547.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2092/1182x591_img-0796.1779883549.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2092/1182x591_img-3687-1-.1779883666.jpeg",
-   "https://inzeraty.reality2u.cz/cache/offers/2092/1182x591_img-3695.1779883670.jpeg",
-   "https://inzeraty.reality2u.cz/cache/offers/2092/1182x591_img-3694-1-.1779883670.jpeg",
-   "https://inzeraty.reality2u.cz/cache/offers/2092/1182x591_sni-mek-obrazovky-2026-05-27-v-14.09.23.1779884139.png",
-   "https://inzeraty.reality2u.cz/cache/offers/2092/1182x591_img-3692-1-.1779884173.jpeg"
-  ],
-  "gps": [
-   "49.210457611832",
-   "16.604551631586"
-  ],
-  "agent": [
-   "Honza Čermák",
-   "733 411 446",
-   "reality@cermakhonza.cz"
-  ],
-  "status": "prodano",
-  "paras_n": 6
  }
 ]
