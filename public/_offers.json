@@ -1,5 +1,44 @@
 [
  {
+  "id": 2239,
+  "title": "Pronájem prostorného bytu 1+kk Brno - Slatina, Kigginsova",
+  "address": "Jihomoravský kraj, Brno-město, Brno, Brno-Slatina, Slatina, Kigginsova 1522/6, 62700",
+  "price": "19 000 Kč / měsíc",
+  "trans": "Pronájem",
+  "label": "Byt",
+  "short": "Brno",
+  "disp": "1+kk",
+  "plocha": null,
+  "pozemek": null,
+  "avail": "Volné od 1.9.2026",
+  "imgs": [
+   "https://inzeraty.reality2u.cz/cache/offers/2239/1182x591_2.1783944398.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2239/1182x591_1.1783944398.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2239/1182x591_3.1783944404.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2239/1182x591_4.1783944404.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2239/1182x591_6.1783944411.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2239/1182x591_5.1783944411.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2239/1182x591_7.1783944417.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2239/1182x591_8.1783944418.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2239/1182x591_9.1783944423.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2239/1182x591_10.1783944423.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2239/1182x591_11.1783944428.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2239/1182x591_13.1783944428.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2239/1182x591_12.1783944428.jpg"
+  ],
+  "gps": [
+   "49.18086534159",
+   "16.669945296905"
+  ],
+  "agent": [
+   "Honza Čermák",
+   "733 411 446",
+   "reality@cermakhonza.cz"
+  ],
+  "status": "volne",
+  "paras_n": 6
+ },
+ {
   "id": 2178,
   "title": "Prodej nadstandardního domu v obci Padochov - Oslavany",
   "address": "Brno-venkov, Jihomoravský kraj, Oslavany, 664 12",
