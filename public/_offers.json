@@ -1,5 +1,79 @@
 [
  {
+  "id": 2252,
+  "title": "Pronájem bytu 1+kk po rekonstrukci, Pražská Svitavy",
+  "address": "Pardubický kraj, Svitavy, Předměstí, Pražská 1514/55, 56802",
+  "price": "11 000 Kč / měsíc",
+  "trans": "Pronájem",
+  "label": "Byt",
+  "short": "Svitavy",
+  "disp": "1+kk",
+  "plocha": null,
+  "pozemek": null,
+  "avail": "Ihned",
+  "imgs": [
+   "https://inzeraty.reality2u.cz/cache/offers/2252/1182x591_c-erma-k-svitavy-praz-ska-exterie-r-2.1784281868.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2252/1182x591_c-erma-k-svitavy-praz-ska-exterie-r-1.1784281869.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2252/1182x591_c-erma-k-svitavy-praz-ska-exterie-r-3.1784281872.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2252/1182x591_c-erma-k-svitavy-praz-ska-byt-2-1.1784281879.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2252/1182x591_c-erma-k-svitavy-praz-ska-byt-2-2.1784281879.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2252/1182x591_c-erma-k-svitavy-praz-ska-byt-2-3.1784281883.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2252/1182x591_c-erma-k-svitavy-praz-ska-byt-2-4.1784281883.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2252/1182x591_c-erma-k-svitavy-praz-ska-byt-2-6.1784281888.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2252/1182x591_c-erma-k-svitavy-praz-ska-byt-2-5.1784281888.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2252/1182x591_c-erma-k-svitavy-praz-ska-byt-2-7.1784281892.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2252/1182x591_c-erma-k-svitavy-praz-ska-byt-2-8.1784281892.jpg"
+  ],
+  "gps": [
+   "49.762748912525",
+   "16.454559835162"
+  ],
+  "agent": [
+   "Honza Čermák",
+   "733 411 446",
+   "reality@cermakhonza.cz"
+  ],
+  "status": "volne",
+  "paras_n": 1
+ },
+ {
+  "id": 2251,
+  "title": "Pronájem bytu 1+kk se sklepem a parkovacím stáním, Pražská Svitavy",
+  "address": "Pardubický kraj, Svitavy, Předměstí, Pražská 1514/55, 56802",
+  "price": "10 500 Kč / měsíc",
+  "trans": "Pronájem",
+  "label": "Byt",
+  "short": "Svitavy",
+  "disp": "1+kk",
+  "plocha": null,
+  "pozemek": null,
+  "avail": "Ihned",
+  "imgs": [
+   "https://inzeraty.reality2u.cz/cache/offers/2251/1182x591_c-erma-k-svitavy-praz-ska-byt-1-8.1784281606.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2251/1182x591_c-erma-k-svitavy-praz-ska-byt-1-5.1784281606.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2251/1182x591_c-erma-k-svitavy-praz-ska-byt-1-1.1784281611.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2251/1182x591_c-erma-k-svitavy-praz-ska-byt-1-2.1784281611.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2251/1182x591_c-erma-k-svitavy-praz-ska-byt-1-3.1784281616.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2251/1182x591_c-erma-k-svitavy-praz-ska-byt-1-4.1784281616.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2251/1182x591_c-erma-k-svitavy-praz-ska-byt-1-6.1784281621.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2251/1182x591_c-erma-k-svitavy-praz-ska-byt-1-7.1784281621.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2251/1182x591_c-erma-k-svitavy-praz-ska-exterie-r-2.1784281631.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2251/1182x591_c-erma-k-svitavy-praz-ska-exterie-r-1.1784281633.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2251/1182x591_c-erma-k-svitavy-praz-ska-exterie-r-3.1784281636.jpg"
+  ],
+  "gps": [
+   "49.762748912525",
+   "16.454559835162"
+  ],
+  "agent": [
+   "Honza Čermák",
+   "733 411 446",
+   "reality@cermakhonza.cz"
+  ],
+  "status": "volne",
+  "paras_n": 1
+ },
+ {
   "id": 2239,
   "title": "Pronájem prostorného bytu 1+kk Brno - Slatina, Kigginsova",
   "address": "Jihomoravský kraj, Brno-město, Brno, Brno-Slatina, Slatina, Kigginsova 1522/6, 62700",
