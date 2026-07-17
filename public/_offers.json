@@ -1,5 +1,43 @@
 [
  {
+  "id": 2256,
+  "title": "Pronájem podkrovního bytu 1+kk ve Svitavách, Pražská",
+  "address": "Pardubický kraj, Svitavy, Předměstí, Pražská 1514/55, 56802",
+  "price": "10 000 Kč / měsíc",
+  "trans": "Pronájem",
+  "label": "Byt",
+  "short": "Svitavy",
+  "disp": "1+kk",
+  "plocha": null,
+  "pozemek": null,
+  "avail": "Ihned",
+  "imgs": [
+   "https://inzeraty.reality2u.cz/cache/offers/2256/1182x591_c-erma-k-svitavy-praz-ska-byt-3-1.1784314500.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2256/1182x591_c-erma-k-svitavy-praz-ska-byt-3-2.1784314501.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2256/1182x591_c-erma-k-svitavy-praz-ska-byt-3-3.1784314501.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2256/1182x591_c-erma-k-svitavy-praz-ska-byt-3-4.1784314503.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2256/1182x591_c-erma-k-svitavy-praz-ska-byt-3-5.1784314503.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2256/1182x591_c-erma-k-svitavy-praz-ska-byt-3-6.1784314504.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2256/1182x591_c-erma-k-svitavy-praz-ska-byt-3-7.1784314505.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2256/1182x591_c-erma-k-svitavy-praz-ska-byt-3-8.1784314506.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2256/1182x591_c-erma-k-svitavy-praz-ska-byt-3-9.1784314506.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2256/1182x591_c-erma-k-svitavy-praz-ska-exterie-r-2.1784314509.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2256/1182x591_c-erma-k-svitavy-praz-ska-exterie-r-1.1784314509.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2256/1182x591_c-erma-k-svitavy-praz-ska-exterie-r-3.1784314510.jpg"
+  ],
+  "gps": [
+   "49.762748912525",
+   "16.454559835162"
+  ],
+  "agent": [
+   "Honza Čermák",
+   "733 411 446",
+   "reality@cermakhonza.cz"
+  ],
+  "status": "volne",
+  "paras_n": 1
+ },
+ {
   "id": 2252,
   "title": "Pronájem bytu 1+kk po rekonstrukci, Pražská Svitavy",
   "address": "Pardubický kraj, Svitavy, Předměstí, Pražská 1514/55, 56802",
