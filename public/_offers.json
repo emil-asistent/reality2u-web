@@ -285,43 +285,6 @@
   "paras_n": 1
  },
  {
-  "id": 1979,
-  "title": "Prodej zrekonstruovaného panelového bytu 2+1 v OV",
-  "address": "Jihomoravský kraj, Břeclav, Hustopeče, Větrná",
-  "price": "4 990 000 Kč",
-  "trans": "Prodej",
-  "label": "Byt",
-  "short": "Hustopeče",
-  "disp": "2+1",
-  "plocha": null,
-  "pozemek": null,
-  "avail": null,
-  "imgs": [
-   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_20260420-095653.1776693497.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_20260420-095516.1776693522.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_20260420-095537.1776693536.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_20260420-095908.1776703743.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_img-20260420-wa0017.1776703748.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_img-20260420-wa0016.1776703754.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_img-20260420-wa0015.1776703763.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_img-20260420-wa0013.1776703777.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_img-20260420-wa0012.1776703800.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_img-20260420-wa0010-2-.1776703829.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_20260420-101812.1783495945.jpg"
-  ],
-  "gps": [
-   "48.943343767471",
-   "16.723698674922"
-  ],
-  "agent": [
-   "Jana Vaňková",
-   "774 229 922",
-   "vankova@reality2u.cz"
-  ],
-  "status": "volne",
-  "paras_n": 1
- },
- {
   "id": 1972,
   "title": "Pronájem bytu 2+kk po kompletní rekonstrukci Brno - Žebětín",
   "address": "Jihomoravský kraj, Brno-město, Brno, Brno-Žebětín, Žebětín, Pramenná 225/3, 64100",
@@ -608,6 +571,43 @@
   "paras_n": 1
  },
  {
+  "id": 1979,
+  "title": "Prodej zrekonstruovaného panelového bytu 2+1 v OV",
+  "address": "Jihomoravský kraj, Břeclav, Hustopeče, Větrná",
+  "price": "4 990 000 Kč",
+  "trans": "Prodej",
+  "label": "Byt",
+  "short": "Hustopeče",
+  "disp": "2+1",
+  "plocha": null,
+  "pozemek": null,
+  "avail": null,
+  "imgs": [
+   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_20260420-095653.1776693497.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_20260420-095516.1776693522.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_20260420-095537.1776693536.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_20260420-095908.1776703743.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_img-20260420-wa0017.1776703748.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_img-20260420-wa0016.1776703754.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_img-20260420-wa0015.1776703763.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_img-20260420-wa0013.1776703777.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_img-20260420-wa0012.1776703800.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_img-20260420-wa0010-2-.1776703829.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1979/1182x591_20260420-101812.1783495945.jpg"
+  ],
+  "gps": [
+   "48.943343767471",
+   "16.723698674922"
+  ],
+  "agent": [
+   "Jana Vaňková",
+   "774 229 922",
+   "vankova@reality2u.cz"
+  ],
+  "status": "prodano",
+  "paras_n": 1
+ },
+ {
   "id": 2126,
   "title": "Prodej stavebního pozemku Střelice u Brna",
   "address": "Brno-venkov, Jihomoravský kraj, Střelice, 664 47",
@@ -813,39 +813,5 @@
   ],
   "status": "prodano",
   "paras_n": 8
- },
- {
-  "id": 1493,
-  "title": "Prodej novostavby 1,5+kk Kamechy",
-  "address": "Jihomoravský kraj, Brno-město, Brno, Brno-Žebětín, Křepelčí",
-  "price": "6 100 000 Kč",
-  "trans": "Prodej",
-  "label": "Byt",
-  "short": "Brno",
-  "disp": "1,5+kk",
-  "plocha": null,
-  "pozemek": null,
-  "avail": null,
-  "imgs": [
-   "https://inzeraty.reality2u.cz/cache/offers/1493/1182x591_img-20251010-wa0001.1760093205.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1493/1182x591_img-20251010-wa0002.1760093210.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1493/1182x591_img-20251010-wa0004.1760093213.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1493/1182x591_img-20251010-wa0005.1760093216.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1493/1182x591_img-20251010-wa0006.1760093218.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1493/1182x591_img-20251010-wa0008.1760093223.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1493/1182x591_img-20251010-wa0009.1760093225.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1493/1182x591_img-20251010-wa0012.1760093332.jpg"
-  ],
-  "gps": [
-   "49.216111629688",
-   "16.495155904624"
-  ],
-  "agent": [
-   "Jana Vaňková",
-   "774 229 922",
-   "vankova@reality2u.cz"
-  ],
-  "status": "prodano",
-  "paras_n": 2
  }
 ]
