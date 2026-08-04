@@ -1,5 +1,43 @@
 [
  {
+  "id": 2305,
+  "title": "Prodej moderní novostavby 5+kk v Mouřínově",
+  "address": "Jihomoravský kraj, Vyškov, Mouřínov",
+  "price": "9 800 000 Kč",
+  "trans": "Prodej",
+  "label": "Byt",
+  "short": "Mouřínov",
+  "disp": "5+kk",
+  "plocha": "117 m²",
+  "pozemek": null,
+  "avail": null,
+  "imgs": [
+   "https://inzeraty.reality2u.cz/cache/offers/2305/1182x591_001a-kopie.1785845815.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2305/1182x591_001-2-.1785845824.png",
+   "https://inzeraty.reality2u.cz/cache/offers/2305/1182x591_001.1785845824.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2305/1182x591_001.1785845828.png",
+   "https://inzeraty.reality2u.cz/cache/offers/2305/1182x591_img-20260803-wa0003.1785845881.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2305/1182x591_img-20260803-wa0002.1785845887.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2305/1182x591_img-20260803-wa0004.1785845890.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2305/1182x591_img-20260803-wa0013.1785845893.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2305/1182x591_img-20260803-wa0014.1785845898.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2305/1182x591_img-20260803-wa0017.1785845904.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2305/1182x591_img-20260803-wa0005.1785845908.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/2305/1182x591_img-20260803-wa0015.1785845924.jpg"
+  ],
+  "gps": [
+   "16.9766931",
+   "49.120946"
+  ],
+  "agent": [
+   "Jana Vaňková",
+   "774 229 922",
+   "vankova@reality2u.cz"
+  ],
+  "status": "volne",
+  "paras_n": 1
+ },
+ {
   "id": 2256,
   "title": "Pronájem podkrovního bytu 1+kk ve Svitavách, Pražská",
   "address": "Pardubický kraj, Svitavy, Předměstí, Pražská 1514/55, 56802",
@@ -495,6 +533,40 @@
   "paras_n": 1
  },
  {
+  "id": 914,
+  "title": "Pronájem ordinace Svitavy",
+  "address": "Pardubický kraj, Svitavy, Město, náměstí Míru 63/37, 56802",
+  "price": "7 500 Kč / měsíc",
+  "trans": "Pronájem",
+  "label": "Komerční",
+  "short": "Svitavy",
+  "disp": null,
+  "plocha": null,
+  "pozemek": null,
+  "avail": "Ihned",
+  "imgs": [
+   "https://inzeraty.reality2u.cz/cache/offers/914/1182x591_2.1743086612.jpeg",
+   "https://inzeraty.reality2u.cz/cache/offers/914/1182x591_1.1743086613.jpeg",
+   "https://inzeraty.reality2u.cz/cache/offers/914/1182x591_3.1743086615.jpeg",
+   "https://inzeraty.reality2u.cz/cache/offers/914/1182x591_4.1743086615.jpeg",
+   "https://inzeraty.reality2u.cz/cache/offers/914/1182x591_5.1743086617.jpeg",
+   "https://inzeraty.reality2u.cz/cache/offers/914/1182x591_6.1743086619.jpeg",
+   "https://inzeraty.reality2u.cz/cache/offers/914/1182x591_7.1743086621.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/914/1182x591_8.1743086626.png"
+  ],
+  "gps": [
+   "49.755571628965",
+   "16.470673163757"
+  ],
+  "agent": [
+   "Honza Čermák",
+   "733 411 446",
+   "reality@cermakhonza.cz"
+  ],
+  "status": "volne",
+  "paras_n": 1
+ },
+ {
   "id": 1535,
   "title": "Prodej moderní novostavby rodinného domu v Mouřínově, 117m2",
   "address": "Vyškov, Jihomoravský kraj, Mouřínov, 685 01",
@@ -533,42 +605,8 @@
    "774 229 922",
    "vankova@reality2u.cz"
   ],
-  "status": "volne",
+  "status": "prodano",
   "paras_n": 2
- },
- {
-  "id": 914,
-  "title": "Pronájem ordinace Svitavy",
-  "address": "Pardubický kraj, Svitavy, Město, náměstí Míru 63/37, 56802",
-  "price": "7 500 Kč / měsíc",
-  "trans": "Pronájem",
-  "label": "Komerční",
-  "short": "Svitavy",
-  "disp": null,
-  "plocha": null,
-  "pozemek": null,
-  "avail": "Ihned",
-  "imgs": [
-   "https://inzeraty.reality2u.cz/cache/offers/914/1182x591_2.1743086612.jpeg",
-   "https://inzeraty.reality2u.cz/cache/offers/914/1182x591_1.1743086613.jpeg",
-   "https://inzeraty.reality2u.cz/cache/offers/914/1182x591_3.1743086615.jpeg",
-   "https://inzeraty.reality2u.cz/cache/offers/914/1182x591_4.1743086615.jpeg",
-   "https://inzeraty.reality2u.cz/cache/offers/914/1182x591_5.1743086617.jpeg",
-   "https://inzeraty.reality2u.cz/cache/offers/914/1182x591_6.1743086619.jpeg",
-   "https://inzeraty.reality2u.cz/cache/offers/914/1182x591_7.1743086621.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/914/1182x591_8.1743086626.png"
-  ],
-  "gps": [
-   "49.755571628965",
-   "16.470673163757"
-  ],
-  "agent": [
-   "Honza Čermák",
-   "733 411 446",
-   "reality@cermakhonza.cz"
-  ],
-  "status": "volne",
-  "paras_n": 1
  },
  {
   "id": 1979,
@@ -774,44 +812,5 @@
   ],
   "status": "prodano",
   "paras_n": 7
- },
- {
-  "id": 2125,
-  "title": "Pronájem bytu 2+1 Svitavy Felberova",
-  "address": "Pardubický kraj, Svitavy, Lány, Felberova 673/6, 56802",
-  "price": "13 000 Kč / měsíc",
-  "trans": "Pronájem",
-  "label": "Byt",
-  "short": "Svitavy",
-  "disp": "2+1",
-  "plocha": null,
-  "pozemek": null,
-  "avail": "Ihned",
-  "imgs": [
-   "https://inzeraty.reality2u.cz/cache/offers/2125/1182x591_1.1780478002.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2125/1182x591_2.1780478003.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2125/1182x591_3.1780478010.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2125/1182x591_4.1780478012.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2125/1182x591_5.1780478020.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2125/1182x591_6.1780478020.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2125/1182x591_8.1780478026.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2125/1182x591_7.1780478027.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2125/1182x591_9.1780478030.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2125/1182x591_10.1780478033.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2125/1182x591_11.1780478037.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2125/1182x591_12.1780478038.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2125/1182x591_1-2-.1780479860.png"
-  ],
-  "gps": [
-   "49.746862603126",
-   "16.475021081674"
-  ],
-  "agent": [
-   "Honza Čermák",
-   "733 411 446",
-   "reality@cermakhonza.cz"
-  ],
-  "status": "prodano",
-  "paras_n": 8
  }
 ]
