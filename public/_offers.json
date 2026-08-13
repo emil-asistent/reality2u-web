@@ -492,28 +492,26 @@
   "id": 1688,
   "title": "Novostavba finského srubového domu",
   "address": "Středočeský kraj, Mladá Boleslav, Jivina, 1, 29414",
-  "price": "6 840 000 Kč",
+  "price": "5 600 000 Kč",
   "trans": "Prodej",
   "label": "Rodinný dům",
   "short": "Jivina",
   "disp": "4+kk",
   "plocha": "70 m²",
-  "pozemek": "871 m²",
+  "pozemek": "873 m²",
   "avail": null,
   "imgs": [
-   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_28a061c2-9b19-46d2-9def-eded3fb5065c.1767351560.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_4ae9f4a1-c178-48b5-8da3-87f3c935b711.1767351567.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_c454f3ee-345a-454c-a6e3-13cc610c235c.1767351575.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_6913857e-2e43-4a70-92aa-c2e5ad60cf9a.1767351581.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_270186be-786d-4e55-9a21-47f64969ea2f.1767351604.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_68bbc20f-5531-4a60-8666-d25017dd7bc6.1767351624.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_f26d4737-db4f-4db1-9d6d-d44c92071e3e-1-.1767351630.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_85b4b4f9-c6db-4c0d-9ece-d4211cdf1fd7.1767351635.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_f66d2338-b388-442e-982e-45533ac0a8d8.1767351645.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_82727989-8ebe-4ac3-953d-b0cebd14b8ae.1767351650.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_6a5acfd1-2f1b-4ff0-a85e-3174f82f8a19.1767351655.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_8a7c9a30-f9c7-42d9-896c-a6264d5f3bd8.1767351663.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_cbf52526-81e3-465b-ab53-9f2d02aee5af.1767351671.jpg"
+   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_img-0826.1786625326.jpeg",
+   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_img-0824.1786625327.jpeg",
+   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_img-0836.1786625331.jpeg",
+   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_img-0128.1786625334.jpeg",
+   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_514ca61c-34ad-451c-a3f3-3d8f4066465b.1786625335.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_img-0823.1786625336.jpeg",
+   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_img-0828.1786625340.jpeg",
+   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_img-2240.1786625344.jpeg",
+   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_img-6091.1786625345.jpeg",
+   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_img-6151.1786625349.jpeg",
+   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_img-2600.1786625351.jpeg"
   ],
   "gps": [
    "50.55604743078",
@@ -525,7 +523,7 @@
    "kroupa@money2u.cz"
   ],
   "status": "volne",
-  "paras_n": 6
+  "paras_n": 1
  },
  {
   "id": 1536,
