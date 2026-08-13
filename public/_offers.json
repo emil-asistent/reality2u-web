@@ -1,5 +1,41 @@
 [
  {
+  "id": 5243,
+  "title": "Pronájem bytu 2+1 Brno - Husovice",
+  "address": "Jihomoravský kraj, Brno-město, Brno, Brno-sever, Husovice, Provazníkova 1628/94cc, 61400",
+  "price": "20 000 Kč / měsíc",
+  "trans": "Pronájem",
+  "label": "Byt",
+  "short": "Brno",
+  "disp": "2+1",
+  "plocha": null,
+  "pozemek": null,
+  "avail": "Ihned",
+  "imgs": [
+   "https://inzeraty.reality2u.cz/cache/offers/5243/1182x591_img-5147.1786614840.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5243/1182x591_pu-dorys.1786614841.png",
+   "https://inzeraty.reality2u.cz/cache/offers/5243/1182x591_img-5148.1786614845.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5243/1182x591_img-5149.1786614846.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5243/1182x591_img-5150.1786614849.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5243/1182x591_img-5151.1786614851.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5243/1182x591_img-5152.1786614857.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5243/1182x591_img-5153.1786614859.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5243/1182x591_img-5154.1786614863.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5243/1182x591_img-5155.1786614874.jpg"
+  ],
+  "gps": [
+   "49.213800133051",
+   "16.633726165101"
+  ],
+  "agent": [
+   "Honza Čermák",
+   "733 411 446",
+   "reality@cermakhonza.cz"
+  ],
+  "status": "volne",
+  "paras_n": 7
+ },
+ {
   "id": 2305,
   "title": "Prodej moderní novostavby 5+kk v Mouřínově",
   "address": "Jihomoravský kraj, Vyškov, Mouřínov",
