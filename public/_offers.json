@@ -1,5 +1,55 @@
 [
  {
+  "id": 5244,
+  "title": "Podsklepený RD 5+1 s velkou kuchyní a jídelnou.",
+  "address": "Jihomoravský kraj, Vyškov, Slavkov u Brna",
+  "price": "11 200 000 Kč",
+  "trans": "Prodej",
+  "label": "Rodinný dům",
+  "short": "Slavkov u Brna",
+  "disp": "5+1",
+  "plocha": null,
+  "pozemek": null,
+  "avail": null,
+  "imgs": [
+   "https://inzeraty.reality2u.cz/cache/offers/5244/1182x591_bpei3811.1786706036.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5244/1182x591_bxnr2115.1786706044.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5244/1182x591_20260813-155124.1786706055.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5244/1182x591_20260813-163031.1786706066.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5244/1182x591_20260813-163136.1786706069.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5244/1182x591_20260813-163216.1786706075.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5244/1182x591_fxny9476.1786706077.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5244/1182x591_cuqn7606.1786706083.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5244/1182x591_gays7381.1786706093.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5244/1182x591_itkg6887.1786706103.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5244/1182x591_jnlm6080.1786706108.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5244/1182x591_wojr4861.1786706121.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5244/1182x591_nvaq5264.1786706142.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5244/1182x591_pqus1653.1786706155.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5244/1182x591_saky1004.1786706165.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5244/1182x591_vwvr5771.1786706179.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5244/1182x591_uynf5451.1786706186.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5244/1182x591_ttuv4118.1786706195.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5244/1182x591_symy6724.1786706212.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5244/1182x591_20260813-155336.1786706243.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5244/1182x591_irsp0596.1786706299.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5244/1182x591_okvi8546.1786706328.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5244/1182x591_wzln2481.1786706393.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5244/1182x591_20260813-162212.1786706791.jpg"
+  ],
+  "gps": [
+   "49.151246635202",
+   "16.874681006373"
+  ],
+  "agent": [
+   "Jana Vaňková",
+   "774 229 922",
+   "vankova@reality2u.cz"
+  ],
+  "status": "volne",
+  "paras_n": 1
+ },
+ {
   "id": 5243,
   "title": "Pronájem bytu 2+1 Brno - Husovice",
   "address": "Jihomoravský kraj, Brno-město, Brno, Brno-sever, Husovice, Provazníkova 1628/94cc, 61400",
