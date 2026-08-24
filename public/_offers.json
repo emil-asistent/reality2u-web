@@ -1,5 +1,45 @@
 [
  {
+  "id": 5278,
+  "title": "Pronájem bytu 2+1 Šlapanice",
+  "address": "Jihomoravský kraj, Brno-venkov, Šlapanice, Brněnská 1440/134, 66451",
+  "price": "20 000 Kč / měsíc",
+  "trans": "Pronájem",
+  "label": "Byt",
+  "short": "Šlapanice",
+  "disp": "2+1",
+  "plocha": "58 m²",
+  "pozemek": null,
+  "avail": "Ihned",
+  "imgs": [
+   "https://inzeraty.reality2u.cz/cache/offers/5278/1182x591_1.1787597522.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5278/1182x591_2.1787597522.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5278/1182x591_3.1787597523.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5278/1182x591_4.1787597524.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5278/1182x591_5.1787597525.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5278/1182x591_6.1787597526.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5278/1182x591_7.1787597527.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5278/1182x591_8.1787597529.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5278/1182x591_9.1787597530.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5278/1182x591_10.1787597531.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5278/1182x591_11.1787597532.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5278/1182x591_12.1787597534.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5278/1182x591_pu-dorys.1787597534.png",
+   "https://inzeraty.reality2u.cz/cache/offers/5278/1182x591_13.1787597534.jpg"
+  ],
+  "gps": [
+   "49.169017877565",
+   "16.71679982227"
+  ],
+  "agent": [
+   "Honza Čermák",
+   "733 411 446",
+   "reality@cermakhonza.cz"
+  ],
+  "status": "volne",
+  "paras_n": 4
+ },
+ {
   "id": 5273,
   "title": "Pronájem garáže Brno - Štýřice",
   "address": "Jihomoravský kraj, Brno-město, Brno",
