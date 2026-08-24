@@ -1,5 +1,37 @@
 [
  {
+  "id": 5273,
+  "title": "Pronájem garáže Brno - Štýřice",
+  "address": "Jihomoravský kraj, Brno-město, Brno",
+  "price": "3 000 Kč / měsíc",
+  "trans": "Pronájem",
+  "label": "Nemovitost",
+  "short": "Brno",
+  "disp": null,
+  "plocha": null,
+  "pozemek": null,
+  "avail": "Ihned",
+  "imgs": [
+   "https://inzeraty.reality2u.cz/cache/offers/5273/1182x591_1.1787572127.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5273/1182x591_3.1787572129.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5273/1182x591_2.1787572129.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5273/1182x591_4.1787572131.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5273/1182x591_5.1787572131.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5273/1182x591_6.1787572133.jpg"
+  ],
+  "gps": [
+   "49.1791066",
+   "16.5902397"
+  ],
+  "agent": [
+   "Honza Čermák",
+   "733 411 446",
+   "reality@cermakhonza.cz"
+  ],
+  "status": "volne",
+  "paras_n": 1
+ },
+ {
   "id": 5244,
   "title": "Podsklepený RD 5+1 s velkou kuchyní a jídelnou.",
   "address": "Jihomoravský kraj, Vyškov, Slavkov u Brna",
