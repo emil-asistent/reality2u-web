@@ -70,6 +70,81 @@ STATUS_COLOR = {
     "prodano":     ("rgba(74,85,104,.96)",  "#fff"),
 }
 
+# ───────────────────────── SEO / OG / favicon ─────────────────────────
+SITE        = "https://reality2u.cz"
+THEME_COLOR = "#0A1628"
+OG_DEFAULT  = SITE + "/assets/og-default.jpg"
+
+FAVICON_TAGS = (
+    '<link rel="icon" href="/favicon.ico" sizes="any">'
+    '<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">'
+    '<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">'
+    '<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">'
+    '<link rel="manifest" href="/site.webmanifest">'
+    '<meta name="theme-color" content="' + THEME_COLOR + '">'
+)
+
+# popisky + cesta (čisté URL) pro statické stránky
+PAGE_META = {
+    "index.html":      ("reality2u — realitní kancelář v Brně. Prodej a pronájem bytů, domů a pozemků, bezplatný odhad nemovitosti a kompletní realitní servis s férovým jednáním.", "/"),
+    "nemovitosti.html":("Aktuální nabídka nemovitostí reality2u — byty, domy a pozemky k prodeji i pronájmu v Brně a okolí. Fotografie, dispozice a ceny na jednom místě.", "/nemovitosti"),
+    "sluzby.html":     ("Kompletní realitní servis reality2u — prodej, pronájem, výkup, odhad ceny, právní i hypoteční servis. Provedeme vás celým obchodem od A do Z.", "/sluzby"),
+    "o-nas.html":      ("Realitní kancelář reality2u s.r.o. z Brna. Kdo jsme, jak pracujeme a proč nám klienti důvěřují — férové jednání a osobní přístup.", "/o-nas"),
+    "kontakt.html":    ("Kontaktujte reality2u — realitní kancelář Brno, Tolstého 35. Telefon +420 722 967 163, e-mail asistentka@reality2u.cz.", "/kontakt"),
+    "kalkulacka.html": ("Hypoteční kalkulačka reality2u — spočítejte si měsíční splátku hypotéky online, rychle a zdarma.", "/kalkulacka"),
+    "odhad.html":      ("Bezplatný odhad tržní ceny nemovitosti od reality2u. Zjistěte, za kolik můžete prodat byt, dům nebo pozemek.", "/odhad"),
+}
+
+def seo_head(title, desc, path, og_image=None, og_type="website"):
+    """Blok SEO/OG/Twitter/favicon tagů (bez <title>) k vložení do <head>."""
+    url = SITE + path
+    img = og_image or OG_DEFAULT
+    d = html.escape((desc or "").strip())
+    t = html.escape((title or "").strip())
+    iu = html.escape(img)
+    return (
+        f'<meta name="description" content="{d}">'
+        f'<meta name="robots" content="index, follow, max-image-preview:large">'
+        f'<link rel="canonical" href="{url}">'
+        f'<meta property="og:type" content="{og_type}">'
+        f'<meta property="og:site_name" content="reality2u">'
+        f'<meta property="og:locale" content="cs_CZ">'
+        f'<meta property="og:title" content="{t}">'
+        f'<meta property="og:description" content="{d}">'
+        f'<meta property="og:url" content="{url}">'
+        f'<meta property="og:image" content="{iu}">'
+        f'<meta name="twitter:card" content="summary_large_image">'
+        f'<meta name="twitter:title" content="{t}">'
+        f'<meta name="twitter:description" content="{d}">'
+        f'<meta name="twitter:image" content="{iu}">'
+        + FAVICON_TAGS
+    )
+
+def inject_seo(s, block, new_title=None):
+    """Vloží SEO blok do <head> (za </title>); volitelně přepíše <title>."""
+    if new_title:
+        s = re.sub(r"<title>.*?</title>", "<title>" + html.escape(new_title) + "</title>",
+                   s, count=1, flags=re.S)
+    if "</title>" in s:
+        return s.replace("</title>", "</title>\n" + block, 1)
+    return s.replace("<head>", "<head>\n" + block, 1)
+
+def detail_desc(o):
+    """Sestaví meta description nemovitosti z dostupných dat."""
+    bits = [o.get("trans") or ""]
+    lab = (o.get("label") or "") + ((" " + o["disp"]) if o.get("disp") else "")
+    bits.append(lab.strip())
+    if o.get("plocha"):
+        pl = str(o["plocha"]); bits.append(pl + ("" if re.search(r"m", pl) else " m²"))
+    if o.get("short"):  bits.append(o["short"])
+    if o.get("price"):  bits.append(o["price"])
+    head = " · ".join(b for b in bits if b)
+    extra = o["paras"][0] if o.get("paras") else ""
+    d = (head + ". " + extra).strip()
+    if len(d) > 195:
+        d = d[:192].rsplit(" ", 1)[0] + "…"
+    return d
+
 def slugify(s):
     s = unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode()
     s = re.sub(r"[^A-Za-z0-9]+", "-", s).strip("-").lower()
@@ -516,22 +591,18 @@ def render_detail(o, offers):
     else:
         status_banner = ""
     badge = o["trans"]
+    slug = detail_slug(o)
+    canonical = f"{SITE}/{slug}"
+    seo = seo_head(o["title"], detail_desc(o), "/" + slug,
+                   og_image=(o["imgs"][0] if o.get("imgs") else None))
 
-    # ── SEO/GEO: canonical, OG/twitter, JSON-LD (jen z dat, co už o[] má) ──
-    canonical = f"https://reality2u.cz/{detail_slug(o)}"
-    desc_src = (o["paras"][0] if o["paras"] else
-                f"{o['trans']} {o['label'].lower()}, {o['short']}.")
-    meta_desc = esc((desc_src[:157] + "…") if len(desc_src) > 158 else desc_src)
-    ogimage = o["imgs"][0] if o["imgs"] else "https://reality2u.cz/assets/hero-bg.jpg"
+    # GEO: JSON-LD RealEstateListing z dat inzerátu (nic nevymýšlet, jen co je v o[])
     price_num = re.sub(r"\D", "", o["price"] or "")
     ld = {
-        "@context": "https://schema.org",
-        "@type": "RealEstateListing",
-        "@id": canonical + "#listing",
-        "url": canonical,
-        "name": o["title"],
-        "description": desc_src,
-        "image": o["imgs"][:5] if o["imgs"] else [ogimage],
+        "@context": "https://schema.org", "@type": "RealEstateListing",
+        "@id": canonical + "#listing", "url": canonical, "name": o["title"],
+        "description": detail_desc(o),
+        "image": o["imgs"][:5] if o["imgs"] else [OG_DEFAULT],
     }
     if o["address"]:
         ld["address"] = {"@type": "PostalAddress", "addressLocality": o["short"],
@@ -539,22 +610,19 @@ def render_detail(o, offers):
     if o["gps"][0] and o["gps"][1]:
         ld["geo"] = {"@type": "GeoCoordinates", "latitude": o["gps"][0], "longitude": o["gps"][1]}
     if price_num:
-        ld["offers"] = {
-            "@type": "Offer", "price": price_num, "priceCurrency": "CZK",
-            "availability": ("https://schema.org/SoldOut" if status == "prodano"
-                              else "https://schema.org/InStock"),
-            "url": canonical,
-        }
+        ld["offers"] = {"@type": "Offer", "price": price_num, "priceCurrency": "CZK",
+                         "availability": ("https://schema.org/SoldOut" if status == "prodano"
+                                          else "https://schema.org/InStock"),
+                         "url": canonical}
     jsonld = json.dumps(ld, ensure_ascii=False).replace("</", "<\\/")
 
     return DETAIL_TPL.format(
         title=esc(o["title"]), badge=badge, label=esc(o["label"]),
-        short=esc(o["short"]), price=esc(o["price"]),
+        short=esc(o["short"]), price=esc(o["price"]), seo_head=seo, jsonld=jsonld,
         hstats=hstats, gallery=gallery, params=params, paras=paras, similar=similar,
         agent=esc(name), initials=initials(name), phone=esc(phone), phone_tel=phone_tel,
         mail=esc(mail), hypo=hypo, imgs_js=imgs_js,
-        status_badge=status_badge, status_banner=status_banner,
-        canonical=canonical, meta_desc=meta_desc, ogimage=ogimage, jsonld=jsonld)
+        status_badge=status_badge, status_banner=status_banner)
 
 # ───────────────────────── shared chrome (z 1849) ─────────────────────────
 NAV = '''<nav id="navbar">
@@ -654,20 +722,7 @@ DETAIL_TPL = '''<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title} — reality2u</title>
-<meta name="description" content="{meta_desc}">
-<link rel="canonical" href="{canonical}">
-<meta name="theme-color" content="#0A1628">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="cs_CZ">
-<meta property="og:site_name" content="reality2u">
-<meta property="og:title" content="{title} — reality2u">
-<meta property="og:description" content="{meta_desc}">
-<meta property="og:url" content="{canonical}">
-<meta property="og:image" content="{ogimage}">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{title} — reality2u">
-<meta name="twitter:description" content="{meta_desc}">
-<meta name="twitter:image" content="{ogimage}">
+{seo_head}
 <script type="application/ld+json">{jsonld}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -840,7 +895,7 @@ DETAIL_TPL = DETAIL_TPL.replace("{nav}", NAV).replace("{footer}", FOOTER).replac
 # ───────────────────────── build ─────────────────────────
 SHELL_KEEP = ["index.html", "sluzby.html", "o-nas.html", "kontakt.html",
               "kalkulacka.html", "odhad.html", "vercel.json",
-              "robots.txt", "llms.txt", "7406f6dfb7d70fe1892248ff76ab8559.txt"]
+              "llms.txt", "7406f6dfb7d70fe1892248ff76ab8559.txt"]
 
 def build(out_dir, offline=False):
     print(f"[1/5] seznam aktivních inzerátů…")
@@ -904,6 +959,11 @@ def build(out_dir, offline=False):
         s = os.path.join(TEMPLATE_DIR, f)
         if os.path.exists(s):
             shutil.copy2(s, os.path.join(out_dir, f))
+    # ikony do rootu (favicon.ico, apple-touch, manifest) pro auto-discovery
+    for ic in ("favicon.ico", "apple-touch-icon.png", "site.webmanifest"):
+        sp = os.path.join(src_assets, ic)
+        if os.path.exists(sp):
+            shutil.copy2(sp, os.path.join(out_dir, ic))
 
     # homepage: „Vybrané nemovitosti“ = 3 aktuální inzeráty z feedu (vzhled 1:1)
     idx_path = os.path.join(out_dir, "index.html")
@@ -936,6 +996,19 @@ def build(out_dir, offline=False):
         page = render_detail(o, visible)   # podobné nemovitosti = z aktivních
         open(os.path.join(out_dir, slug_by_id[o["id"]] + ".html"), "w", encoding="utf-8").write(page)
 
+    # SEO/OG/favicon do statických stránek + listingu (detaily mají SEO z šablony)
+    for fn, (mdesc, mpath) in PAGE_META.items():
+        pp = os.path.join(out_dir, fn)
+        if not os.path.exists(pp):
+            continue
+        ss = open(pp, encoding="utf-8").read()
+        if "og:title" in ss:
+            continue
+        mt = re.search(r"<title>(.*?)</title>", ss, re.S)
+        ptitle = html.unescape(mt.group(1)).strip() if mt else "reality2u"
+        ss = inject_seo(ss, seo_head(ptitle, mdesc, mpath))
+        open(pp, "w", encoding="utf-8").write(ss)
+
     # čisté URL ve VŠECH stránkách (shell + generované)
     for f in os.listdir(out_dir):
         if f.endswith(".html"):
@@ -943,18 +1016,18 @@ def build(out_dir, offline=False):
             s = open(p, encoding="utf-8").read()
             open(p, "w", encoding="utf-8").write(cleanify(s, slug_by_id))
 
-    # sitemap.xml (statické stránky + aktuální detaily, čisté URL) — GEO/SEO
-    static_pages = ["", "nemovitosti", "sluzby", "o-nas", "kontakt", "kalkulacka", "odhad"]
-    urls = [f"https://reality2u.cz/{p}" for p in static_pages]
-    urls += [f"https://reality2u.cz/{slug_by_id[o['id']]}" for o in render_offers]
+    # robots.txt + sitemap.xml
+    open(os.path.join(out_dir, "robots.txt"), "w", encoding="utf-8").write(
+        "User-agent: *\nAllow: /\n\nSitemap: %s/sitemap.xml\n\n"
+        "# LLM summary: %s/llms.txt\n" % (SITE, SITE))
     today = time.strftime("%Y-%m-%d")
+    sm_urls = ["/", "/nemovitosti", "/sluzby", "/o-nas", "/odhad", "/kalkulacka", "/kontakt"]
+    sm_urls += ["/" + slug_by_id[o["id"]] for o in render_offers if o.get("status") != "prodano"]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    for u in urls:
-        prio = "1.0" if u == "https://reality2u.cz/" else "0.6"
-        sm.append(f"  <url><loc>{u}</loc><lastmod>{today}</lastmod>"
-                  f"<changefreq>daily</changefreq><priority>{prio}</priority></url>")
-    sm.append("</urlset>")
+    for u in sm_urls:
+        sm.append('  <url><loc>%s%s</loc><lastmod>%s</lastmod></url>' % (SITE, u, today))
+    sm.append('</urlset>')
     open(os.path.join(out_dir, "sitemap.xml"), "w", encoding="utf-8").write("\n".join(sm) + "\n")
 
     # snapshot (pro change-detection v refresh.sh) + archiv
