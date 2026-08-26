@@ -516,13 +516,45 @@ def render_detail(o, offers):
     else:
         status_banner = ""
     badge = o["trans"]
+
+    # ── SEO/GEO: canonical, OG/twitter, JSON-LD (jen z dat, co už o[] má) ──
+    canonical = f"https://reality2u.cz/{detail_slug(o)}"
+    desc_src = (o["paras"][0] if o["paras"] else
+                f"{o['trans']} {o['label'].lower()}, {o['short']}.")
+    meta_desc = esc((desc_src[:157] + "…") if len(desc_src) > 158 else desc_src)
+    ogimage = o["imgs"][0] if o["imgs"] else "https://reality2u.cz/assets/hero-bg.jpg"
+    price_num = re.sub(r"\D", "", o["price"] or "")
+    ld = {
+        "@context": "https://schema.org",
+        "@type": "RealEstateListing",
+        "@id": canonical + "#listing",
+        "url": canonical,
+        "name": o["title"],
+        "description": desc_src,
+        "image": o["imgs"][:5] if o["imgs"] else [ogimage],
+    }
+    if o["address"]:
+        ld["address"] = {"@type": "PostalAddress", "addressLocality": o["short"],
+                          "streetAddress": o["address"], "addressCountry": "CZ"}
+    if o["gps"][0] and o["gps"][1]:
+        ld["geo"] = {"@type": "GeoCoordinates", "latitude": o["gps"][0], "longitude": o["gps"][1]}
+    if price_num:
+        ld["offers"] = {
+            "@type": "Offer", "price": price_num, "priceCurrency": "CZK",
+            "availability": ("https://schema.org/SoldOut" if status == "prodano"
+                              else "https://schema.org/InStock"),
+            "url": canonical,
+        }
+    jsonld = json.dumps(ld, ensure_ascii=False).replace("</", "<\\/")
+
     return DETAIL_TPL.format(
         title=esc(o["title"]), badge=badge, label=esc(o["label"]),
         short=esc(o["short"]), price=esc(o["price"]),
         hstats=hstats, gallery=gallery, params=params, paras=paras, similar=similar,
         agent=esc(name), initials=initials(name), phone=esc(phone), phone_tel=phone_tel,
         mail=esc(mail), hypo=hypo, imgs_js=imgs_js,
-        status_badge=status_badge, status_banner=status_banner)
+        status_badge=status_badge, status_banner=status_banner,
+        canonical=canonical, meta_desc=meta_desc, ogimage=ogimage, jsonld=jsonld)
 
 # ───────────────────────── shared chrome (z 1849) ─────────────────────────
 NAV = '''<nav id="navbar">
@@ -622,6 +654,21 @@ DETAIL_TPL = '''<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title} — reality2u</title>
+<meta name="description" content="{meta_desc}">
+<link rel="canonical" href="{canonical}">
+<meta name="theme-color" content="#0A1628">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:site_name" content="reality2u">
+<meta property="og:title" content="{title} — reality2u">
+<meta property="og:description" content="{meta_desc}">
+<meta property="og:url" content="{canonical}">
+<meta property="og:image" content="{ogimage}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{title} — reality2u">
+<meta name="twitter:description" content="{meta_desc}">
+<meta name="twitter:image" content="{ogimage}">
+<script type="application/ld+json">{jsonld}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -792,7 +839,8 @@ DETAIL_TPL = DETAIL_TPL.replace("{nav}", NAV).replace("{footer}", FOOTER).replac
 
 # ───────────────────────── build ─────────────────────────
 SHELL_KEEP = ["index.html", "sluzby.html", "o-nas.html", "kontakt.html",
-              "kalkulacka.html", "odhad.html", "vercel.json"]
+              "kalkulacka.html", "odhad.html", "vercel.json",
+              "robots.txt", "llms.txt", "7406f6dfb7d70fe1892248ff76ab8559.txt"]
 
 def build(out_dir, offline=False):
     print(f"[1/5] seznam aktivních inzerátů…")
@@ -894,6 +942,20 @@ def build(out_dir, offline=False):
             p = os.path.join(out_dir, f)
             s = open(p, encoding="utf-8").read()
             open(p, "w", encoding="utf-8").write(cleanify(s, slug_by_id))
+
+    # sitemap.xml (statické stránky + aktuální detaily, čisté URL) — GEO/SEO
+    static_pages = ["", "nemovitosti", "sluzby", "o-nas", "kontakt", "kalkulacka", "odhad"]
+    urls = [f"https://reality2u.cz/{p}" for p in static_pages]
+    urls += [f"https://reality2u.cz/{slug_by_id[o['id']]}" for o in render_offers]
+    today = time.strftime("%Y-%m-%d")
+    sm = ['<?xml version="1.0" encoding="UTF-8"?>',
+          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    for u in urls:
+        prio = "1.0" if u == "https://reality2u.cz/" else "0.6"
+        sm.append(f"  <url><loc>{u}</loc><lastmod>{today}</lastmod>"
+                  f"<changefreq>daily</changefreq><priority>{prio}</priority></url>")
+    sm.append("</urlset>")
+    open(os.path.join(out_dir, "sitemap.xml"), "w", encoding="utf-8").write("\n".join(sm) + "\n")
 
     # snapshot (pro change-detection v refresh.sh) + archiv
     snap = [{k: v for k, v in o.items() if k != "paras"} | {"paras_n": len(o["paras"])}

@@ -1,0 +1,13 @@
+# reality2u
+
+> Realitní portál a makléřská služba, součást skupiny money2u. Prodej, koupě i pronájem nemovitostí v Brně a okolí s férovou provizí.
+
+Web: https://reality2u.cz/
+
+## Kontakt
+- Telefon: +420 799 794 670
+- E-mail: info@reality2u.cz
+- Adresa: Tolstého 35, Brno
+
+## Odkazy
+- https://money2u.cz
