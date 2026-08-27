@@ -40,38 +40,6 @@
   "paras_n": 4
  },
  {
-  "id": 5273,
-  "title": "Pronájem garáže Brno - Štýřice",
-  "address": "Jihomoravský kraj, Brno-město, Brno",
-  "price": "3 000 Kč / měsíc",
-  "trans": "Pronájem",
-  "label": "Nemovitost",
-  "short": "Brno",
-  "disp": null,
-  "plocha": null,
-  "pozemek": null,
-  "avail": "Ihned",
-  "imgs": [
-   "https://inzeraty.reality2u.cz/cache/offers/5273/1182x591_1.1787572127.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5273/1182x591_3.1787572129.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5273/1182x591_2.1787572129.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5273/1182x591_4.1787572131.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5273/1182x591_5.1787572131.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5273/1182x591_6.1787572133.jpg"
-  ],
-  "gps": [
-   "49.1791066",
-   "16.5902397"
-  ],
-  "agent": [
-   "Honza Čermák",
-   "733 411 446",
-   "reality@cermakhonza.cz"
-  ],
-  "status": "volne",
-  "paras_n": 1
- },
- {
   "id": 5244,
   "title": "Podsklepený RD 5+1 s velkou kuchyní a jídelnou.",
   "address": "Jihomoravský kraj, Vyškov, Slavkov u Brna",
@@ -721,6 +689,38 @@
   "paras_n": 1
  },
  {
+  "id": 5273,
+  "title": "Pronájem garáže Brno - Štýřice",
+  "address": "Jihomoravský kraj, Brno-město, Brno",
+  "price": "3 000 Kč / měsíc",
+  "trans": "Pronájem",
+  "label": "Nemovitost",
+  "short": "Brno",
+  "disp": null,
+  "plocha": null,
+  "pozemek": null,
+  "avail": "Ihned",
+  "imgs": [
+   "https://inzeraty.reality2u.cz/cache/offers/5273/1182x591_1.1787572127.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5273/1182x591_3.1787572129.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5273/1182x591_2.1787572129.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5273/1182x591_4.1787572131.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5273/1182x591_5.1787572131.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5273/1182x591_6.1787572133.jpg"
+  ],
+  "gps": [
+   "49.1791066",
+   "16.5902397"
+  ],
+  "agent": [
+   "Honza Čermák",
+   "733 411 446",
+   "reality@cermakhonza.cz"
+  ],
+  "status": "prodano",
+  "paras_n": 1
+ },
+ {
   "id": 1535,
   "title": "Prodej moderní novostavby rodinného domu v Mouřínově, 117m2",
   "address": "Vyškov, Jihomoravský kraj, Mouřínov, 685 01",
@@ -925,46 +925,5 @@
   ],
   "status": "prodano",
   "paras_n": 6
- },
- {
-  "id": 1763,
-  "title": "Prodej nádherné chaty u Langrova lesa Svitavy",
-  "address": "Pardubický kraj, Svitavy, Předměstí, U Langrova lesa 100, 56802",
-  "price": "2 690 000 Kč",
-  "trans": "Prodej",
-  "label": "Chata",
-  "short": "Svitavy",
-  "disp": null,
-  "plocha": "37 m²",
-  "pozemek": "898 m²",
-  "avail": null,
-  "imgs": [
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_1.1770041549.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_2.1770041549.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_3.1770041558.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_4.1770041559.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_5.1770041569.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_6.1770041570.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_7.1770041579.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_8.1770041580.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_9.1770041590.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_10.1770041591.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_11.1770041599.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_12.1770041600.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_sv-chatka-2.1771944565.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_sv-chatka-6.1771944567.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1763/1182x591_sv-chatka-7.1771944577.jpg"
-  ],
-  "gps": [
-   "49.754915907319",
-   "16.444267836568"
-  ],
-  "agent": [
-   "Honza Čermák",
-   "733 411 446",
-   "reality@cermakhonza.cz"
-  ],
-  "status": "prodano",
-  "paras_n": 7
  }
 ]
