@@ -585,56 +585,6 @@
   "paras_n": 6
  },
  {
-  "id": 1946,
-  "title": "Prodej prostorné chalupy 8+1 v Brodě nad Dyjí",
-  "address": "Jihomoravský kraj, Břeclav, Brod nad Dyjí",
-  "price": "6 300 000 Kč",
-  "trans": "Prodej",
-  "label": "Chalupa",
-  "short": "Brod nad Dyjí",
-  "disp": "8+1",
-  "plocha": "798 m²",
-  "pozemek": "1 522 m²",
-  "avail": null,
-  "imgs": [
-   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_10.1775726724.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_13.1775727597.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_14.1775727603.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_17.1775727609.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_24.1775727617.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_27.1775727622.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_31.1775727627.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_37.1775727647.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_38.1775727652.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_41a.1775727669.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_57.1775727677.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_68.1775727686.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_rd-brod-nad-dyji-hlavni-budova.1775727693.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_rd-brod-nad-dyji-vedlejsi-budova.1775727698.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_dsc03570.1775727709.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_dsc03572.1775727720.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_dsc03576.1775727726.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_dsc03577.1775727733.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_dsc03585.1775727738.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_dsc03606.1775727748.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_dsc03601.1775727753.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_dsc03602.1775727763.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_dsc03602.1775727776.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_dsc03612.1775727786.jpg"
-  ],
-  "gps": [
-   "48.874777240135",
-   "16.529818022022"
-  ],
-  "agent": [
-   "Jana Vaňková",
-   "774 229 922",
-   "vankova@reality2u.cz"
-  ],
-  "status": "volne",
-  "paras_n": 1
- },
- {
   "id": 1688,
   "title": "Novostavba finského srubového domu",
   "address": "Středočeský kraj, Mladá Boleslav, Jivina, 1, 29414",
@@ -742,6 +692,56 @@
    "reality@cermakhonza.cz"
   ],
   "status": "volne",
+  "paras_n": 1
+ },
+ {
+  "id": 1946,
+  "title": "Prodej prostorné chalupy 8+1 v Brodě nad Dyjí",
+  "address": "Jihomoravský kraj, Břeclav, Brod nad Dyjí",
+  "price": "6 300 000 Kč",
+  "trans": "Prodej",
+  "label": "Chalupa",
+  "short": "Brod nad Dyjí",
+  "disp": "8+1",
+  "plocha": "798 m²",
+  "pozemek": "1 522 m²",
+  "avail": null,
+  "imgs": [
+   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_10.1775726724.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_13.1775727597.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_14.1775727603.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_17.1775727609.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_24.1775727617.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_27.1775727622.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_31.1775727627.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_37.1775727647.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_38.1775727652.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_41a.1775727669.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_57.1775727677.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_68.1775727686.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_rd-brod-nad-dyji-hlavni-budova.1775727693.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_rd-brod-nad-dyji-vedlejsi-budova.1775727698.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_dsc03570.1775727709.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_dsc03572.1775727720.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_dsc03576.1775727726.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_dsc03577.1775727733.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_dsc03585.1775727738.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_dsc03606.1775727748.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_dsc03601.1775727753.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_dsc03602.1775727763.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_dsc03602.1775727776.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/1946/1182x591_dsc03612.1775727786.jpg"
+  ],
+  "gps": [
+   "48.874777240135",
+   "16.529818022022"
+  ],
+  "agent": [
+   "Jana Vaňková",
+   "774 229 922",
+   "vankova@reality2u.cz"
+  ],
+  "status": "prodano",
   "paras_n": 1
  },
  {
@@ -942,44 +942,5 @@
   ],
   "status": "prodano",
   "paras_n": 5
- },
- {
-  "id": 1971,
-  "title": "Pronájem bytu 1+kk po rekonstrukci Žebětín",
-  "address": "Jihomoravský kraj, Brno-město, Brno, Brno-Žebětín, Žebětín, Pramenná 225/3, 64100",
-  "price": "13 000 Kč / měsíc",
-  "trans": "Pronájem",
-  "label": "Byt",
-  "short": "Brno",
-  "disp": "1+kk",
-  "plocha": null,
-  "pozemek": null,
-  "avail": "Ihned",
-  "imgs": [
-   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_1.1773047336.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_2.1773047337.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_3.1773047340.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_4.1773047340.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_5.1773047344.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_6.1773047344.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_7.1773047347.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_8.1773047348.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_9.1773047351.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_10.1773047352.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_11.1773047355.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_12.1773047355.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1971/1182x591_sni-mek-obrazovky-2026-03-09-v-11.04.18.1773050914.png"
-  ],
-  "gps": [
-   "49.206569472712",
-   "16.480807052613"
-  ],
-  "agent": [
-   "Honza Čermák",
-   "733 411 446",
-   "reality@cermakhonza.cz"
-  ],
-  "status": "prodano",
-  "paras_n": 6
  }
 ]
