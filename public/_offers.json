@@ -1,5 +1,51 @@
 [
  {
+  "id": 5337,
+  "title": "Prodej moderního cihlového bytu 3+1 s balkonem v žádané lokalitě Židlochovic",
+  "address": "Jihomoravský kraj, Brno-venkov, Židlochovice, Joštova",
+  "price": "Cena na vyžádání",
+  "trans": "Prodej",
+  "label": "Byt",
+  "short": "Židlochovice",
+  "disp": "3+1",
+  "plocha": null,
+  "pozemek": null,
+  "avail": null,
+  "imgs": [
+   "https://inzeraty.reality2u.cz/cache/offers/5337/1182x591_20260908-121102.1788876669.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5337/1182x591_20260908-121051.1788876682.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5337/1182x591_20260908-115807.1788876688.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5337/1182x591_20260908-115759.1788876692.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5337/1182x591_20260908-120040.1788876720.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5337/1182x591_20260908-120145-1-.1788876727.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5337/1182x591_20260908-120053.1788876740.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5337/1182x591_20260908-115343.1788876743.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5337/1182x591_20260908-115408.1788876747.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5337/1182x591_20260908-115501.1788876754.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5337/1182x591_20260908-115515.1788876759.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5337/1182x591_20260908-115523.1788876771.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5337/1182x591_20260908-120301.1788876784.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5337/1182x591_20260908-120358.1788876795.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5337/1182x591_20260908-120945.1788876810.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5337/1182x591_20260908-120855.1788876818.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5337/1182x591_20260908-120413.1788876843.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5337/1182x591_20260908-122135.1788876850.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5337/1182x591_20260908-122157.1788876858.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5337/1182x591_20260908-120509.1788876864.jpg"
+  ],
+  "gps": [
+   "49.033488525457",
+   "16.614183943364"
+  ],
+  "agent": [
+   "Jana Vaňková",
+   "774 229 922",
+   "vankova@reality2u.cz"
+  ],
+  "status": "volne",
+  "paras_n": 1
+ },
+ {
   "id": 5332,
   "title": "Prodej novostavby domu v obci Padochov - Oslavany",
   "address": "Jihomoravský kraj, Brno-venkov, Oslavany, 664 12",
@@ -430,7 +476,7 @@
   "id": 2177,
   "title": "Prodej prostorného bytu 2+kk Svitavy, Lanškrounská",
   "address": "Pardubický kraj, Svitavy, Předměstí, Lanškrounská 407/40, 56802",
-  "price": "4 700 000 Kč",
+  "price": "4 400 000 Kč",
   "trans": "Prodej",
   "label": "Byt",
   "short": "Svitavy",
