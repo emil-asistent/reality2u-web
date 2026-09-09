@@ -1,5 +1,43 @@
 [
  {
+  "id": 5342,
+  "title": "Pronájem hobby dílny Brno - Žebětín",
+  "address": "Jihomoravský kraj, Brno-město, Brno, Brno-Žebětín, Žebětín, Pramenná 225/3, 64100",
+  "price": "12 000 Kč / měsíc",
+  "trans": "Pronájem",
+  "label": "Komerční",
+  "short": "Brno",
+  "disp": null,
+  "plocha": null,
+  "pozemek": null,
+  "avail": "Ihned",
+  "imgs": [
+   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_2.1788952491.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_1.1788952492.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_3.1788952498.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_4.1788952499.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_5.1788952504.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_6.1788952505.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_7.1788952509.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_8.1788952510.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_9.1788952517.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_10.1788952519.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_12.1788952519.png",
+   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_11.1788952523.jpg"
+  ],
+  "gps": [
+   "49.206569472712",
+   "16.480807052613"
+  ],
+  "agent": [
+   "Honza Čermák",
+   "733 411 446",
+   "reality@cermakhonza.cz"
+  ],
+  "status": "volne",
+  "paras_n": 6
+ },
+ {
   "id": 5337,
   "title": "Prodej moderního cihlového bytu 3+1 s balkonem v žádané lokalitě Židlochovic",
   "address": "Jihomoravský kraj, Brno-venkov, Židlochovice, Joštova",
