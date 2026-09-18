@@ -10,7 +10,7 @@
   "disp": "2+1",
   "plocha": null,
   "pozemek": null,
-  "avail": null,
+  "avail": "Ihned",
   "imgs": [
    "https://inzeraty.reality2u.cz/cache/offers/5382/1182x591_20260917-185706.1789716345.jpg",
    "https://inzeraty.reality2u.cz/cache/offers/5382/1182x591_20260917-185741.1789716352.jpg",
@@ -38,7 +38,7 @@
    "vankova@reality2u.cz"
   ],
   "status": "volne",
-  "paras_n": 0
+  "paras_n": 1
  },
  {
   "id": 5342,
