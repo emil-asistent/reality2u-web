@@ -41,44 +41,6 @@
   "paras_n": 1
  },
  {
-  "id": 5342,
-  "title": "Pronájem hobby dílny Brno - Žebětín",
-  "address": "Jihomoravský kraj, Brno-město, Brno, Brno-Žebětín, Žebětín, Pramenná 225/3, 64100",
-  "price": "12 000 Kč / měsíc",
-  "trans": "Pronájem",
-  "label": "Komerční",
-  "short": "Brno",
-  "disp": null,
-  "plocha": null,
-  "pozemek": null,
-  "avail": "Ihned",
-  "imgs": [
-   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_2.1788952491.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_1.1788952492.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_3.1788952498.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_4.1788952499.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_5.1788952504.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_6.1788952505.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_7.1788952509.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_8.1788952510.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_9.1788952517.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_10.1788952519.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_12.1788952519.png",
-   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_11.1788952523.jpg"
-  ],
-  "gps": [
-   "49.206569472712",
-   "16.480807052613"
-  ],
-  "agent": [
-   "Honza Čermák",
-   "733 411 446",
-   "reality@cermakhonza.cz"
-  ],
-  "status": "volne",
-  "paras_n": 6
- },
- {
   "id": 5337,
   "title": "Prodej moderního cihlového bytu 3+1 s balkonem v žádané lokalitě Židlochovic",
   "address": "Jihomoravský kraj, Brno-venkov, Židlochovice, Joštova",
@@ -820,6 +782,44 @@
   "paras_n": 1
  },
  {
+  "id": 5342,
+  "title": "Pronájem hobby dílny Brno - Žebětín",
+  "address": "Jihomoravský kraj, Brno-město, Brno, Brno-Žebětín, Žebětín, Pramenná 225/3, 64100",
+  "price": "12 000 Kč / měsíc",
+  "trans": "Pronájem",
+  "label": "Komerční",
+  "short": "Brno",
+  "disp": null,
+  "plocha": null,
+  "pozemek": null,
+  "avail": "Ihned",
+  "imgs": [
+   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_2.1788952491.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_1.1788952492.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_3.1788952498.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_4.1788952499.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_5.1788952504.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_6.1788952505.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_7.1788952509.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_8.1788952510.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_9.1788952517.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_10.1788952519.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_12.1788952519.png",
+   "https://inzeraty.reality2u.cz/cache/offers/5342/1182x591_11.1788952523.jpg"
+  ],
+  "gps": [
+   "49.206569472712",
+   "16.480807052613"
+  ],
+  "agent": [
+   "Honza Čermák",
+   "733 411 446",
+   "reality@cermakhonza.cz"
+  ],
+  "status": "prodano",
+  "paras_n": 6
+ },
+ {
   "id": 1946,
   "title": "Prodej prostorné chalupy 8+1 v Brodě nad Dyjí",
   "address": "Jihomoravský kraj, Břeclav, Brod nad Dyjí",
@@ -1007,58 +1007,6 @@
   "gps": [
    "49.1502527",
    "16.5022317"
-  ],
-  "agent": [
-   "Honza Čermák",
-   "733 411 446",
-   "reality@cermakhonza.cz"
-  ],
-  "status": "prodano",
-  "paras_n": 5
- },
- {
-  "id": 2078,
-  "title": "Pronájem domu 5+kk Třebíč",
-  "address": "Kraj Vysočina, Třebíč, Nové Dvory, Kpt. Nálepky 765/4, 67401",
-  "price": "27 000 Kč / měsíc",
-  "trans": "Pronájem",
-  "label": "Rodinný dům",
-  "short": "Třebíč",
-  "disp": "5+kk",
-  "plocha": null,
-  "pozemek": null,
-  "avail": "Volné od 1.7.2026",
-  "imgs": [
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_2.1779196887.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_1.1779196888.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_3.1779196892.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_4.1779196893.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_5.1779196896.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_6.1779196898.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_7.1779196901.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_8.1779196904.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_9.1779196908.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_10.1779196910.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_11.1779196913.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_12.1779196915.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_13.1779196917.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_14.1779196920.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_15.1779196922.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_16.1779196924.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_17.1779196927.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_18.1779196929.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_19.1779196932.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_20.1779196933.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_21.1779196936.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_22.1779196937.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_23.1779196941.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_24.1779196941.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_sni-mek-obrazovky-2026-05-19-v-15.25.30.1779197154.png",
-   "https://inzeraty.reality2u.cz/cache/offers/2078/1182x591_sni-mek-obrazovky-2026-05-19-v-15.25.12.1779197154.png"
-  ],
-  "gps": [
-   "49.226199569054",
-   "15.883391038671"
   ],
   "agent": [
    "Honza Čermák",
