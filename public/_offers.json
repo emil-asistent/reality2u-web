@@ -1,5 +1,49 @@
 [
  {
+  "id": 5403,
+  "title": "Prodej nízkoenergetického bytu 3+kk Pohořelice - Smolín",
+  "address": "Jihomoravský kraj, Brno-venkov, Pohořelice, 691 23",
+  "price": "6 990 000 Kč",
+  "trans": "Prodej",
+  "label": "Byt",
+  "short": "Pohořelice",
+  "disp": "3+kk",
+  "plocha": "83 m²",
+  "pozemek": null,
+  "avail": null,
+  "imgs": [
+   "https://inzeraty.reality2u.cz/cache/offers/5403/1182x591_2.1790164464.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5403/1182x591_1.1790164470.png",
+   "https://inzeraty.reality2u.cz/cache/offers/5403/1182x591_3.1790164471.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5403/1182x591_4.1790164479.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5403/1182x591_5.1790164480.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5403/1182x591_6.1790164489.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5403/1182x591_7.1790164489.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5403/1182x591_8.1790164496.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5403/1182x591_9.1790164498.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5403/1182x591_10.1790164505.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5403/1182x591_11.1790164508.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5403/1182x591_12.1790164514.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5403/1182x591_13.1790164515.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5403/1182x591_15.1790164525.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5403/1182x591_14.1790164528.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5403/1182x591_16.1790164536.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5403/1182x591_17.1790164538.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5403/1182x591_18.1790164546.jpg"
+  ],
+  "gps": [
+   "49.0076402",
+   "16.5398321"
+  ],
+  "agent": [
+   "Honza Čermák",
+   "733 411 446",
+   "reality@cermakhonza.cz"
+  ],
+  "status": "volne",
+  "paras_n": 7
+ },
+ {
   "id": 5382,
   "title": "Zajímavá investiční příležitost -RD 2+1 v Brně Líšni k rekonstrukci",
   "address": "Jihomoravský kraj, Brno-město, Brno, Brno-Líšeň, Ondráčkova",
