@@ -1,5 +1,41 @@
 [
  {
+  "id": 5415,
+  "title": "Pronájem bytu 2+kk Blanická Svitavy",
+  "address": "Pardubický kraj, Svitavy, Předměstí, Blanická 438/6, 56802",
+  "price": "11 500 Kč / měsíc",
+  "trans": "Pronájem",
+  "label": "Byt",
+  "short": "Svitavy",
+  "disp": "2+kk",
+  "plocha": "47 m²",
+  "pozemek": null,
+  "avail": "Ihned",
+  "imgs": [
+   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka5.1773159724.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka6.1773159725.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka7.1773159750.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka1.1773159711.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka2.1773159712.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka3.1773159717.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka4.1773159720.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka8.1773159701.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka9.1773159706.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka10.1773159706.jpg"
+  ],
+  "gps": [
+   "49.758970898439",
+   "16.471474704308"
+  ],
+  "agent": [
+   "Honza Čermák",
+   "733 411 446",
+   "reality@cermakhonza.cz"
+  ],
+  "status": "volne",
+  "paras_n": 4
+ },
+ {
   "id": 5403,
   "title": "Prodej nízkoenergetického bytu 3+kk Pohořelice - Smolín",
   "address": "Jihomoravský kraj, Brno-venkov, Pohořelice, 691 23",
@@ -29,7 +65,8 @@
    "https://inzeraty.reality2u.cz/cache/offers/5403/1182x591_14.1790164528.jpg",
    "https://inzeraty.reality2u.cz/cache/offers/5403/1182x591_16.1790164536.jpg",
    "https://inzeraty.reality2u.cz/cache/offers/5403/1182x591_17.1790164538.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5403/1182x591_18.1790164546.jpg"
+   "https://inzeraty.reality2u.cz/cache/offers/5403/1182x591_18.1790164546.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5403/1182x591_3d-smoli-n.1790256539.png"
   ],
   "gps": [
    "49.0076402",
