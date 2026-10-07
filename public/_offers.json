@@ -1,41 +1,5 @@
 [
  {
-  "id": 5415,
-  "title": "Pronájem bytu 2+kk Blanická Svitavy",
-  "address": "Pardubický kraj, Svitavy, Předměstí, Blanická 438/6, 56802",
-  "price": "11 500 Kč / měsíc",
-  "trans": "Pronájem",
-  "label": "Byt",
-  "short": "Svitavy",
-  "disp": "2+kk",
-  "plocha": "47 m²",
-  "pozemek": null,
-  "avail": "Ihned",
-  "imgs": [
-   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka5.1773159724.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka6.1773159725.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka7.1773159750.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka1.1773159711.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka2.1773159712.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka3.1773159717.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka4.1773159720.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka8.1773159701.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka9.1773159706.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka10.1773159706.jpg"
-  ],
-  "gps": [
-   "49.758970898439",
-   "16.471474704308"
-  ],
-  "agent": [
-   "Honza Čermák",
-   "733 411 446",
-   "reality@cermakhonza.cz"
-  ],
-  "status": "volne",
-  "paras_n": 4
- },
- {
   "id": 5403,
   "title": "Prodej nízkoenergetického bytu 3+kk Pohořelice - Smolín",
   "address": "Jihomoravský kraj, Brno-venkov, Pohořelice, 691 23",
@@ -863,6 +827,42 @@
   "paras_n": 1
  },
  {
+  "id": 5415,
+  "title": "Pronájem bytu 2+kk Blanická Svitavy",
+  "address": "Pardubický kraj, Svitavy, Předměstí, Blanická 438/6, 56802",
+  "price": "11 500 Kč / měsíc",
+  "trans": "Pronájem",
+  "label": "Byt",
+  "short": "Svitavy",
+  "disp": "2+kk",
+  "plocha": "47 m²",
+  "pozemek": null,
+  "avail": "Ihned",
+  "imgs": [
+   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka5.1773159724.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka6.1773159725.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka7.1773159750.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka1.1773159711.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka2.1773159712.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka3.1773159717.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka4.1773159720.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka8.1773159701.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka9.1773159706.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5415/1182x591_sv-blanicka10.1773159706.jpg"
+  ],
+  "gps": [
+   "49.758970898439",
+   "16.471474704308"
+  ],
+  "agent": [
+   "Honza Čermák",
+   "733 411 446",
+   "reality@cermakhonza.cz"
+  ],
+  "status": "prodano",
+  "paras_n": 4
+ },
+ {
   "id": 5342,
   "title": "Pronájem hobby dílny Brno - Žebětín",
   "address": "Jihomoravský kraj, Brno-město, Brno, Brno-Žebětín, Žebětín, Pramenná 225/3, 64100",
@@ -1060,41 +1060,5 @@
   ],
   "status": "prodano",
   "paras_n": 1
- },
- {
-  "id": 2126,
-  "title": "Prodej stavebního pozemku Střelice u Brna",
-  "address": "Brno-venkov, Jihomoravský kraj, Střelice, 664 47",
-  "price": "5 900 000 Kč",
-  "trans": "Prodej",
-  "label": "Pozemek",
-  "short": "Střelice",
-  "disp": null,
-  "plocha": null,
-  "pozemek": null,
-  "avail": null,
-  "imgs": [
-   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_2.1780490260.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_3.1780490260.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_5.1780490271.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_4.1780490273.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_6.1780490283.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_7.1780490285.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_8.1780490293.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_9.1780490294.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_honza-c-erma-k-str-elice-vyznac-eni-do-dronu-vodoznak-1.1780499210.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/2126/1182x591_honza-c-erma-k-str-elice-vyznac-eni-do-dronu-vodoznak-2.1780499228.jpg"
-  ],
-  "gps": [
-   "49.1502527",
-   "16.5022317"
-  ],
-  "agent": [
-   "Honza Čermák",
-   "733 411 446",
-   "reality@cermakhonza.cz"
-  ],
-  "status": "prodano",
-  "paras_n": 5
  }
 ]
