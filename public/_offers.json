@@ -1,5 +1,48 @@
 [
  {
+  "id": 5484,
+  "title": "Krásný byt 2+1 ke koupi Šlapanice ulice Brněnská",
+  "address": "Jihomoravský kraj, Brno-venkov, Šlapanice, Brněnská 1440/134, 66451",
+  "price": "5 990 000 Kč",
+  "trans": "Prodej",
+  "label": "Byt",
+  "short": "Šlapanice",
+  "disp": "2+1",
+  "plocha": null,
+  "pozemek": null,
+  "avail": "Ihned",
+  "imgs": [
+   "https://inzeraty.reality2u.cz/cache/offers/5484/1182x591_2-oby-vaci-pokoj.1792256664.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5484/1182x591_1-oby-vaci-pokoj.1792256665.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5484/1182x591_3-detail.1792256671.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5484/1182x591_4-oby-vaci-ste-na.1792256672.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5484/1182x591_5-ji-delni-kout.1792256678.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5484/1182x591_6-kuchyn-.1792256679.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5484/1182x591_7-balko-n.1792256684.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5484/1182x591_8-loz-nice.1792256685.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5484/1182x591_9-detail-loz-nice.1792256691.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5484/1182x591_10-lodz-ie.1792256692.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5484/1182x591_11-detail-lodz-ie.1792256701.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5484/1182x591_12-koupelna.1792256701.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5484/1182x591_14-chodba.1792256707.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5484/1182x591_13-koupelna.1792256708.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5484/1182x591_15-spi-z-.1792256714.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5484/1182x591_16-s-atna.1792256715.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5484/1182x591_c-erma-k.1792256717.png"
+  ],
+  "gps": [
+   "49.169017877565",
+   "16.71679982227"
+  ],
+  "agent": [
+   "Honza Čermák",
+   "733 411 446",
+   "reality@cermakhonza.cz"
+  ],
+  "status": "volne",
+  "paras_n": 8
+ },
+ {
   "id": 5403,
   "title": "Prodej nízkoenergetického bytu 3+kk Pohořelice - Smolín",
   "address": "Jihomoravský kraj, Brno-venkov, Pohořelice, 691 23",
