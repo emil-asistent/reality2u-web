@@ -243,21 +243,23 @@
     <div>
       <div class="form-card">
         <h2>Napište nám</h2>
+        <form id="r2uForm" action="https://formulare.gomatela.cz/api/reality2u" method="POST">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
         <div class="form-field">
           <label>Jméno a příjmení *</label>
-          <input type="text" placeholder="Jan Novák">
+          <input type="text" name="Jméno" placeholder="Jan Novák" required>
         </div>
         <div class="form-field">
           <label>E-mail *</label>
-          <input type="email" placeholder="vas@email.cz">
+          <input type="email" name="E-mail" placeholder="vas@email.cz" required>
         </div>
         <div class="form-field">
           <label>Telefon</label>
-          <input type="tel" placeholder="+420 XXX XXX XXX">
+          <input type="tel" name="Telefon" placeholder="+420 XXX XXX XXX">
         </div>
         <div class="form-field">
           <label>Typ poptávky</label>
-          <select>
+          <select name="Typ poptávky">
             <option value="">Vyberte...</option>
             <option>Prodej nemovitosti</option>
             <option>Koupě nemovitosti</option>
@@ -269,9 +271,11 @@
         </div>
         <div class="form-field">
           <label>Zpráva *</label>
-          <textarea rows="5" placeholder="Popište svůj požadavek..."></textarea>
+          <textarea name="Zpráva" rows="5" placeholder="Popište svůj požadavek..." required></textarea>
         </div>
-        <button class="btn-full" style="margin-bottom:1rem;">Odeslat zprávu</button>
+        <button type="submit" class="btn-full" style="margin-bottom:1rem;">Odeslat zprávu</button>
+        <p id="formMsg" style="display:none;font-weight:600;margin:0 0 1rem;"></p>
+        </form>
 
       </div>
 
@@ -405,5 +409,26 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 </script>
 <script>window.addEventListener("scroll",function(){var n=document.getElementById("navbar");if(n){if(window.scrollY>20){n.classList.add("scrolled");}else{n.classList.remove("scrolled");}}});</script>
+<script>
+(function(){
+  var f=document.getElementById('r2uForm'); if(!f) return;
+  var msg=document.getElementById('formMsg');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=f.querySelector('button[type=submit]'), orig=btn.textContent;
+    btn.disabled=true; btn.textContent='Odesílám…'; msg.style.display='none';
+    var body=new URLSearchParams(new FormData(f)); body.append('stranka',location.href);
+    fetch(f.action,{method:'POST',headers:{'Accept':'application/json'},body:body})
+      .then(function(r){return r.json();})
+      .then(function(d){
+        msg.style.display='block';
+        if(d.ok){msg.style.color='#2D7A76';msg.textContent='Děkujeme! Zpráva je odeslaná, brzy se vám ozveme.';f.reset();}
+        else{msg.style.color='#c0392b';msg.textContent='Zprávu se nepodařilo odeslat. Napište nám prosím na asistentka@reality2u.cz.';}
+      })
+      .catch(function(){msg.style.display='block';msg.style.color='#c0392b';msg.textContent='Zprávu se nepodařilo odeslat. Napište nám prosím na asistentka@reality2u.cz.';})
+      .finally(function(){btn.disabled=false;btn.textContent=orig;});
+  });
+})();
+</script>
 </body>
 </html>
