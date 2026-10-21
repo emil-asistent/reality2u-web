@@ -842,7 +842,7 @@ footer{{background:#060e1a;padding:2.5rem 5% 1.5rem;border-top:1px solid rgba(15
       <input class="inp" placeholder="Vaše jméno" id="cf-name">
       <input class="inp" placeholder="Telefon nebo email" id="cf-contact">
       <textarea class="inp" rows="3" placeholder="Zpráva..." id="cf-msg" style="resize:none"></textarea>
-      <button onclick="sendInq()" style="width:100%;background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--navy);border:none;border-radius:9px;padding:.75rem;font-weight:700;font-size:.88rem;cursor:pointer;font-family:Inter,sans-serif">Odeslat poptávku</button>
+      <button id="cf-send" onclick="sendInq()" style="width:100%;background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--navy);border:none;border-radius:9px;padding:.75rem;font-weight:700;font-size:.88rem;cursor:pointer;font-family:Inter,sans-serif">Odeslat poptávku</button>
       {hypo}
     </div>
     <div style="background:#fff;border-radius:14px;padding:1.2rem;margin-top:.8rem;font-size:.79rem;color:var(--text-mid);line-height:1.85;box-shadow:0 2px 12px rgba(10,22,40,.06)">
@@ -876,9 +876,19 @@ document.addEventListener('keydown',e=>{{if(e.key==='Escape')closeLb();if(e.key=
 function sendInq(){{
   const n=document.getElementById('cf-name').value.trim();
   const c=document.getElementById('cf-contact').value.trim();
+  const m=document.getElementById('cf-msg').value.trim();
   if(!n||!c){{alert('Vyplňte prosím jméno a kontakt.');return}}
-  alert('Děkujeme, '+n+'! {agent} vás bude kontaktovat co nejdříve.');
-  ['cf-name','cf-contact','cf-msg'].forEach(id=>document.getElementById(id).value='')
+  const b=document.getElementById('cf-send'); b.disabled=true; b.textContent='Odesílám…';
+  const body=new URLSearchParams({{'Jméno':n,'Kontakt':c,'Zpráva':m,'Nemovitost':document.title,'agent_email':'{mail}','stranka':location.href,'_subject':'Poptávka nemovitosti z webu reality2u.cz'}});
+  fetch('https://formulare.gomatela.cz/api/reality2u',{{method:'POST',headers:{{'Accept':'application/json'}},body:body}})
+    .then(r=>r.json())
+    .then(d=>{{
+      if(d.ok){{alert('Děkujeme, '+n+'! {agent} vás bude kontaktovat co nejdříve.');['cf-name','cf-contact','cf-msg'].forEach(id=>document.getElementById(id).value='')}}
+      else if(d.error==='no_contact'){{alert('Zadejte prosím telefon nebo e-mail, ať se vám můžeme ozvat.')}}
+      else{{alert('Poptávku se nepodařilo odeslat. Zavolejte nebo napište prosím přímo na {mail}.')}}
+    }})
+    .catch(()=>alert('Poptávku se nepodařilo odeslat. Zavolejte nebo napište prosím přímo na {mail}.'))
+    .finally(()=>{{b.disabled=false;b.textContent='Odeslat poptávku'}});
 }}
 window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>30));
 </script>
