@@ -1,5 +1,53 @@
 [
  {
+  "id": 5497,
+  "title": "Prodej cihlového rohového dvoupodlažního RD 2x 2+1",
+  "address": "Olomoucký kraj, Prostějov, Dobromilice",
+  "price": "3 750 000 Kč",
+  "trans": "Prodej",
+  "label": "Rodinný dům",
+  "short": "Dobromilice",
+  "disp": "2+1",
+  "plocha": "546 m²",
+  "pozemek": "1 020 m²",
+  "avail": null,
+  "imgs": [
+   "https://inzeraty.reality2u.cz/cache/offers/5497/1182x591_20261022-103228.1792751906.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5497/1182x591_20261022-103300.1792751912.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5497/1182x591_20261022-100842.1792751932.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5497/1182x591_20261022-100906.1792751938.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5497/1182x591_20261022-101015.1792751952.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5497/1182x591_20261022-101001.1792751961.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5497/1182x591_20261022-101039.1792751973.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5497/1182x591_20261022-101115.1792751978.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5497/1182x591_20261022-101455.1792751986.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5497/1182x591_20261022-101533.1792751992.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5497/1182x591_20261022-101447.1792752001.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5497/1182x591_20261022-101545.1792752013.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5497/1182x591_20261022-101608.1792752022.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5497/1182x591_20261022-101815.1792752027.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5497/1182x591_20261022-101827.1792752035.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5497/1182x591_20261022-101913.1792752043.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5497/1182x591_20261022-101926.1792752058.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5497/1182x591_20261022-102139.1792752070.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5497/1182x591_20261022-102246.1792752088.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5497/1182x591_20261022-102449.1792752188.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5497/1182x591_20261022-102211.1792752193.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5497/1182x591_20261022-102436.1792752226.jpg"
+  ],
+  "gps": [
+   "49.355176435028",
+   "17.145829405729"
+  ],
+  "agent": [
+   "Jana Vaňková",
+   "774 229 922",
+   "vankova@reality2u.cz"
+  ],
+  "status": "volne",
+  "paras_n": 3
+ },
+ {
   "id": 5403,
   "title": "Prodej nízkoenergetického bytu 3+kk Pohořelice - Smolín",
   "address": "Jihomoravský kraj, Brno-venkov, Pohořelice, 691 23",
