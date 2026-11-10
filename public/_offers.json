@@ -1,5 +1,40 @@
 [
  {
+  "id": 5570,
+  "title": "Pronájem bytu 2+kk Dornych, Brno",
+  "address": "Jihomoravský kraj, Brno-město, Brno, Brno-jih, Komárov, Dornych 49/120, 61700",
+  "price": "19 000 Kč / měsíc",
+  "trans": "Pronájem",
+  "label": "Byt",
+  "short": "Brno",
+  "disp": "2+kk",
+  "plocha": "54 m²",
+  "pozemek": null,
+  "avail": "Ihned",
+  "imgs": [
+   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_1-obyvak-.1794347101.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_2-obyvak.1794347101.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_4kuchyn.1794347103.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_3-kuchyn-.1794347103.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_5-koupelna.1794347104.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_6-pokoj.1794347104.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_7-pokoj.1794347106.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_8-chodba.1794347106.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_9-dvur.1794347108.jpg"
+  ],
+  "gps": [
+   "49.182290176304",
+   "16.621321955852"
+  ],
+  "agent": [
+   "Honza Čermák",
+   "733 411 446",
+   "reality@cermakhonza.cz"
+  ],
+  "status": "volne",
+  "paras_n": 5
+ },
+ {
   "id": 5518,
   "title": "Prodej nízkoenergetického bytu 3+kk Pohořelice - Smolín",
   "address": "Jihomoravský kraj, Brno-venkov, Pohořelice",
