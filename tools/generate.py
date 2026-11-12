@@ -635,26 +635,33 @@ def stat_block(o):
 def render_gallery(o):
     imgs = o["imgs"]
     if not imgs:
-        return ('<div style="margin-bottom:2.5rem"><div style="aspect-ratio:16/9;border-radius:14px;'
+        return ('<div style="margin-bottom:2.5rem"><div style="aspect-ratio:3/2;border-radius:16px;'
                 f'background:{GRADIENTS[o["id"]%len(GRADIENTS)]}"></div></div>')
-    main = imgs[0]
-    grad = GRADIENTS[o["id"] % len(GRADIENTS)]
     small = o.get("thumbs") or imgs
-    thumbs = list(zip(imgs[1:9], small[1:9]))
-    th = "".join(
-        f'<div class="gthumb" onclick="setMain(\'{u}\',{i+1})" style="background:url(\'{t}\') '
-        f'center/cover no-repeat;aspect-ratio:16/10;border-radius:8px;cursor:zoom-in;transition:all .2s;'
-        f'border:2px solid transparent" onmouseover="this.style.borderColor=\'var(--teal)\'" '
-        f'onmouseout="this.style.borderColor=\'transparent\'"></div>'
-        for i, (u, t) in enumerate(thumbs))
-    more = (f'<div style="text-align:center;margin-top:.5rem"><button onclick="openLightbox(0)" '
-            f'style="background:transparent;border:1px solid rgba(10,22,40,.15);border-radius:8px;'
-            f'padding:.4rem 1rem;font-size:.78rem;color:var(--text-mid);cursor:pointer">'
-            f'Zobrazit všech {len(imgs)} fotek</button></div>') if len(imgs) > 1 else ""
-    return (f'<div style="margin-bottom:2.5rem"><div id="mainImgWrap" onclick="openLightbox(0)" '
-            f'style="cursor:zoom-in;border-radius:14px;overflow:hidden;margin-bottom:.6rem;'
-            f'aspect-ratio:4/3;max-height:78vh;background:url(\'{main}\') center/contain no-repeat;background-color:#e9ecef"></div>'
-            f'<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem">{th}</div>{more}</div>')
+    n = len(imgs)
+    alt = esc(o["title"])
+    main = imgs[0]
+    nav = ('<button class="gal-nav gal-prev" type="button" aria-label="Předchozí fotka" '
+           'onclick="event.stopPropagation();galGo(-1)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" '
+           'stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>'
+           '<button class="gal-nav gal-next" type="button" aria-label="Další fotka" '
+           'onclick="event.stopPropagation();galGo(1)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" '
+           'stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>'
+           ) if n > 1 else ""
+    thumbs = "".join(
+        f'<button class="gal-th{" on" if i == 0 else ""}" type="button" onclick="galShow({i})" '
+        f'aria-label="Fotka {i+1}"><img src="{t}" alt="" loading="lazy" decoding="async"></button>'
+        for i, t in enumerate(small[:n])) if n > 1 else ""
+    wide = "" if o.get("thumbs") else " gal-wide"     # myBRIK výřez 2:1 → scéna ve stejném poměru
+    return (f'<div class="gal{wide}">'
+            f'<div class="gal-stage" id="galStage" onclick="openLightbox(cur)">'
+            f'<div class="gal-bg" id="galBg" style="background-image:url(\'{main}\')"></div>'
+            f'<img class="gal-img" id="galImg" src="{main}" alt="{alt}" fetchpriority="high" decoding="async">'
+            f'{nav}<div class="gal-count" id="galCnt">1 / {n}</div>'
+            f'<span class="gal-zoom"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+            f'stroke-width="2.2" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>'
+            f'Celá obrazovka</span></div>'
+            f'<div class="gal-thumbs" id="galThumbs">{thumbs}</div></div>')
 
 def render_similar(o, offers):
     others = [x for x in offers if x["id"] != o["id"] and x["trans"] == o["trans"]]
@@ -671,7 +678,7 @@ def render_similar(o, offers):
             for v in [s["disp"], s["plocha"]] if v)
         title = s["title"][:46].rstrip()
         cells.append(
-            f'<a href="./nemovitost-{s["id"]}.html" class="sim-card"><div style="height:160px;'
+            f'<a href="./nemovitost-{s["id"]}.html" class="sim-card"><div style="aspect-ratio:4/3;'
             f'background:{bg};border-radius:12px 12px 0 0"></div><div style="padding:.9rem 1rem 1rem">'
             f'<div style="font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;'
             f'color:var(--teal2);margin-bottom:.2rem">{esc(s["label"])}</div>'
@@ -894,9 +901,29 @@ body{{font-family:'Inter',sans-serif;background:#f0f2f5;color:var(--navy);overfl
 .sim-card:hover{{transform:translateY(-4px);box-shadow:0 12px 32px rgba(10,22,40,.14)}}
 .sim-grid{{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}}
 .gthumb:hover{{opacity:.85}}
+.gal{{margin-bottom:2.5rem}}
+.gal-stage{{position:relative;aspect-ratio:3/2;max-height:80vh;border-radius:16px;overflow:hidden;background:#0d1626;cursor:zoom-in;isolation:isolate;box-shadow:0 10px 40px rgba(10,22,40,.14)}}
+.gal-bg{{position:absolute;inset:-40px;background:center/cover no-repeat;filter:blur(28px) saturate(1.15) brightness(.72);transform:scale(1.1);z-index:-1;transition:background-image .25s}}
+.gal-img{{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .2s ease}}
+.gal-img.fade{{opacity:.35}}
+.gal-nav{{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:none;background:rgba(255,255,255,.92);color:var(--navy);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 18px rgba(0,0,0,.22);opacity:0;transition:opacity .2s,transform .2s}}
+.gal-stage:hover .gal-nav{{opacity:1}}
+.gal-nav:hover{{transform:translateY(-50%) scale(1.07)}}
+.gal-prev{{left:16px}}.gal-next{{right:16px}}
+.gal-count,.gal-zoom{{position:absolute;bottom:14px;background:rgba(10,22,40,.72);backdrop-filter:blur(8px);color:#fff;font-size:.78rem;font-weight:600;padding:.38rem .75rem;border-radius:999px;letter-spacing:.02em}}
+.gal-count{{left:14px;font-variant-numeric:tabular-nums}}
+.gal-zoom{{right:14px;display:flex;align-items:center;gap:.4rem;pointer-events:none}}
+.gal-thumbs{{display:flex;gap:.5rem;margin-top:.65rem;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:.35rem;scrollbar-width:thin}}
+.gal-th{{flex:0 0 112px;aspect-ratio:4/3;border-radius:9px;overflow:hidden;border:2px solid transparent;padding:0;cursor:pointer;background:#dfe3e8;scroll-snap-align:start;opacity:.72;transition:opacity .2s,border-color .2s}}
+.gal-th img{{width:100%;height:100%;object-fit:cover;display:block}}
+.gal-th:hover{{opacity:1}}
+.gal-th.on{{opacity:1;border-color:var(--teal2)}}
+@media(hover:none){{.gal-nav{{opacity:1;width:40px;height:40px;background:rgba(255,255,255,.85)}}}}
+@media(max-width:600px){{.gal-stage{{aspect-ratio:1/1;border-radius:14px;margin:0 -1px}}.gal-prev{{left:10px}}.gal-next{{right:10px}}.gal-zoom{{display:none}}.gal-th{{flex-basis:84px}}.gal-wide .gal-stage{{aspect-ratio:2/1}}}}
+.gal-wide .gal-stage{{aspect-ratio:2/1}}
 .lightbox{{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:9999;display:none;align-items:center;justify-content:center;flex-direction:column}}
 .lightbox.open{{display:flex}}
-.lb-img{{max-width:90vw;max-height:80vh;object-fit:contain;border-radius:12px}}
+.lb-img{{max-width:94vw;max-height:86vh;object-fit:contain;border-radius:10px}}
 .lb-close,.lb-nav{{position:absolute;border:none;background:rgba(255,255,255,.12);color:#fff;cursor:pointer;border-radius:50%;width:44px;height:44px;font-size:1.4rem;display:flex;align-items:center;justify-content:center}}
 .lb-close{{top:1.5rem;right:1.5rem;font-size:1.8rem}}
 .lb-nav{{top:50%;transform:translateY(-50%)}}
@@ -995,12 +1022,16 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 const IMGS=[{imgs_js}];
 let cur=0;
 function openLightbox(i){{if(!IMGS.length)return;cur=i;document.getElementById('lb').classList.add('open');updLb()}}
-function closeLb(){{document.getElementById('lb').classList.remove('open')}}
+function closeLb(){{document.getElementById('lb').classList.remove('open');galShow(cur)}}
 function lbNav(d){{cur=(cur+d+IMGS.length)%IMGS.length;updLb()}}
 function updLb(){{document.getElementById('lbImg').src=IMGS[cur];document.getElementById('lbCnt').textContent=(cur+1)+' / '+IMGS.length}}
 function setMain(src,idx){{document.getElementById('mainImgWrap').style.backgroundImage="url('"+src+"')";cur=idx}}
+function galShow(i){{if(!IMGS.length)return;cur=(i+IMGS.length)%IMGS.length;var im=document.getElementById('galImg');if(!im)return;var u=IMGS[cur];im.classList.add('fade');var pre=new Image();pre.onload=pre.onerror=function(){{im.src=u;im.classList.remove('fade')}};pre.src=u;document.getElementById('galBg').style.backgroundImage="url('"+u+"')";document.getElementById('galCnt').textContent=(cur+1)+' / '+IMGS.length;var th=document.querySelectorAll('.gal-th');th.forEach(function(t,k){{t.classList.toggle('on',k===cur)}});if(th[cur]){{var box=document.getElementById('galThumbs');box.scrollTo({{left:th[cur].offsetLeft-box.clientWidth/2+th[cur].clientWidth/2,behavior:'smooth'}})}};if(IMGS.length>1){{var nx=new Image();nx.src=IMGS[(cur+1)%IMGS.length]}}}}
+function galGo(d){{galShow(cur+d)}}
+(function(){{var lb=document.getElementById('lb');if(!lb)return;var x0=null;lb.addEventListener('touchstart',function(e){{x0=e.touches[0].clientX}},{{passive:true}});lb.addEventListener('touchend',function(e){{if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)lbNav(dx<0?1:-1);x0=null}})}})();
+(function(){{var st=document.getElementById('galStage');if(!st)return;var x0=null,y0=0;st.addEventListener('touchstart',function(e){{x0=e.touches[0].clientX;y0=e.touches[0].clientY}},{{passive:true}});st.addEventListener('touchend',function(e){{if(x0===null)return;var dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)){{e.preventDefault();galGo(dx<0?1:-1)}}x0=null}})}})();
 document.getElementById('lb').addEventListener('click',e=>{{if(e.target===e.currentTarget)closeLb()}})
-document.addEventListener('keydown',e=>{{if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')lbNav(-1);if(e.key==='ArrowRight')lbNav(1)}})
+document.addEventListener('keydown',e=>{{var o=document.getElementById('lb').classList.contains('open');if(e.key==='Escape'&&o)closeLb();if(e.key==='ArrowLeft')o?lbNav(-1):galGo(-1);if(e.key==='ArrowRight')o?lbNav(1):galGo(1)}})
 function sendInq(){{
   const n=document.getElementById('cf-name').value.trim();
   const c=document.getElementById('cf-contact').value.trim();

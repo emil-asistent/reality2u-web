@@ -18,6 +18,12 @@ SaaS pro analýzu rodinných domů v ČR - jak je rozdělit na max. malých byt�
 - Endpoint NEMÁ CORS → data se formátují při buildu, ne klientsky
 - Detaily: dispozice/plocha/pozemek se parsují z titulku+popisu (best-effort)
 
+## Fotky ze Sreality (od 2026-11-12)
+- myBRIK dává fotky jen jako výřez 1182×591 (ořezané střechy). `apply_sreality_photos()` v `generate.py` páruje každý inzerát s jeho kopií na Sreality (kancelář `reality2u-brno-zabovresky/14919`; cena + obec + počet fotek, u „ceny na vyžádání“ přesný počet) a bere celé fotky `?fl=res,1200,1200,1|shr,,20|jpg,80` (bez vodoznaku), náhledy `res,800,800,1|…|webp,60`.
+- Bez páru nebo při chybě zůstanou myBRIK fotky + `VAROVÁNÍ` v refresh.log; přehled párů v `_sreality_report.json` (gitignore). Vypnout: `R2U_NO_SREALITY=1`.
+- Galerie: rozmazané pozadí + celá fotka (contain), šipky, swipe, pás náhledů; karty 4:3.
+- Návrat: tag `zaloha-pred-sreality-fotkami-2026-11-12` (stav před změnou), Vercel prod před změnou = `reality2you-hfbk81xc8`.
+
 ## Key Files
 - `tools/generate.py` -- generátor: feed → stávající vzhled (listing + detaily)
 - `tools/refresh.sh` -- auto-refresh (ruční spuštění z repa)
