@@ -346,6 +346,133 @@ def parse_offer(oid, det_html, short_loc):
         "status": "volne",
     }
 
+# ───────────────────────── Sreality: celé (neořezané) fotky ─────────────────────────
+# myBRIK publikuje fotky jen jako výřez 1182×591 (ořízne střechy u domů focených na výšku).
+# Tytéž inzeráty exportuje myBRIK i na Sreality, kde jsou fotky v původním poměru stran.
+# Ke každému inzerátu proto najdeme jeho dvojče na Sreality (stejná cena + obec + podobný
+# počet fotek) a vezmeme fotky odtamtud. Když dvojče nenajdeme nebo cokoli selže,
+# zůstanou fotky z myBRIKu (= stav před touhle změnou) a do logu jde VAROVÁNÍ.
+SREALITY_PREMISE = "https://www.sreality.cz/adresar/reality2u-brno-zabovresky/14919"
+SREALITY_IMG_BIG = "?fl=res,1200,1200,1|shr,,20|jpg,80"      # celý snímek, max 1200 px, bez vodoznaku
+SREALITY_IMG_SMALL = "?fl=res,800,800,1|shr,,20|webp,60"     # náhledy na kartách
+SREALITY_REPORT = os.path.join(PROJECT, "_sreality_report.json")
+SREALITY_UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36"
+
+def _sr_get(url, timeout=30):
+    req = urllib.request.Request(url, headers={"User-Agent": SREALITY_UA, "Accept-Language": "cs"})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        return r.read().decode("utf-8", "replace")
+
+def _norm(s):
+    s = unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode().lower()
+    return re.sub(r"[^a-z0-9]+", " ", s).strip()
+
+def _price_int(s):
+    d = re.sub(r"[^0-9]", "", s or "")
+    return int(d) if d else 0
+
+def sreality_estates():
+    """vrátí seznam inzerátů Reality2u na Sreality: {hash, price, city, imgs}. Při chybě []."""
+    try:
+        h = _sr_get(SREALITY_PREMISE)
+    except Exception as e:
+        print(f"      ! VAROVÁNÍ Sreality: nejde stáhnout stránku kanceláře ({e}) → fotky z myBRIKu")
+        return []
+    links = list(dict.fromkeys(re.findall(r'(/detail/[a-z]+/[a-z]+/[^"/]+/[^"/]+/(\d+))', h)))
+    out = []
+    for path, hid in links:
+        try:
+            dh = _sr_get("https://www.sreality.cz" + path)
+            nd = json.loads(re.search(r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>', dh, re.S).group(1))
+            est = None
+            for q in nd["props"]["pageProps"]["dehydratedState"]["queries"]:
+                k = q.get("queryKey") or []
+                if k and k[0] == "estate":
+                    est = q["state"]["data"]; break
+            if not est or (est.get("premise") or {}).get("id") != 14919:
+                continue
+            loc = est.get("locality") or {}
+            imgs = []
+            for im in sorted(est.get("images") or [], key=lambda x: x.get("order", 0)):
+                u = im.get("url") or ""
+                if "sdn.cz" in u:
+                    imgs.append(("https:" + u if u.startswith("//") else u).split("?")[0])
+            out.append({"hash": int(hid), "price": int(est.get("priceCzk") or 0),
+                        "city": " ".join(filter(None, [loc.get("city"), loc.get("citypart"),
+                                                       loc.get("district"), loc.get("street")])),
+                        "name": est.get("name", ""), "imgs": imgs})
+        except Exception as e:
+            print(f"      ! VAROVÁNÍ Sreality: detail {hid} nejde načíst ({e})")
+    print(f"      Sreality: {len(out)} inzerátů kanceláře Reality2u")
+    return out
+
+def sreality_pair(o, estates, used):
+    """najde dvojče inzerátu `o` mezi `estates`; vrátí estate nebo None."""
+    price = _price_int(o.get("price"))       # 0 = „cena na vyžádání“
+    n_mb = len(o.get("imgs") or [])
+    if not n_mb:
+        return None
+    place = _norm(o.get("short", "") + " " + o.get("address", "") + " " + o.get("title", ""))
+    cands = []
+    for e in estates:
+        if e["hash"] in used or e["price"] != price or not e["imgs"]:
+            continue
+        city = _norm(e["city"]).split()
+        if not city or city[0] not in place.split():
+            continue
+        diff = abs(len(e["imgs"]) - n_mb)
+        if diff > (0 if not price else max(2, n_mb // 5)):   # bez ceny musí počet fotek sedět přesně
+            continue
+        cands.append((diff, e))
+    if len(cands) != 1:
+        cands.sort(key=lambda x: x[0])
+        if len(cands) > 1 and cands[0][0] == cands[1][0]:
+            return None                        # nejednoznačné → radši myBRIK
+    return cands[0][1] if cands else None
+
+def sreality_check_img(u):
+    try:
+        req = urllib.request.Request(u, headers={"User-Agent": SREALITY_UA}, method="GET")
+        with urllib.request.urlopen(req, timeout=20) as r:
+            return r.status == 200 and len(r.read(2048)) > 1000
+    except Exception:
+        return False
+
+def apply_sreality_photos(offers, offline=False):
+    report = {"ts": time.strftime("%Y-%m-%d %H:%M:%S"), "sparovano": [], "bez_dvojcete": []}
+    if offline or os.environ.get("R2U_NO_SREALITY") == "1":
+        print("      Sreality přeskočeno (offline / R2U_NO_SREALITY=1) → fotky z myBRIKu")
+        return
+    estates = sreality_estates()
+    used = set()
+    for o in offers:
+        o["imgs_mybrik"] = list(o.get("imgs") or [])
+        e = sreality_pair(o, estates, used) if estates else None
+        if e:
+            big = [u + SREALITY_IMG_BIG for u in e["imgs"]]
+            if sreality_check_img(big[0]) and sreality_check_img(big[-1]):
+                used.add(e["hash"])
+                o["imgs"] = big
+                o["thumbs"] = [u + SREALITY_IMG_SMALL for u in e["imgs"]]
+                o["sreality"] = e["hash"]
+                report["sparovano"].append({"id": o["id"], "sreality": e["hash"], "fotek": len(big),
+                                            "fotek_mybrik": len(o["imgs_mybrik"]), "titul": o["title"]})
+                continue
+        report["bez_dvojcete"].append({"id": o["id"], "titul": o["title"], "cena": o.get("price"),
+                                       "fotek_mybrik": len(o["imgs_mybrik"])})
+        print(f"      ! VAROVÁNÍ Sreality: {o['id']} „{o['title'][:50]}“ nemá dvojče → fotky z myBRIKu (ořezané)")
+    print(f"      Sreality fotky: {len(report['sparovano'])}/{len(offers)} inzerátů, "
+          f"bez dvojčete {len(report['bez_dvojcete'])}")
+    try:
+        json.dump(report, open(SREALITY_REPORT, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    except Exception:
+        pass
+
+def thumb_of(o):
+    t = o.get("thumbs")
+    if t: return t[0]
+    return o["imgs"][0] if o.get("imgs") else ""
+
 # ───────────────────────── list (ajax) ─────────────────────────
 def collect_list(offline=False):
     """vrátí seznam (id, short_location, list_price) v pořadí jak je portál vrací"""
@@ -387,12 +514,12 @@ def render_card(o, idx):
     badge_cls = "pb-new" if o["trans"] == "Prodej" else "pb-rent"
     status = o.get("status", "volne")
     slabel, scls = STATUS_META.get(status, STATUS_META["volne"])
-    img0 = o["imgs"][0] if o["imgs"] else ""
+    img0 = thumb_of(o)
     snippet = (o["paras"][0] if o["paras"] else o["title"])
     snippet = snippet[:118].rstrip() + ("…" if len(snippet) > 118 else "")
     hypo = ('<a href="kalkulacka.html" class="btn-prop-hypo" onclick="event.stopPropagation()">Hypotéka</a>'
             if o["trans"] == "Prodej" and status != "prodano" else "")
-    bg = f"url('{img0}') center/cover no-repeat,{grad}" if img0 else grad
+    bg = f"url('{img0}') center 35%/cover no-repeat,{grad}" if img0 else grad
     band = "" if status == "volne" else f'<div class="prop-status-band ps-{status}">{slabel.upper()}</div>'
     img_cls = "prop-img" + (" is-dim" if status == "prodano" else "")
     return f'''      <div class="prop-card reveal" data-status="{status}" onclick="window.location='./nemovitost-{o['id']}.html'">
@@ -420,8 +547,8 @@ def render_featured(offers, n=3):
     cards = []
     for i, o in enumerate(vis[:n]):
         grad = GRADIENTS[i % len(GRADIENTS)]
-        img0 = o["imgs"][0] if o["imgs"] else ""
-        bg = f"url('{img0}') center/cover no-repeat,{grad}" if img0 else grad
+        img0 = thumb_of(o)
+        bg = f"url('{img0}') center 35%/cover no-repeat,{grad}" if img0 else grad
         badge_cls = "pb-new" if o["trans"] == "Prodej" else "pb-rent"
         snippet = (o["paras"][0] if o["paras"] else o["title"])
         snippet = snippet[:118].rstrip() + ("…" if len(snippet) > 118 else "")
@@ -512,20 +639,21 @@ def render_gallery(o):
                 f'background:{GRADIENTS[o["id"]%len(GRADIENTS)]}"></div></div>')
     main = imgs[0]
     grad = GRADIENTS[o["id"] % len(GRADIENTS)]
-    thumbs = imgs[1:9]
+    small = o.get("thumbs") or imgs
+    thumbs = list(zip(imgs[1:9], small[1:9]))
     th = "".join(
-        f'<div class="gthumb" onclick="setMain(\'{u}\',{i+1})" style="background:url(\'{u}\') '
+        f'<div class="gthumb" onclick="setMain(\'{u}\',{i+1})" style="background:url(\'{t}\') '
         f'center/cover no-repeat;aspect-ratio:16/10;border-radius:8px;cursor:zoom-in;transition:all .2s;'
         f'border:2px solid transparent" onmouseover="this.style.borderColor=\'var(--teal)\'" '
         f'onmouseout="this.style.borderColor=\'transparent\'"></div>'
-        for i, u in enumerate(thumbs))
+        for i, (u, t) in enumerate(thumbs))
     more = (f'<div style="text-align:center;margin-top:.5rem"><button onclick="openLightbox(0)" '
             f'style="background:transparent;border:1px solid rgba(10,22,40,.15);border-radius:8px;'
             f'padding:.4rem 1rem;font-size:.78rem;color:var(--text-mid);cursor:pointer">'
             f'Zobrazit všech {len(imgs)} fotek</button></div>') if len(imgs) > 1 else ""
     return (f'<div style="margin-bottom:2.5rem"><div id="mainImgWrap" onclick="openLightbox(0)" '
             f'style="cursor:zoom-in;border-radius:14px;overflow:hidden;margin-bottom:.6rem;'
-            f'aspect-ratio:16/9;background:url(\'{main}\') center/cover no-repeat,{grad}"></div>'
+            f'aspect-ratio:4/3;max-height:78vh;background:url(\'{main}\') center/contain no-repeat;background-color:#e9ecef"></div>'
             f'<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem">{th}</div>{more}</div>')
 
 def render_similar(o, offers):
@@ -534,9 +662,9 @@ def render_similar(o, offers):
     pick = others[:3]
     cells = []
     for s in pick:
-        img = s["imgs"][0] if s["imgs"] else ""
+        img = thumb_of(s)
         grad = GRADIENTS[s["id"] % len(GRADIENTS)]
-        bg = f"url('{img}') center/cover no-repeat,{grad}" if img else grad
+        bg = f"url('{img}') center 35%/cover no-repeat,{grad}" if img else grad
         chips = "".join(
             f'<span style="background:var(--cream);border-radius:5px;padding:.15rem .45rem;'
             f'font-size:.68rem;font-weight:600;color:var(--navy)">{esc(v)}</span>'
@@ -921,6 +1049,15 @@ def build(out_dir, offline=False):
         print(f"      ✓ {oid:>5}  {o['trans']:8} {o['label']:12} disp={str(o['disp']):>9} "
               f"plocha={str(o['plocha']):>7} img={len(o['imgs']):>2}  {o['short']}")
 
+    print(f"      fotky ze Sreality (celé, neořezané)…")
+    try:
+        apply_sreality_photos(active, offline=offline)
+    except Exception as e:                       # pojistka: nikdy neshodit build kvůli Sreality
+        print(f"      ! VAROVÁNÍ Sreality: {e} → fotky z myBRIKu")
+        for o in active:
+            if o.get("imgs_mybrik"): o["imgs"] = o["imgs_mybrik"]
+            o.pop("thumbs", None); o.pop("sreality", None)
+
     # ── stavy: volné (feed) / rezervované (ruční) / prodané (auto-archiv zmizelých) ──
     print(f"[3/5] stavy inzerátů…")
     ov = load_status()
@@ -946,6 +1083,8 @@ def build(out_dir, offline=False):
         if oid in active_ids or oid in ov["skryto"]:
             continue
         so = dict(v.get("offer", {})); so["status"] = "prodano"
+        if so.get("imgs_mybrik"):              # prodané: Sreality inzerát zmizí → zpět na myBRIK fotky
+            so["imgs"] = so["imgs_mybrik"]; so.pop("thumbs", None)
         if so.get("id"): sold.append((v.get("ts", 0), so))
     sold.sort(key=lambda x: -x[0])
     sold_show = [o for _, o in sold[:SOLD_KEEP]]
