@@ -1,5 +1,72 @@
 [
  {
+  "id": 5597,
+  "title": "Pronájem bytu 2+kk s terasou Pisárecká Brno",
+  "address": "Jihomoravský kraj, Brno-město, Brno, Brno-Jundrov, Pisárky, Pisárecká 275/4, 60300",
+  "price": "21 000 Kč / měsíc",
+  "trans": "Pronájem",
+  "label": "Byt",
+  "short": "Brno",
+  "disp": "2+kk",
+  "plocha": null,
+  "pozemek": null,
+  "avail": "Ihned",
+  "imgs": [
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkB87eWGudxIXdpyb/9c38.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkCJCefHAhmIXdp0g/1da3.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/nQO0xPd86TB49GnBHWBIXdp4m/db3e.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkBQkMFOfg6IXdp9o/b17e.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkBcInfGs73IXdqFz/91b8.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkC4TclG1aMIXdqJV/4699.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/nQO0xPd86TCl5yxreOIXdqNm/7729.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkC4TclG1aMIXdqPL/8f3d.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/nQO0xPd86TDrngKDGAEIXdqRH/be3d.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkCJCefHAhqIXdqT1/bab3.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdk3whEBNYaIXdqXz/7ede.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/nQO0xPd86TDrSmq02QIXdqiL/9c08.png?fl=res,1200,1200,1|shr,,20|jpg,80"
+  ],
+  "gps": [
+   "49.193638708127",
+   "16.566233472688"
+  ],
+  "agent": [
+   "Honza Čermák",
+   "733 411 446",
+   "reality@cermakhonza.cz"
+  ],
+  "status": "volne",
+  "imgs_mybrik": [
+   "https://inzeraty.reality2u.cz/cache/offers/5597/1182x591_2.1794740909.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5597/1182x591_1.1794740911.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5597/1182x591_3.1794740911.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5597/1182x591_4.1794740912.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5597/1182x591_5.1794740913.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5597/1182x591_6.1794740915.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5597/1182x591_7.1794740915.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5597/1182x591_8.1794740916.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5597/1182x591_9.1794740917.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5597/1182x591_10.1794740918.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5597/1182x591_11.1794740919.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5597/1182x591_sni-mek-obrazovky-2026-11-15-v-12.09.25.1794740984.png"
+  ],
+  "thumbs": [
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkB87eWGudxIXdpyb/9c38.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkCJCefHAhmIXdp0g/1da3.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/nQO0xPd86TB49GnBHWBIXdp4m/db3e.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkBQkMFOfg6IXdp9o/b17e.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkBcInfGs73IXdqFz/91b8.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkC4TclG1aMIXdqJV/4699.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/nQO0xPd86TCl5yxreOIXdqNm/7729.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkC4TclG1aMIXdqPL/8f3d.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/nQO0xPd86TDrngKDGAEIXdqRH/be3d.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkCJCefHAhqIXdqT1/bab3.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdk3whEBNYaIXdqXz/7ede.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/nQO0xPd86TDrSmq02QIXdqiL/9c08.png?fl=res,800,800,1|shr,,20|webp,60"
+  ],
+  "sreality": 413954124,
+  "paras_n": 5
+ },
+ {
   "id": 5578,
   "title": "Prodej novostavby domu v obci Padochov - Oslavany",
   "address": "Jihomoravský kraj, Brno-venkov, Oslavany, 664 12",
@@ -254,15 +321,15 @@
   "pozemek": null,
   "avail": "Ihned",
   "imgs": [
-   "https://d18-a.sdn.cz/d_18/c_img_qH_B/kb4JgeTdk3whEPzRyIUyd6O/645c.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_B/nQO0xPd86TBVyhhB0DrIUyd7m/19cf.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_B/nQO0xPd86TDrngKB8WrIUyd80/fe9b.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_B/kb4JgeTdk3whEPzTmIUyeAJ/50af.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_B/kb4JgeTdkB87eWFruEIUyeBa/f0a6.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_B/nQO0xPd86TDhsIbOE2eIUyeCn/2e0e.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_B/nQO0xPd86TkUyxFWZ4IUyeD5/0179.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_B/kb4JgeTdkB87eWFruIIUyeFK/5c4f.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_B/kb4JgeTdk3RI9FUm8IUyeGe/3c82.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80"
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/nQO0xPd86TDrSmq3hEIXebOd/1368.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/nQO0xPd86TBVyhhDDEmIXebPw/415f.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkC4TclG2ZRIXebRE/949c.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/nQO0xPd86TBjrrQBCOcIXebS7/8a01.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkBQkMFOfhYIXebUT/abe6.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/nQO0xPd86TCM3uZBCeHIXebVs/7bbd.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/nQO0xPd86TDrSmq3hEIXebXC/1234.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkB87eWGrzIIXebYS/3aef.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkCJCefHDLkIXebZ0/54fa.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80"
   ],
   "gps": [
    "49.182290176304",
@@ -286,15 +353,15 @@
    "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_9-dvur.1794347108.jpg"
   ],
   "thumbs": [
-   "https://d18-a.sdn.cz/d_18/c_img_qH_B/kb4JgeTdk3whEPzRyIUyd6O/645c.jpeg?fl=res,800,800,1|shr,,20|webp,60",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_B/nQO0xPd86TBVyhhB0DrIUyd7m/19cf.jpeg?fl=res,800,800,1|shr,,20|webp,60",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_B/nQO0xPd86TDrngKB8WrIUyd80/fe9b.jpeg?fl=res,800,800,1|shr,,20|webp,60",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_B/kb4JgeTdk3whEPzTmIUyeAJ/50af.jpeg?fl=res,800,800,1|shr,,20|webp,60",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_B/kb4JgeTdkB87eWFruEIUyeBa/f0a6.jpeg?fl=res,800,800,1|shr,,20|webp,60",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_B/nQO0xPd86TDhsIbOE2eIUyeCn/2e0e.jpeg?fl=res,800,800,1|shr,,20|webp,60",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_B/nQO0xPd86TkUyxFWZ4IUyeD5/0179.jpeg?fl=res,800,800,1|shr,,20|webp,60",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_B/kb4JgeTdkB87eWFruIIUyeFK/5c4f.jpeg?fl=res,800,800,1|shr,,20|webp,60",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_B/kb4JgeTdk3RI9FUm8IUyeGe/3c82.jpeg?fl=res,800,800,1|shr,,20|webp,60"
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/nQO0xPd86TDrSmq3hEIXebOd/1368.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/nQO0xPd86TBVyhhDDEmIXebPw/415f.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkC4TclG2ZRIXebRE/949c.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/nQO0xPd86TBjrrQBCOcIXebS7/8a01.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkBQkMFOfhYIXebUT/abe6.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/nQO0xPd86TCM3uZBCeHIXebVs/7bbd.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/nQO0xPd86TDrSmq3hEIXebXC/1234.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkB87eWGrzIIXebYS/3aef.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkCJCefHDLkIXebZ0/54fa.jpeg?fl=res,800,800,1|shr,,20|webp,60"
   ],
   "sreality": 462975052,
   "paras_n": 5
