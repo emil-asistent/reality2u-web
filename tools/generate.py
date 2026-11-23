@@ -856,6 +856,7 @@ DETAIL_TPL = '''<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>/* iPhone: nepřibližovat stránku po kliknutí do políčka (přiblížení prsty dál funguje) */(function(){{var a=navigator.userAgent;if(/iP(hone|ad|od)/.test(a)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1)){{var m=document.querySelector("meta[name=viewport]");if(m)m.setAttribute("content",m.getAttribute("content").replace(/,?\s*maximum-scale=[^,]*/,"")+", maximum-scale=1");}}}})();</script>
 <title>{title} — reality2u</title>
 {seo_head}
 <script type="application/ld+json">{jsonld}</script>
