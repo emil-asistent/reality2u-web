@@ -394,64 +394,6 @@
   "paras_n": 7
  },
  {
-  "id": 5570,
-  "title": "Pronájem bytu 2+kk Dornych, Brno",
-  "address": "Jihomoravský kraj, Brno-město, Brno, Brno-jih, Komárov, Dornych 49/120, 61700",
-  "price": "19 000 Kč / měsíc",
-  "trans": "Pronájem",
-  "label": "Byt",
-  "short": "Brno",
-  "disp": "2+kk",
-  "plocha": "54 m²",
-  "pozemek": null,
-  "avail": "Ihned",
-  "imgs": [
-   "https://d18-a.sdn.cz/d_18/c_img_qH_C/nQO0xPd86TDrSmq3hEIXebOd/1368.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_C/nQO0xPd86TBVyhhDDEmIXebPw/415f.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkC4TclG2ZRIXebRE/949c.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_C/nQO0xPd86TBjrrQBCOcIXebS7/8a01.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkBQkMFOfhYIXebUT/abe6.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_C/nQO0xPd86TCM3uZBCeHIXebVs/7bbd.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_C/nQO0xPd86TDrSmq3hEIXebXC/1234.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkB87eWGrzIIXebYS/3aef.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkCJCefHDLkIXebZ0/54fa.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80"
-  ],
-  "gps": [
-   "49.182290176304",
-   "16.621321955852"
-  ],
-  "agent": [
-   "Honza Čermák",
-   "733 411 446",
-   "reality@cermakhonza.cz"
-  ],
-  "status": "volne",
-  "imgs_mybrik": [
-   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_1-obyvak-.1794347101.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_2-obyvak.1794347101.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_4kuchyn.1794347103.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_3-kuchyn-.1794347103.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_5-koupelna.1794347104.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_6-pokoj.1794347104.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_7-pokoj.1794347106.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_8-chodba.1794347106.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_9-dvur.1794347108.jpg"
-  ],
-  "thumbs": [
-   "https://d18-a.sdn.cz/d_18/c_img_qH_C/nQO0xPd86TDrSmq3hEIXebOd/1368.jpeg?fl=res,800,800,1|shr,,20|webp,60",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_C/nQO0xPd86TBVyhhDDEmIXebPw/415f.jpeg?fl=res,800,800,1|shr,,20|webp,60",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkC4TclG2ZRIXebRE/949c.jpeg?fl=res,800,800,1|shr,,20|webp,60",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_C/nQO0xPd86TBjrrQBCOcIXebS7/8a01.jpeg?fl=res,800,800,1|shr,,20|webp,60",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkBQkMFOfhYIXebUT/abe6.jpeg?fl=res,800,800,1|shr,,20|webp,60",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_C/nQO0xPd86TCM3uZBCeHIXebVs/7bbd.jpeg?fl=res,800,800,1|shr,,20|webp,60",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_C/nQO0xPd86TDrSmq3hEIXebXC/1234.jpeg?fl=res,800,800,1|shr,,20|webp,60",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkB87eWGrzIIXebYS/3aef.jpeg?fl=res,800,800,1|shr,,20|webp,60",
-   "https://d18-a.sdn.cz/d_18/c_img_qH_C/kb4JgeTdkCJCefHDLkIXebZ0/54fa.jpeg?fl=res,800,800,1|shr,,20|webp,60"
-  ],
-  "sreality": 462975052,
-  "paras_n": 5
- },
- {
   "id": 5497,
   "title": "Prodej cihlového rohového dvoupodlažního RD 2x 2+1",
   "address": "Olomoucký kraj, Prostějov, Dobromilice",
@@ -1117,6 +1059,53 @@
   "paras_n": 1
  },
  {
+  "id": 5570,
+  "title": "Pronájem bytu 2+kk Dornych, Brno",
+  "address": "Jihomoravský kraj, Brno-město, Brno, Brno-jih, Komárov, Dornych 49/120, 61700",
+  "price": "19 000 Kč / měsíc",
+  "trans": "Pronájem",
+  "label": "Byt",
+  "short": "Brno",
+  "disp": "2+kk",
+  "plocha": "54 m²",
+  "pozemek": null,
+  "avail": "Ihned",
+  "imgs": [
+   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_1-obyvak-.1794347101.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_2-obyvak.1794347101.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_4kuchyn.1794347103.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_3-kuchyn-.1794347103.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_5-koupelna.1794347104.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_6-pokoj.1794347104.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_7-pokoj.1794347106.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_8-chodba.1794347106.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_9-dvur.1794347108.jpg"
+  ],
+  "gps": [
+   "49.182290176304",
+   "16.621321955852"
+  ],
+  "agent": [
+   "Honza Čermák",
+   "733 411 446",
+   "reality@cermakhonza.cz"
+  ],
+  "status": "prodano",
+  "imgs_mybrik": [
+   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_1-obyvak-.1794347101.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_2-obyvak.1794347101.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_4kuchyn.1794347103.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_3-kuchyn-.1794347103.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_5-koupelna.1794347104.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_6-pokoj.1794347104.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_7-pokoj.1794347106.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_8-chodba.1794347106.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5570/1182x591_9-dvur.1794347108.jpg"
+  ],
+  "sreality": 462975052,
+  "paras_n": 5
+ },
+ {
   "id": 5518,
   "title": "Prodej nízkoenergetického bytu 3+kk Pohořelice - Smolín",
   "address": "Jihomoravský kraj, Brno-venkov, Pohořelice",
@@ -1379,42 +1368,5 @@
   ],
   "status": "prodano",
   "paras_n": 7
- },
- {
-  "id": 1688,
-  "title": "Novostavba finského srubového domu",
-  "address": "Středočeský kraj, Mladá Boleslav, Jivina, 1, 29414",
-  "price": "5 600 000 Kč",
-  "trans": "Prodej",
-  "label": "Rodinný dům",
-  "short": "Jivina",
-  "disp": "4+kk",
-  "plocha": "70 m²",
-  "pozemek": "873 m²",
-  "avail": null,
-  "imgs": [
-   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_img-0826.1786625326.jpeg",
-   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_img-0824.1786625327.jpeg",
-   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_img-0836.1786625331.jpeg",
-   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_img-0128.1786625334.jpeg",
-   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_514ca61c-34ad-451c-a3f3-3d8f4066465b.1786625335.jpg",
-   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_img-0823.1786625336.jpeg",
-   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_img-0828.1786625340.jpeg",
-   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_img-2240.1786625344.jpeg",
-   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_img-6091.1786625345.jpeg",
-   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_img-6151.1786625349.jpeg",
-   "https://inzeraty.reality2u.cz/cache/offers/1688/1182x591_img-2600.1786625351.jpeg"
-  ],
-  "gps": [
-   "50.55604743078",
-   "14.948176525123"
-  ],
-  "agent": [
-   "Martin Kroupa",
-   "777 167 930",
-   "kroupa@money2u.cz"
-  ],
-  "status": "prodano",
-  "paras_n": 1
  }
 ]
