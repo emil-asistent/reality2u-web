@@ -1,5 +1,72 @@
 [
  {
+  "id": 5630,
+  "title": "Pronájem bytu 2+kk Vondrákova, Brno - Bystrc",
+  "address": "Jihomoravský kraj, Brno-město, Brno, Brno-Bystrc, Bystrc, Vondrákova 653/42, 63500",
+  "price": "16 000 Kč / měsíc",
+  "trans": "Pronájem",
+  "label": "Byt",
+  "short": "Brno",
+  "disp": "2+kk",
+  "plocha": null,
+  "pozemek": null,
+  "avail": "Ihned",
+  "imgs": [
+   "https://d18-a.sdn.cz/d_18/c_img_qH_D/kPXU1fy4LrDgKF2QUqId5xZw/c16f.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_D/kPXU1fy4LrDPHZ1SmHId5xbe/5b3c.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_D/nPx0D3Tir8CBUdfeluId5xcr/0cfe.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_D/kPXU1fy4LrBH1sbd5MId5xeA/7018.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_D/kPXU1fy4LrCDO2HqumId5xfX/d3f7.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_D/kPXU1fy4LrCYqEhB68wId5xg0/dd8c.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_D/nPx0D3Tir8BEqULlg3Id5xiS/9cb7.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_D/kPXU1fy4LrCswbMZAUId5xjq/5a52.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_D/kPXU1fy4LrBSIouBGJTId5xlC/8b60.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_D/nPx0D3Tir8ClOyprR1Id5xmg/2d07.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_D/nPx0D3Tir8BdE7tiw0Id5xn3/5d43.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_D/nPx0D3Tir8CJY3HrN1Id5xpU/10c6.jpeg?fl=res,1200,1200,1|shr,,20|jpg,80"
+  ],
+  "gps": [
+   "49.222197960941",
+   "16.526909124118"
+  ],
+  "agent": [
+   "Honza Čermák",
+   "733 411 446",
+   "reality@cermakhonza.cz"
+  ],
+  "status": "volne",
+  "imgs_mybrik": [
+   "https://inzeraty.reality2u.cz/cache/offers/5630/1182x591_2.1795693972.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5630/1182x591_3.1795693980.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5630/1182x591_1.1795693980.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5630/1182x591_4.1795693986.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5630/1182x591_5.1795693986.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5630/1182x591_6.1795693991.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5630/1182x591_7.1795693991.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5630/1182x591_9.1795693998.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5630/1182x591_8.1795693998.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5630/1182x591_10.1795694002.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5630/1182x591_11.1795694004.jpg",
+   "https://inzeraty.reality2u.cz/cache/offers/5630/1182x591_12.1795694007.jpg"
+  ],
+  "thumbs": [
+   "https://d18-a.sdn.cz/d_18/c_img_qH_D/kPXU1fy4LrDgKF2QUqId5xZw/c16f.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_D/kPXU1fy4LrDPHZ1SmHId5xbe/5b3c.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_D/nPx0D3Tir8CBUdfeluId5xcr/0cfe.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_D/kPXU1fy4LrBH1sbd5MId5xeA/7018.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_D/kPXU1fy4LrCDO2HqumId5xfX/d3f7.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_D/kPXU1fy4LrCYqEhB68wId5xg0/dd8c.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_D/nPx0D3Tir8BEqULlg3Id5xiS/9cb7.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_D/kPXU1fy4LrCswbMZAUId5xjq/5a52.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_D/kPXU1fy4LrBSIouBGJTId5xlC/8b60.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_D/nPx0D3Tir8ClOyprR1Id5xmg/2d07.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_D/nPx0D3Tir8BdE7tiw0Id5xn3/5d43.jpeg?fl=res,800,800,1|shr,,20|webp,60",
+   "https://d18-a.sdn.cz/d_18/c_img_qH_D/nPx0D3Tir8CJY3HrN1Id5xpU/10c6.jpeg?fl=res,800,800,1|shr,,20|webp,60"
+  ],
+  "sreality": 1444569164,
+  "paras_n": 6
+ },
+ {
   "id": 5609,
   "title": "Prodej nízkoenergetického bytu 3+kk Pohořelice - Smolín",
   "address": "Jihomoravský kraj, Brno-venkov, Pohořelice",
